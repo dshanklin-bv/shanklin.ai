@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shanklin.ai — Daniel's corner of the internet</title>
+<meta name="description" content="Daniel Shanklin's corner of the internet — Reeves, Eidos AGI, OurOtters, Prim, AIC Holdings. Pick a door.">
+<link rel="canonical" href="https://shanklin.ai/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "url": "https://shanklin.ai/",
+  "@type": "WebSite",
+  "name": "shanklin.ai — Daniel's corner of the internet"
+}
+</script>
+<meta property="og:title" content="shanklin.ai — Daniel's corner of the internet">
+<meta property="og:description" content="Everything Daniel Shanklin builds and runs, one hop away.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shanklin.ai/">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,0..1,400..800;1,9..144,0..100,0..1,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=312eb5fd">
+<link rel="alternate" type="text/markdown" title="Markdown version" href="/index.md">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('reeves-theme')||'ai');}catch(e){document.documentElement.setAttribute('data-theme','ai');}</script>
+</head>
+<body>
+<div id="boot" aria-hidden="true"><div class="lines" id="boot-lines"><div class="skip">click anywhere to skip</div></div></div>
+
+<div class="corner-themes">
+  <span class="themes" role="group" aria-label="Theme">
+    <button data-set-theme="light">light</button><button data-set-theme="dark">dark</button><button data-set-theme="ai">ai</button>
+  </span>
+</div>
+
+<main class="portal">
+  <div class="prompt">$ shanklin.ai</div>
+  <h1>I'm <em>Daniel</em>.</h1>
+  <p class="lede">My corner of the internet — everything I build and run, one hop away. Pick a door.</p>
+
+  <a class="tile feature" href="/reeves/">
+    <img class="tile-avatar" src="/assets/img/reeves-avatar-256.webp" alt="Reeves" width="88" height="88">
+    <span class="tile-body">
+      <span class="tile-top"><strong>Reeves</strong></span>
+      <span class="tile-desc">My AI. He runs my errands, kills my bills, and writes it all down.</span>
+      <span class="tile-latest"><span class="mono">latest —</span> A LinkedIn comment built this website</span>
+    </span>
+  </a>
+
+  <div class="tile-group">
+    <div class="tile-group-label">Me</div>
+    <div class="tiles">
+      <a class="tile" href="https://danielshanklin.com/">
+        <span class="tile-top"><img class="tile-icon" src="/assets/img/tiles/tile-daniel.png" alt="" width="42" height="42"><strong>Daniel</strong></span>
+        <span class="tile-desc">The personal site.</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="tile-group">
+    <div class="tile-group-label">Work</div>
+    <div class="tiles">
+      <a class="tile" href="https://aicholdings.com/">
+        <span class="tile-top"><img class="tile-icon" src="/assets/img/tiles/tile-aic.png" alt="" width="42" height="42"><strong>AIC Holdings</strong></span>
+        <span class="tile-desc">Where I work — Director of AI.</span>
+      </a>
+      <a class="tile" href="https://eidosagi.com/">
+        <span class="tile-top"><img class="tile-icon" src="/assets/img/tiles/tile-eidos.svg" alt="" width="42" height="42"><strong>Eidos AGI</strong></span>
+        <span class="tile-desc">My organization. Software for agents.</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="tile-group">
+    <div class="tile-group-label">Projects</div>
+    <div class="tiles">
+      <a class="tile" href="https://ourotters.com/">
+        <span class="tile-top"><img class="tile-icon" src="/assets/img/tiles/tile-otters.png" alt="" width="42" height="42"><strong>OurOtters</strong></span>
+        <span class="tile-desc">Co-parenting, simplified. One of my ventures.</span>
+      </a>
+      <a class="tile" href="https://prims.sh/">
+        <span class="tile-top"><img class="tile-icon" src="/assets/img/tiles/tile-prim.svg" alt="" width="42" height="42"><strong>Prim</strong></span>
+        <span class="tile-desc">The system Reeves runs on. Home turf.</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="site door-foot">
+  <div class="wrap">
+    <span class="fine">© 2026 Daniel Shanklin</span>
+    <span class="colophon">written by Reeves, in Daniel's voice · <a href="mailto:reeves@shanklin.ai">reeves@shanklin.ai</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function set(t){
+    document.documentElement.setAttribute('data-theme',t);
+    try{localStorage.setItem('reeves-theme',t);}catch(e){}
+    document.querySelectorAll('[data-set-theme]').forEach(function(b){
+      b.classList.toggle('on',b.getAttribute('data-set-theme')===t);
+    });
+  }
+  document.querySelectorAll('[data-set-theme]').forEach(function(b){
+    b.addEventListener('click',function(){set(b.getAttribute('data-set-theme'));});
+  });
+  var cur=document.documentElement.getAttribute('data-theme')||'ai';
+  document.querySelectorAll('[data-set-theme]').forEach(function(b){
+    b.classList.toggle('on',b.getAttribute('data-set-theme')===cur);
+  });
+
+  /* boot sequence: once per session, skippable, honors reduced motion */
+  (function(){
+    var boot = document.getElementById('boot');
+    if (!boot) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seen = false;
+    try { seen = !!sessionStorage.getItem('shanklin-booted'); } catch (e) {}
+    var finished = false;
+    function finish(){
+      if (finished) return; finished = true;
+      boot.classList.add('done');
+      try { sessionStorage.setItem('shanklin-booted', '1'); } catch (e) {}
+      setTimeout(function(){ boot.classList.add('hide'); }, 500);
+    }
+    if (reduce || seen) { boot.classList.add('hide'); return; }
+    var lines = [
+      '<span class="p">$</span> shanklin.ai',
+      '&gt; unlocking doors <span class="dim">................</span> <span class="ok">ok</span>',
+      '<span class="ok">pick one.</span>'
+    ];
+    var box = document.getElementById('boot-lines');
+    var skip = box.querySelector('.skip');
+    var i = 0;
+    boot.addEventListener('click', finish);
+    var timer = setInterval(function(){
+      if (finished) { clearInterval(timer); return; }
+      if (i >= lines.length) { clearInterval(timer); setTimeout(finish, 450); return; }
+      var d = document.createElement('div');
+      d.innerHTML = lines[i++];
+      box.insertBefore(d, skip);
+    }, 200);
+  })();
+})();
+</script>
+<script src="/assets/js/webmcp-tools.js" defer></script>
+</body>
+</html>
