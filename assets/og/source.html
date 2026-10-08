@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>shanklin.ai share card source — 1200 × 630</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,72,700;1,72,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    body { background: #161009; color: #faf5e9; font-family: Inter, sans-serif; }
+    .card { position: relative; width: 1200px; height: 630px; padding: 54px 64px; }
+    .prompt { margin: 0; font: 500 25px/1.4 'JetBrains Mono', monospace; color: #d9cbb6; }
+    .prompt span { color: #ff9a3c; }
+    h1 { margin: 30px 0 20px; font: 700 108px/.99 Fraunces, Georgia, serif; letter-spacing: -4px; }
+    h1 em { color: #ff9a3c; }
+    .lede { margin: 0; font-size: 27px; line-height: 1.48; color: #d9cbb6; }
+    .invitation { margin: 20px 0 0; font: 700 33px/1.2 Fraunces, Georgia, serif; }
+    .portrait { position: absolute; top: 50px; right: 68px; width: 344px; height: 408px; margin: 0; }
+    .portrait img { display: block; width: 344px; height: 362px; object-fit: cover; border-radius: 174px 174px 20px 20px; border: 3px solid #ff9a3c; }
+    .portrait figcaption { margin-top: 13px; text-align: center; font-size: 19px; color: #d9cbb6; }
+    .doors { position: absolute; left: 64px; right: 64px; bottom: 49px; display: flex; align-items: center; justify-content: space-between; padding-top: 26px; border-top: 1px solid #3a2c1e; }
+    .door { display: flex; gap: 12px; align-items: center; font: 700 23px/1.2 Fraunces, Georgia, serif; white-space: nowrap; }
+    .door img { width: 38px; height: 38px; padding: 3px; object-fit: contain; border-radius: 8px; background: #faf5e9; }
+    .door.reeves img { width: 48px; height: 48px; padding: 0; border-radius: 50%; border: 1px solid #ff9a3c; }
+    .door small { display: block; color: #a39076; font: 400 15px/1.7 Inter, sans-serif; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="prompt"><span>$</span> shanklin.ai</p>
+    <h1>I'm<br><em>Daniel.</em></h1>
+    <p class="lede">Everything I build and run,<br>one hop away.</p>
+    <p class="invitation">Pick a door.</p>
+    <figure class="portrait">
+      <img src="../img/daniel-photo.png" alt="Daniel Shanklin">
+      <figcaption>Daniel Shanklin</figcaption>
+    </figure>
+    <div class="doors">
+      <div class="door reeves"><img src="../img/reeves-avatar-256.webp" alt=""><span>Reeves<small>My AI</small></span></div>
+      <div class="door"><img src="../img/tiles/tile-aic.png" alt=""><span>AIC Holdings</span></div>
+      <div class="door"><img src="../img/tiles/tile-eidos.svg" alt=""><span>Eidos AGI</span></div>
+      <div class="door"><img src="../img/tiles/tile-otters.png" alt=""><span>OurOtters</span></div>
+      <div class="door"><img src="../img/tiles/tile-prim.svg" alt=""><span>Prim</span></div>
+    </div>
+  </main>
+</body>
+</html>
