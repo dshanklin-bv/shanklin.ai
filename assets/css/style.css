@@ -110,6 +110,10 @@ html[data-section="reeves"][data-theme="dark"] body {
 .masthead {
   border-bottom: 1px solid var(--hairline);
   padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
 }
 .masthead .wrap {
   display: flex; align-items: baseline; justify-content: space-between;
