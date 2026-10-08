@@ -6,7 +6,7 @@ The branded HTML email template. Table-based with inline styles — safe for all
 
 Avatar is PNG (`/assets/img/reeves-avatar-256.png`) for client compatibility — WebP doesn't render in Outlook.
 
-Copy everything between `<!-- email start -->` and `<!-- email end -->` into the email. Replace `{{body}}` with the message. The `{{name}}` placeholder is in the example body. Optional `{{cta_label}}` / `{{cta_url}}` render a purple pill CTA button below the body (bulletproof VML for Outlook) — omit the entire `{{cta}}` row when the email has no call to action. A small purple diamond divider row (lavender hairlines flanking `◆`) always separates the content from the lavender footer.
+Copy everything between `<!-- email start -->` and `<!-- email end -->` into the email. Replace `{{body}}` with the message. The `{{name}}` placeholder is in the example body. Optional `{{cta_label}}` / `{{cta_url}}` render a purple pill CTA button below the body (bulletproof VML for Outlook) — omit the entire `{{cta}}` row when the email has no call to action. An optional hidden `{{preheader}}` div (first inside `email start`) sets the inbox preview text; `render_html_email(..., preheader=...)` and `--preheader P` add it (filler keeps body copy out of the preview) — omit the div when you don't need one. A small purple diamond divider row (lavender hairlines flanking `◆`) always separates the content from the lavender footer.
 
 Brand rules:
 - Plain text is the default (per email protocols). HTML is for when the beautiful matters.

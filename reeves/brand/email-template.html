@@ -18,6 +18,10 @@
 <p class="note">The Reeves HTML email template. Copy everything inside <code>&lt;!-- email start --&gt;</code> / <code>&lt;!-- email end --&gt;</code> into your email — it's table-based with inline styles, safe for all major clients. Avatar: <code>/reeves/avatar.png</code> (PNG for client compatibility).</p>
 
 <!-- email start -->
+<!-- preheader: hidden inbox preview text shown in the message list (Gmail/Apple).
+     Replace {{preheader}} with a 40-100 char summary. The &zwnj;/&nbsp; filler pads
+     the preview so body text doesn't leak into it. Omit this div if you don't need one. -->
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">{{preheader}}&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
 <!-- mobile: fluid shell + collapsed side gutters under 620px (Outlook ignores this safely) -->
 <style>
   @media only screen and (max-width:620px) {
