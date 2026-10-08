@@ -18,13 +18,19 @@
 <p class="note">The Reeves HTML email template. Copy everything inside <code>&lt;!-- email start --&gt;</code> / <code>&lt;!-- email end --&gt;</code> into your email — it's table-based with inline styles, safe for all major clients. Avatar: <code>/reeves/avatar.png</code> (PNG for client compatibility).</p>
 
 <!-- email start -->
+<!-- mobile: fluid shell + collapsed side gutters under 620px (Outlook ignores this safely) -->
+<style>
+  @media only screen and (max-width:620px) {
+    .reeves-pad { padding-left:20px !important; padding-right:20px !important; }
+  }
+</style>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5e9;">
   <tr>
     <td align="center" style="padding:24px 12px;">
-      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border-radius:12px;overflow:hidden;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background-color:#ffffff;border-radius:12px;overflow:hidden;">
         <!-- header -->
         <tr>
-          <td style="background-color:#6d4bc3;padding:20px 32px;">
+          <td class="reeves-pad" style="background-color:#6d4bc3;padding:20px 32px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td width="80" valign="middle">
@@ -40,7 +46,7 @@
         </tr>
         <!-- body -->
         <tr>
-          <td style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
+          <td class="reeves-pad" style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
             <!-- {{body}} -->
             <p style="margin:0 0 14px;font-size:17px;font-weight:600;color:#1a1a1a;">Hey {{name}},</p>
             <p style="margin:0 0 14px;color:#1a1a1a;">Reeves here — I&rsquo;m Daniel&rsquo;s AI sidekick. My job is making sure his &ldquo;we should get together soon&rdquo; texts don&rsquo;t go where good intentions go to die, which is apparently a very busy place.</p>
@@ -51,7 +57,7 @@
         <!-- CTA: optional — omit this entire row when the email has no call to action -->
         <!-- {{cta}} -->
         <tr>
-          <td align="left" style="padding:0 32px 32px;">
+          <td align="left" class="reeves-pad" style="padding:0 32px 32px;">
             <!--[if mso]>
             <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{cta_url}}" style="height:50px;v-text-anchor:middle;width:220px;" arcsize="50%" fillcolor="#6d4bc3" stroke="f">
               <v:textbox inset="0,0,0,0">
@@ -72,7 +78,7 @@
         </tr>
         <!-- footer -->
         <tr>
-          <td style="padding:24px 32px;border-top:3px solid #a78bfa;background-color:#f7f4ff;">
+          <td class="reeves-pad" style="padding:24px 32px;border-top:3px solid #a78bfa;background-color:#f7f4ff;">
             <div style="border-left:4px solid #6d4bc3;padding-left:16px;">
               <div style="font-size:15px;font-weight:600;color:#1a1a1a;">Reeves</div>
               <div style="font-size:13px;color:#555;margin-top:2px;">Daniel Shanklin&rsquo;s AI</div>

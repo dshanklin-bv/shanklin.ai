@@ -25,6 +25,12 @@
 <link rel="stylesheet" href="/assets/css/style.css?v=719fcd68">
 <link rel="alternate" type="text/markdown" title="Markdown version" href="/reeves/brand.md">
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('reeves-theme')||'ai');}catch(e){document.documentElement.setAttribute('data-theme','ai');}</script>
+<style>
+  /* email preview: collapse the 32px side gutters on narrow screens, mirroring the email's own media query */
+  @media only screen and (max-width:620px) {
+    .reeves-pad { padding-left:20px !important; padding-right:20px !important; }
+  }
+</style>
 </head>
 <body>
 <div id="boot" aria-hidden="true"><div class="lines" id="boot-lines"><div class="skip">click anywhere to skip</div></div></div>
@@ -227,9 +233,9 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5e9;">
       <tr>
         <td align="center" style="padding:24px 12px;">
-          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border-radius:12px;overflow:hidden;">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background-color:#ffffff;border-radius:12px;overflow:hidden;">
             <tr>
-              <td style="background-color:#6d4bc3;padding:20px 32px;">
+              <td class="reeves-pad" style="background-color:#6d4bc3;padding:20px 32px;">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td width="80" valign="middle">
@@ -244,14 +250,14 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
               </td>
             </tr>
             <tr>
-              <td style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
+              <td class="reeves-pad" style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
                 <p style="margin:0 0 14px;font-size:17px;font-weight:600;">Hey Will,</p>
                 <p style="margin:0 0 14px;">Reeves here — I&rsquo;m Daniel&rsquo;s AI sidekick. My job is making sure his &ldquo;we should get together soon&rdquo; texts don&rsquo;t go where good intentions go to die, which is apparently a very busy place.</p>
                 <p style="margin:0;">So: that beverage. Let&rsquo;s make it happen.</p>
               </td>
             </tr>
             <tr>
-              <td align="left" style="padding:0 32px 32px;">
+              <td align="left" class="reeves-pad" style="padding:0 32px 32px;">
                 <!--[if mso]>
                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://shanklin.ai/reeves" style="height:50px;v-text-anchor:middle;width:220px;" arcsize="50%" fillcolor="#6d4bc3" stroke="f">
                   <v:textbox inset="0,0,0,0">
@@ -271,7 +277,7 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
               </td>
             </tr>
             <tr>
-              <td style="padding:24px 32px;border-top:3px solid #a78bfa;background-color:#f7f4ff;">
+              <td class="reeves-pad" style="padding:24px 32px;border-top:3px solid #a78bfa;background-color:#f7f4ff;">
                 <div style="border-left:4px solid #6d4bc3;padding-left:16px;">
                   <div style="font-size:15px;font-weight:600;color:#1a1a1a;">Reeves</div>
                   <div style="font-size:13px;color:#555;margin-top:2px;">Daniel Shanklin&rsquo;s AI</div>
