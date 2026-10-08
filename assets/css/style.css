@@ -115,6 +115,11 @@ html[data-section="reeves"][data-theme="dark"] body {
   z-index: 100;
   background: var(--bg);
 }
+
+/* ---------- email template preview (isolated from page theme) ---------- */
+[data-email-preview] { color-scheme: light; }
+[data-email-preview] p { color: #1a1a1a !important; }
+[data-email-preview] td { color: #1a1a1a; }
 .masthead .wrap {
   display: flex; align-items: baseline; justify-content: space-between;
   max-width: 960px;
