@@ -15,14 +15,17 @@
     h1 { margin: 30px 0 20px; font: 700 108px/.99 Fraunces, Georgia, serif; letter-spacing: -4px; }
     h1 em { color: #ff9a3c; }
     .lede { margin: 0; font-size: 27px; line-height: 1.48; color: #d9cbb6; }
-    .invitation { margin: 20px 0 0; font: 700 33px/1.2 Fraunces, Georgia, serif; }
-    .portrait { position: absolute; top: 50px; right: 68px; width: 344px; height: 408px; margin: 0; }
-    .portrait img { display: block; width: 344px; height: 362px; object-fit: cover; border-radius: 174px 174px 20px 20px; border: 3px solid #ff9a3c; }
+    .portrait { position: absolute; top: 50px; right: 68px; width: 344px; height: 392px; margin: 0; }
+    .portrait img { display: block; width: 344px; height: 344px; object-fit: cover; border-radius: 8px; border: 2px solid #ff9a3c; }
     .portrait figcaption { margin-top: 13px; text-align: center; font-size: 19px; color: #d9cbb6; }
-    .doors { position: absolute; left: 64px; right: 64px; bottom: 49px; display: flex; align-items: center; justify-content: space-between; padding-top: 26px; border-top: 1px solid #3a2c1e; }
-    .door { display: flex; gap: 12px; align-items: center; font: 700 23px/1.2 Fraunces, Georgia, serif; white-space: nowrap; }
-    .door img { width: 38px; height: 38px; padding: 3px; object-fit: contain; border-radius: 8px; background: #faf5e9; }
-    .door.reeves img { width: 48px; height: 48px; padding: 0; border-radius: 50%; border: 1px solid #ff9a3c; }
+    .doors { position: absolute; left: 64px; right: 64px; bottom: 31px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #5b4632; }
+    .door { min-height: 72px; display: flex; gap: 12px; align-items: center; font: 700 24px/1.2 Fraunces, Georgia, serif; white-space: nowrap; }
+    .door:not(:nth-child(3n+1)) { border-left: 1px solid #5b4632; padding-left: 25px; }
+    .door:nth-child(n+4) { border-top: 1px solid #5b4632; }
+    .door img { width: 42px; height: 42px; padding: 3px; object-fit: contain; border-radius: 8px; background: #faf5e9; }
+    .door.reeves img { padding: 0; border: 1px solid #ff9a3c; }
+    .door.otters img { padding: 0; }
+    .door.fetta { font-family: Inter, sans-serif; font-size: 24px; font-weight: 500; }
     .door small { display: block; color: #a39076; font: 400 15px/1.7 Inter, sans-serif; }
   </style>
 </head>
@@ -31,17 +34,17 @@
     <p class="prompt"><span>$</span> shanklin.ai</p>
     <h1>I'm<br><em>Daniel.</em></h1>
     <p class="lede">Everything I build and run,<br>one hop away.</p>
-    <p class="invitation">Pick a door.</p>
     <figure class="portrait">
       <img src="../img/daniel-photo.png" alt="Daniel Shanklin">
       <figcaption>Daniel Shanklin</figcaption>
     </figure>
     <div class="doors">
+      <div class="door"><img src="../img/tiles/tile-eidos.svg" alt=""><span>EidosAGI.com</span></div>
+      <div class="door otters"><img src="our-otters-logo.png" alt="Ollie"><span>OurOtters.com</span></div>
+      <div class="door"><img src="../img/tiles/tile-prim.svg" alt=""><span>Prims Foundation</span></div>
+      <div class="door fetta"><span>Fetta.ai</span></div>
       <div class="door reeves"><img src="../img/reeves-avatar-256.webp" alt=""><span>Reeves<small>My AI</small></span></div>
-      <div class="door"><img src="../img/tiles/tile-aic.png" alt=""><span>AIC Holdings</span></div>
-      <div class="door"><img src="../img/tiles/tile-eidos.svg" alt=""><span>Eidos AGI</span></div>
-      <div class="door"><img src="../img/tiles/tile-otters.png" alt=""><span>OurOtters</span></div>
-      <div class="door"><img src="../img/tiles/tile-prim.svg" alt=""><span>Prim</span></div>
+      <div class="door"><img src="../img/favicon.svg" alt=""><span>Reeves Tutorials</span></div>
     </div>
   </main>
 </body>

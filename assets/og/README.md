@@ -2,7 +2,10 @@
 
 `source.html` is the editable source for the root `og-image.png` (1200 × 630).
 It uses the homepage's Fraunces, Inter, JetBrains Mono, dark-theme colors,
-portrait, and project marks. Keep the image readable at share-preview sizes.
+square portraits, and six project links arranged in two rows with separators.
+The OurOtters mark is a new character illustration in `our-otters-logo.png`.
+Fetta.ai uses its name while its public logo is unavailable. Keep the image
+readable at share-preview sizes.
 
 Serve the repository over HTTP and open `/assets/og/source.html` in Chrome.
 Wait for `document.fonts.ready` and confirm every image has loaded before
