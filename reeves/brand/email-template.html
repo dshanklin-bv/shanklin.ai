@@ -114,14 +114,26 @@
             <!--<![endif]-->
           </td>
         </tr>
-        <!-- divider: small purple diamond between content and footer -->
+        <!-- divider: small purple diamond between content and footer.
+             The hairlines live in nested 2px-tall tables with valign="middle" on the
+             flank cells — a border-top on the flank td itself would pin to the TOP of
+             the 12px row while the diamond sits on the midline (~5px off); the nested
+             table centers the hairline on the diamond's vertical center in every client. -->
         <tr>
           <td align="center" class="reeves-pad" style="padding:0 32px 28px;">
             <table role="presentation" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="56" style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td>
+                <td width="56" valign="middle" style="font-size:0;line-height:0;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td></tr>
+                  </table>
+                </td>
                 <td style="padding:0 10px;font-size:12px;line-height:1;color:#6d4bc3;">&#9670;</td>
-                <td width="56" style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td>
+                <td width="56" valign="middle" style="font-size:0;line-height:0;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td></tr>
+                  </table>
+                </td>
               </tr>
             </table>
           </td>
