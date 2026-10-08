@@ -594,6 +594,11 @@ figure.chart img.chart-dark { display: none; }
   font-size: clamp(40px, 6vw, 60px);
   margin: 0 0 14px;
 }
+.portal .daniel-photo {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid var(--accent);
+}
 .portal .lede {
   color: var(--muted); font-size: 17px;
   margin: 0 0 40px; max-width: 560px;
