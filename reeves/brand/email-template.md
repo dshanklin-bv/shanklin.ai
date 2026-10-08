@@ -8,6 +8,8 @@ Avatar is PNG (`/assets/img/reeves-avatar-256.png`) for client compatibility —
 
 Copy everything between `<!-- email start -->` and `<!-- email end -->` into the email. Replace `{{body}}` with the message. The `{{name}}` placeholder is in the example body. Optional `{{cta_label}}` / `{{cta_url}}` render a purple pill CTA button below the body (bulletproof VML for Outlook) — omit the entire `{{cta}}` row when the email has no call to action. An optional hidden `{{preheader}}` div (first inside `email start`) sets the inbox preview text; `render_html_email(..., preheader=...)` and `--preheader P` add it (filler keeps body copy out of the preview) — omit the div when you don't need one. A small purple diamond divider row (lavender hairlines flanking `◆`) always separates the content from the lavender footer.
 
+Body links are suit-purple (`color:#6d4bc3`) with an underline — never client-default blue. Purple keeps the brand lock (~6:1 on white, WCAG AA); the underline keeps link affordance inside prose (footer nav links stay bare).
+
 Brand rules:
 - Plain text is the default (per email protocols). HTML is for when the beautiful matters.
 - Never photorealistic Reeves — the cartoon avatar only.

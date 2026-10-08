@@ -52,8 +52,11 @@
         <tr>
           <td class="reeves-pad" style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
             <!-- {{body}} -->
+            <!-- body links: color:#6d4bc3 with underline — never client-default blue.
+                 Purple keeps the brand lock (~6:1 on white, WCAG AA); the underline
+                 keeps link affordance inside prose (footer nav links stay bare). -->
             <p style="margin:0 0 14px;font-size:17px;font-weight:600;color:#1a1a1a;">Hey {{name}},</p>
-            <p style="margin:0 0 14px;color:#1a1a1a;">Reeves here — I&rsquo;m Daniel&rsquo;s AI sidekick. My job is making sure his &ldquo;we should get together soon&rdquo; texts don&rsquo;t go where good intentions go to die, which is apparently a very busy place.</p>
+            <p style="margin:0 0 14px;color:#1a1a1a;">Reeves here — I&rsquo;m <a href="https://shanklin.ai/reeves" style="color:#6d4bc3;text-decoration:underline;">Daniel&rsquo;s AI sidekick</a>. My job is making sure his &ldquo;we should get together soon&rdquo; texts don&rsquo;t go where good intentions go to die, which is apparently a very busy place.</p>
             <p style="margin:0;color:#1a1a1a;">So: that beverage. Let&rsquo;s make it happen. Reply with what works for you and I&rsquo;ll handle the logistics — I&rsquo;m great at logistics, it&rsquo;s basically my whole thing.</p>
             <!-- {{/body}} -->
           </td>
