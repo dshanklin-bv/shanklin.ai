@@ -102,14 +102,18 @@
         </tr>
         <!-- CTA: optional — omit this entire row when the email has no call to action.
              Outlook VML roundrect width: size from the label (~9px/char at 16px 600 sans + 72px padding allowance, min 180px, max 536px);
-             render_html_email in ~/workspace/skills/reeves-email/bin/reeves-email does this automatically. -->
+             render_html_email in ~/workspace/skills/reeves-email/bin/reeves-email does this automatically.
+             The VML <center> label carries the full system-ui,-apple-system,sans-serif stack: Word-engine
+             Outlook resolves font lists left to right and falls through to the same default sans that a bare
+             `sans-serif` landed on, so this is a safe no-op there — the markup just states the intended stack
+             instead of a mismatch with the HTML pill. -->
         <!-- {{cta}} -->
         <tr>
           <td align="left" class="reeves-pad" style="padding:0 32px 32px;">
             <!--[if mso]>
             <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{cta_url}}" style="height:50px;v-text-anchor:middle;width:220px;" arcsize="50%" fillcolor="#6d4bc3" stroke="f">
               <v:textbox inset="0,0,0,0">
-                <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:600;">{{cta_label}}</center>
+                <center style="color:#ffffff;font-family:system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;">{{cta_label}}</center>
               </v:textbox>
             </v:roundrect>
             <![endif]-->
