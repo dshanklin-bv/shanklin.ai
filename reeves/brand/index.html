@@ -274,13 +274,16 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
                  tracked tight (-0.75px); positive tracking on the 14px line makes the
                  two read as one lockup. 2px lavender bottom border seals the slab —
                  a lighter echo of the footer's 3px top border, so it doesn't compete
-                 with the avatar's 3px ring -->
+                 with the avatar's 3px ring. Alt-text fallback: color:#ffffff;
+                 font-size:13px on the img — with remote images blocked the header
+                 shows the "Reeves" alt in client-default dark text on the purple
+                 slab; the explicit white keeps the lockup composed with images off -->
             <tr>
               <td class="reeves-pad" style="background-color:#6d4bc3;padding:20px 32px;border-bottom:2px solid #a78bfa;">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                   <tr>
                     <td width="72" valign="middle">
-                      <img src="/reeves/avatar.png" alt="Reeves" width="64" height="64" style="display:block;border-radius:50%;border:3px solid #a78bfa;">
+                      <img src="/reeves/avatar.png" alt="Reeves" width="64" height="64" style="display:block;border-radius:50%;border:3px solid #a78bfa;color:#ffffff;font-size:13px;">
                     </td>
                     <td valign="middle" style="padding-left:16px;">
                       <div style="font-size:28px;font-weight:700;color:#ffffff;letter-spacing:-0.75px;">Reeves</div>

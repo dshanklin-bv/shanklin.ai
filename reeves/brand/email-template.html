@@ -65,6 +65,13 @@
         <!-- header: avatar 64px in a 72px cell — sized to balance the 28px wordmark
              (#18: 72px read mascot-large after #12's wordmark growth; the face stays
              the header's dominant without overhanging its counterweight).
+             Alt-text fallback: color:#ffffff;font-size:13px on the img — with remote
+             images blocked (Apple Mail's Block Remote Content, Outlook's default)
+             the header shows the "Reeves" alt in client-default dark text on the
+             purple slab; the explicit white keeps the lockup composed with images
+             off and honors the explicit-colors-on-every-text brand lock. 13px so
+             the word fits the 64px box; the font stays the client default, like
+             every other HTML-side text in the template.
              Subtitle #f1eaff on the purple slab: ~5.2:1 (up from #e8e0ff's 4.8:1),
              still clearly under the white wordmark's ~6.1:1 so hierarchy holds.
              letter-spacing:0.25px — the wordmark is tracked tight (-0.75px); a touch
@@ -77,7 +84,7 @@
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td width="72" valign="middle">
-                  <img src="https://shanklin.ai/reeves/avatar.png" alt="Reeves" width="64" height="64" style="display:block;border-radius:50%;border:3px solid #a78bfa;">
+                  <img src="https://shanklin.ai/reeves/avatar.png" alt="Reeves" width="64" height="64" style="display:block;border-radius:50%;border:3px solid #a78bfa;color:#ffffff;font-size:13px;">
                 </td>
                 <td valign="middle" style="padding-left:16px;">
                   <div style="font-size:28px;font-weight:700;color:#ffffff;letter-spacing:-0.75px;">Reeves</div>
