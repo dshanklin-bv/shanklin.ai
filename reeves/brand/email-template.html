@@ -24,6 +24,13 @@
      honors them in the body too. Mirrors render_html_email's output. -->
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light only">
+<!-- data detectors: iOS Mail auto-links dates, phone numbers, addresses, and emails
+     it finds in body copy into client-blue links at RENDER time, overriding the
+     brand's explicit colors. The format-detection meta tells iOS not to detect at
+     all; the a[x-apple-data-detectors] rule in the <style> block below is the
+     belt-and-suspenders override for anything that slips through. Zero visual
+     change everywhere else. -->
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
 <!-- preheader: hidden inbox preview text shown in the message list (Gmail/Apple).
      Replace {{preheader}} with a 40-100 char summary. The 40 &zwnj;/&nbsp; filler pairs
      pad the div to ~80 chars past the preheader — Gmail's preview slot runs ~100 chars,
@@ -37,6 +44,9 @@
      The CTA pill goes full-width under 620px — thumb-reach prominence for the
      one-ask-per-email pattern where it matters most. -->
 <style>
+  /* data detectors: keep iOS Mail from restyling auto-detected dates/phones/addresses
+     into client-blue links — the brand's explicit colors win. */
+  a[x-apple-data-detectors] { color:inherit !important; text-decoration:inherit !important; }
   @media only screen and (max-width:620px) {
     .reeves-pad { padding-left:20px !important; padding-right:20px !important; }
     .reeves-wrap { padding:16px 6px !important; }

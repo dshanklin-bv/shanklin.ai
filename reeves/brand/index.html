@@ -38,6 +38,10 @@
 <link rel="alternate" type="text/markdown" title="Markdown version" href="/reeves/brand.md">
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('reeves-theme')||'ai');}catch(e){document.documentElement.setAttribute('data-theme','ai');}</script>
 <style>
+  /* data detectors: the format-detection meta lives in the canonical email-template.html
+     copy block (metas don't render inside the preview div) — this CSS override mirrors
+     the email's own <style> rule so the preview shows the same behavior. */
+  a[x-apple-data-detectors] { color:inherit !important; text-decoration:inherit !important; }
   /* email preview: collapse the 32px side gutters on narrow screens, mirroring the email's own media query.
      The outer wrapper padding collapses too (24px/12px -> 16px/6px) so phones keep their line width.
      The CTA pill goes full-width under 620px — thumb-reach prominence for the one-ask-per-email pattern. */
@@ -251,6 +255,9 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
     <!-- dark mode: light-only — the two color-scheme metas live at the top of the
          canonical email-template.html copy block; the wrapper table below also
          carries color-scheme:light only inline, mirroring render_html_email -->
+    <!-- data detectors: the format-detection meta lives in the canonical copy block
+         (metas don't render inside this preview div); the CSS override in the page
+         <head> mirrors the email's own <style> rule -->
     <!-- preheader: hidden inbox preview text (sample). The 40 filler pairs pad it past
          Gmail's ~100-char preview slot so the greeting can't leak in — mirrors the
          canonical email-template.html copy block. -->

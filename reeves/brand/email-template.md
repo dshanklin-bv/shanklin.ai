@@ -12,6 +12,8 @@ Light-only in dark mode: the two `color-scheme` metas at the top of the `email s
 
 Body links are suit-purple (`color:#6d4bc3`) with an underline — never client-default blue. Purple keeps the brand lock (~6:1 on white, WCAG AA); the underline keeps link affordance inside prose (footer nav links stay bare).
 
+iOS data detectors: Apple Mail auto-links dates, phone numbers, addresses, and emails it finds in body copy into client-blue links at render time, overriding the brand's colors. A `format-detection` meta (`telephone=no,date=no,address=no,email=no`) at the top of the `email start` block tells iOS not to detect, and an `a[x-apple-data-detectors]` CSS override (`color:inherit !important; text-decoration:inherit !important`) catches anything that slips through — belt and suspenders, zero visual change elsewhere. Both live in the email's own `<style>` block so they travel with the copied markup; `render_html_email` emits them on the plugin path.
+
 Brand rules:
 - Plain text is the default (per email protocols). HTML is for when the beautiful matters.
 - Never photorealistic Reeves — the cartoon avatar only.
