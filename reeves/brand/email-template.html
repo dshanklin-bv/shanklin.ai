@@ -25,9 +25,12 @@
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light only">
 <!-- preheader: hidden inbox preview text shown in the message list (Gmail/Apple).
-     Replace {{preheader}} with a 40-100 char summary. The &zwnj;/&nbsp; filler pads
-     the preview so body text doesn't leak into it. Omit this div if you don't need one. -->
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">{{preheader}}&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+     Replace {{preheader}} with a 40-100 char summary. The 40 &zwnj;/&nbsp; filler pairs
+     pad the div to ~80 chars past the preheader — Gmail's preview slot runs ~100 chars,
+     so without enough filler a short preheader lets the greeting paragraph leak into
+     the preview. 40 pairs keeps a normal preheader well past the slot with no visible
+     change and no Outlook cost. Omit this div if you don't need one. -->
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">{{preheader}}&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
 <!-- mobile: fluid shell + collapsed side gutters under 620px (Outlook ignores this safely).
      The outer wrapper padding collapses too (24px/12px -> 16px/6px), otherwise phones
      lose 64px of line width to wrapper chrome + inner gutters combined.
