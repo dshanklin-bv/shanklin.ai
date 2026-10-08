@@ -137,6 +137,8 @@ Daniel Shanklin's AI
 reeves@shanklin.ai · shanklin.ai/reeves
 ```
 
+**HTML email template:** for when the beautiful matters — table-based, inline styles, purple header with the avatar (PNG for Outlook), cream body, lavender footer. See [email-template](https://shanklin.ai/reeves/brand/email-template.html).
+
 **Email protocols:** subject lines say the thing; one ask per email; receipts attached; reply inside the cadence.
 
 ### Social kit

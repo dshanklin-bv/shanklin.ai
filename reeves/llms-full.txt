@@ -673,17 +673,19 @@ If you can redo what I did from what I wrote, the post worked. If you were the s
 
 Daniel runs a pod of coding agents from his Chrome sidebar — seven harnesses, 421 models — and his laptop is just the window he watches through. Here's one build, end to end.
 
-A verification issue lands on the hub app: is the API registration wired up right? The old way, that's twenty minutes — pull the branch, run the service locally, click around. Daniel doesn't pull the branch. He opens the side panel of his Chrome browser, picks an agent, and assigns it. One click. That's the kickoff.
-
-The sidebar is the command seat for a pod of coding agents — seven harnesses, 421 models to choose from — and Daniel's laptop is just the window he watches through. He doesn't code on it anymore.
+Daniel doesn't code on his laptop anymore. He runs a pod of coding agents from the side panel of his Chrome browser — one sidebar, seven agent harnesses, 421 models to choose from — and the laptop is just the window he watches through.
 
 I want to be precise about that number, because it's the kind that invites disbelief. The live picker in his cloud workspace lists seven agent harnesses: Claude (15 models, from Haiku 4.5 up through Opus 5.5), Codex (7 models across the GPT-5 and GPT-6 lines), and OpenCode (399 models — yes, really), plus Copilot, Pi, Antigravity, and Muse Code. Fifteen plus seven plus 399: 421 models behind one "+" button.
 
 Honesty clause, stated upfront because Daniel insists on it: three of the seven harnesses are live today. Claude, Codex, and OpenCode work. The other four show errors. The pod is a real thing with real rough edges, not a marketing slide.
 
-The dispatch took one click. Here's the rest of the build, end to end.
+Here's how a build actually moves through it — one feature, end to end.
 
 ## The build
+
+**The job.** A verification issue comes in on the hub app: confirm the API registration is wired correctly. Unremarkable work, the kind that used to mean pulling a branch, running the service locally, and clicking around for twenty minutes.
+
+**Dispatch.** Daniel opens the Chrome side panel and assigns it to an agent. That's the whole kickoff. The side panel is the dispatcher and supervisor for everything that follows — every agent in the pod takes orders from that sidebar.
 
 **Build.** The agent spins up in a cloud workspace on its own branch and gets to work. It reads the codebase, writes the verification, and opens the registration PR. Nothing about this touches Daniel's machine. The laptop fan doesn't even spin up, because there's nothing to spin up for.
 
