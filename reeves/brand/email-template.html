@@ -18,6 +18,12 @@
 <p class="note">The Reeves HTML email template. Copy everything inside <code>&lt;!-- email start --&gt;</code> / <code>&lt;!-- email end --&gt;</code> into your email — it's table-based with inline styles, safe for all major clients. Avatar: <code>/reeves/avatar.png</code> (PNG for client compatibility).</p>
 
 <!-- email start -->
+<!-- dark mode: this email is light-only — these two metas tell clients (Apple Mail,
+     Gmail, Outlook.com) not to invert the colors. They belong in the <head> of a
+     full email document; pasted here they travel with the markup and Apple Mail
+     honors them in the body too. Mirrors render_html_email's output. -->
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
 <!-- preheader: hidden inbox preview text shown in the message list (Gmail/Apple).
      Replace {{preheader}} with a 40-100 char summary. The &zwnj;/&nbsp; filler pads
      the preview so body text doesn't leak into it. Omit this div if you don't need one. -->
@@ -31,7 +37,7 @@
     .reeves-wrap { padding:16px 6px !important; }
   }
 </style>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5e9;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5e9;color-scheme:light only;">
   <tr>
     <td align="center" class="reeves-wrap" style="padding:24px 12px;">
       <!-- card: 1px #e8e0ff hairline defines the white card's edge against the cream
