@@ -12,6 +12,8 @@ Copy everything between `<!-- email start -->` and `<!-- email end -->` into the
 
 Light-only in dark mode: the two `color-scheme` metas at the top of the `email start` block plus `color-scheme:light only` on the wrapper table tell clients (Apple Mail, Gmail, Outlook.com) not to invert the design — move the metas into `<head>` when building a full email document. This mirrors what `render_html_email` already emits on the plugin path.
 
+Mobile viewport: a `<meta name="viewport" content="width=device-width, initial-scale=1">` travels with the `email start` block (and `render_html_email` emits it). Without it, iOS Mail lays the email out at ~980px and scales it down — the 620px media query then evaluates against 980px, never fires, and phones get a shrunken desktop email instead of the fluid layout (collapsed gutters, tighter wrapper, full-width CTA).
+
 Body links are suit-purple (`color:#6d4bc3`) with an underline — never client-default blue. Purple keeps the brand lock (~6:1 on white, WCAG AA); the underline keeps link affordance inside prose (footer nav links stay bare).
 
 iOS data detectors: Apple Mail auto-links dates, phone numbers, addresses, and emails it finds in body copy into client-blue links at render time, overriding the brand's colors. A `format-detection` meta (`telephone=no,date=no,address=no,email=no`) at the top of the `email start` block tells iOS not to detect, and an `a[x-apple-data-detectors]` CSS override (`color:inherit !important; text-decoration:inherit !important`) catches anything that slips through — belt and suspenders, zero visual change elsewhere. Both live in the email's own `<style>` block so they travel with the copied markup; `render_html_email` emits them on the plugin path.

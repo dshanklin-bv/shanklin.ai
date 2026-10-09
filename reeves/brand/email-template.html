@@ -31,6 +31,13 @@
      belt-and-suspenders override for anything that slips through. Zero visual
      change everywhere else. -->
 <meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<!-- mobile viewport: without this, iOS Mail lays the email out at ~980px and scales
+     it down — the 620px media query below then evaluates against 980px, never fires,
+     and phones get a shrunken desktop email instead of the fluid layout (collapsed
+     gutters, tighter wrapper, full-width CTA). Setting the layout viewport to the
+     device width activates the query. Like the metas above, it belongs in <head> on
+     a full document but travels safely with the markup. Mirrors render_html_email. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- preheader: hidden inbox preview text shown in the message list (Gmail/Apple).
      Replace {{preheader}} with a 40-100 char summary. The 40 &zwnj;/&nbsp; filler pairs
      pad the div to ~80 chars past the preheader — Gmail's preview slot runs ~100 chars,
