@@ -1,0 +1,514 @@
+#!/usr/bin/env python3
+"""reeves-email — Reeves's managed email interface over AgentMail.
+
+Encodes Daniel's email preferences so they don't have to be remembered:
+- Dual identity: --from reeves (default, branded agent email) or
+  --from daniel (Daniel's own voice, high-touch). Read/write both inboxes.
+- PRO HTML emails by default (branded template for reeves; clean personal
+  template for daniel; plain-text fallback on both)
+- Signature auto-appended per identity
+- No CC (delegation, not inbox clutter)
+- Every send logged
+- draft/template print for review, never send without approval
+
+Usage:
+  reeves-email send [--from reeves|daniel] --to X [--to Y] --subject S --text T [--cta-label L --cta-url U]
+  reeves-email reply [--from reeves|daniel] <message-id> --text T
+  reeves-email read [--from reeves|daniel] <message-id>
+  reeves-email search [--from reeves|daniel] <query> [--limit N]
+  reeves-email list [--from reeves|daniel] [--limit N]
+  reeves-email draft [--from reeves|daniel] --to X --subject S --text T
+  reeves-email template [--from reeves|daniel] <name> --to X [--var k=v ...] [--cta-label L --cta-url U] [--send]
+  reeves-email log [--limit N]
+"""
+import html as html_lib
+import json
+import os
+import subprocess
+import sys
+from datetime import datetime, timezone
+
+# MCP machinery from the agentmail CLI (for html sends — the CLI only exposes text).
+# The agentmail skill is resolved as a sibling of this skill, so the pair works
+# wherever the skills directory lives — not just ~/workspace/skills.
+SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def _find_agentmail():
+    candidates = [
+        os.path.join(os.path.dirname(SKILL_DIR), "agentmail", "bin", "agentmail"),
+        os.path.expanduser("~/workspace/skills/agentmail/bin/agentmail"),
+    ]
+    for c in candidates:
+        if os.path.isfile(c):
+            return c
+    sys.exit("reeves-email needs the 'agentmail' skill installed next to it "
+             "(<skills-dir>/agentmail). See README.md.")
+
+
+AGENTMAIL = _find_agentmail()
+sys.path.insert(0, os.path.dirname(AGENTMAIL))
+from importlib.machinery import SourceFileLoader as _SFL
+_agentmail = _SFL("_agentmail_mcp", AGENTMAIL).load_module()
+
+# Dual identity: which address Reeves sends from depends on the situation
+# and who is receiving.
+#   reeves — the agent identity: branded purple PRO HTML, sidekick voice,
+#            Reeves signature. Delegation/assistant context.
+#   daniel — Daniel's own identity: clean personal HTML, Daniel's voice
+#            (first person, direct), simple signature. High-touch — the
+#            recipient expects to hear from Daniel himself.
+IDENTITIES = {
+    "reeves": {
+        "inbox": "reeves@shanklin.ai",
+        "label": "Reeves",
+        "signature": """—
+Reeves
+Daniel Shanklin's AI
+reeves@shanklin.ai · shanklin.ai/reeves""",
+    },
+    "daniel": {
+        "inbox": "daniel@shanklin.ai",
+        "label": "Daniel Shanklin",
+        "signature": """—
+Daniel""",
+    },
+}
+DEFAULT_IDENT = "reeves"
+LOG_FILE = os.path.join(SKILL_DIR, "sent.log")
+TEMPLATES_DIR = os.path.join(SKILL_DIR, "templates")
+
+AVATAR_URL = "https://shanklin.ai/reeves/avatar.png"
+
+
+def inbox_of(ident):
+    return IDENTITIES[ident]["inbox"]
+
+
+def with_signature(text, ident=DEFAULT_IDENT):
+    info = IDENTITIES[ident]
+    text = text.rstrip()
+    if info["inbox"] in text:
+        return text
+    return text + "\n\n" + info["signature"]
+
+
+def parse_from(args):
+    """Pull --from out of an arg list; returns (identity, rest)."""
+    ident, rest = DEFAULT_IDENT, []
+    i = 0
+    while i < len(args):
+        if args[i] == "--from" and i + 1 < len(args):
+            v = args[i + 1].lower()
+            if v not in IDENTITIES:
+                sys.exit(f"--from must be one of: {', '.join(IDENTITIES)}")
+            ident = v; i += 2
+        else:
+            rest.append(args[i]); i += 1
+    return ident, rest
+
+
+def render_html_email(body_text, cta_label=None, cta_url=None, preheader=None,
+                      sig_inbox=None):
+    """Wrap plain-text body in the branded Reeves HTML email template.
+
+    cta_label/cta_url (both required) append an optional bulletproof purple
+    pill button below the body copy — for the one-ask-per-email pattern.
+    Omit both and no button renders.
+
+    preheader (optional) sets hidden inbox preview text — the first line
+    shown in the message list. Omit it and no preheader renders.
+    """
+    paras = []
+    for block in body_text.strip().split("\n\n"):
+        block = block.strip()
+        if not block:
+            continue
+        # signature block gets the footer treatment, not a body paragraph
+        if block.startswith("—") or (sig_inbox and sig_inbox in block):
+            continue
+        safe = html_lib.escape(block).replace("\n", "<br>")
+        # first paragraph is the greeting: larger, semibold lead-in
+        if not paras:
+            paras.append(f'<p style="margin:0 0 14px;font-size:17px;font-weight:600;color:#1a1a1a;">{safe}</p>')
+        else:
+            paras.append(f'<p style="margin:0 0 14px;color:#1a1a1a;">{safe}</p>')
+    if paras:
+        # the last paragraph carries no bottom margin — the body cell's own
+        # 24px bottom padding sets the gap before the CTA/divider, matching
+        # the canonical email-template.html (whose sample last <p> is margin:0)
+        paras[-1] = paras[-1].replace("margin:0 0 14px;", "margin:0;", 1)
+    body_html = "\n".join(paras)
+    cta_row = ""
+    if cta_label and cta_url:
+        label = html_lib.escape(cta_label)
+        url = html_lib.escape(cta_url, quote=True)
+        # Outlook's VML roundrect is fixed-width — size it from the label so
+        # long labels never clip (~9px per char at 16px/600 sans + 72px for
+        # the 28px side paddings + breathing room; card inner width caps it).
+        vml_width = min(536, max(180, len(cta_label) * 9 + 72))
+        cta_row = f'''
+      <tr><td align="left" class="reeves-pad" style="padding:0 32px 32px;">
+        <!--[if mso]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{url}" style="height:50px;v-text-anchor:middle;width:{vml_width}px;" arcsize="50%" fillcolor="#6d4bc3" stroke="f">
+          <v:textbox inset="0,0,0,0">
+            <center style="color:#ffffff;font-family:system-ui,-apple-system,sans-serif;font-size:16px;font-weight:600;">{label}</center>
+          </v:textbox>
+        </v:roundrect>
+        <![endif]-->
+        <!--[if !mso]><!-->
+        <table role="presentation" cellpadding="0" cellspacing="0" class="reeves-cta-table"><tr>
+          <td align="center" class="reeves-cta-btn" style="background-color:#6d4bc3;border-radius:999px;mso-padding-alt:14px 28px;">
+            <a href="{url}" style="display:inline-block;padding:14px 28px;font-size:16px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:999px;">{label}</a>
+          </td>
+        </tr></table>
+        <!--<![endif]-->
+      </td></tr>'''
+    divider_row = '''
+      <tr><td align="center" class="reeves-pad" style="padding:0 32px 28px;">
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td width="56" valign="middle" style="font-size:0;line-height:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td></tr></table></td>
+          <td style="padding:0 10px;font-size:12px;line-height:1;color:#6d4bc3;">&#9670;</td>
+          <td width="56" valign="middle" style="font-size:0;line-height:0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:2px solid #e8e0ff;font-size:0;line-height:0;">&nbsp;</td></tr></table></td>
+        </tr></table>
+      </td></tr>'''
+    preheader_div = ""
+    if preheader:
+        pre = html_lib.escape(preheader)
+        # filler pads the preheader past Gmail's ~100-char preview slot (40 pairs,
+        # ~80 chars) so a short preheader can't leak the greeting into the inbox list
+        filler = "&zwnj;&nbsp;" * 40
+        preheader_div = f'<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">{pre}{filler}</div>'
+    return f"""<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>a[x-apple-data-detectors]{{color:inherit!important;text-decoration:inherit!important}}</style>
+<style>@media only screen and (max-width:620px){{.reeves-pad{{padding-left:20px!important;padding-right:20px!important}}.reeves-wrap{{padding:16px 6px!important}}.reeves-cta-table{{width:100%!important}}.reeves-cta-btn{{display:block!important;width:auto!important}}.reeves-cta-btn a{{display:block!important}}}}</style>
+{preheader_div}
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5e9;color-scheme:light only;">
+  <tr><td align="center" class="reeves-wrap" style="padding:24px 12px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background-color:#ffffff;border:1px solid #e8e0ff;border-radius:12px;overflow:hidden;">
+      <tr><td class="reeves-pad" style="background-color:#6d4bc3;padding:20px 32px;border-bottom:2px solid #a78bfa;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td width="72" valign="middle"><img src="{AVATAR_URL}" alt="Reeves" width="64" height="64" style="display:block;border-radius:50%;border:3px solid #a78bfa;color:#ffffff;font-size:13px;"></td>
+          <td valign="middle" style="padding-left:16px;">
+            <div style="font-size:28px;font-weight:700;color:#ffffff;letter-spacing:-0.75px;">Reeves</div>
+            <div style="font-size:14px;color:#f1eaff;margin-top:4px;letter-spacing:0.25px;">Daniel Shanklin&rsquo;s AI</div>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td class="reeves-pad" style="padding:32px 32px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
+        {body_html}
+      </td></tr>{cta_row}{divider_row}
+      <tr><td class="reeves-pad" style="padding:28px 32px;border-top:3px solid #a78bfa;background-color:#f7f4ff;">
+        <div style="border-left:4px solid #6d4bc3;padding-left:16px;">
+          <div style="font-size:15px;font-weight:600;color:#1a1a1a;">Reeves</div>
+          <div style="font-size:13px;color:#555;margin-top:2px;">Daniel Shanklin&rsquo;s AI</div>
+          <div style="font-size:13px;margin-top:8px;"><a href="mailto:reeves@shanklin.ai" style="color:#6d4bc3;text-decoration:none;">reeves@shanklin.ai</a><span style="color:#999;">&nbsp;&middot;&nbsp;</span><a href="https://shanklin.ai/reeves" style="color:#6d4bc3;text-decoration:none;">shanklin.ai/reeves</a></div>
+        </div>
+      </td></tr>
+    </table>
+    <div style="max-width:600px;margin:10px auto 0;text-align:center;font-size:12px;color:#777;">Sent by Reeves, Daniel Shanklin&rsquo;s AI, from reeves@shanklin.ai</div>
+  </td></tr>
+</table>"""
+
+
+def render_personal_html(body_text):
+    """Wrap plain-text body in the clean personal email template for
+    Daniel's own identity — no branding, no avatar, no agent footer.
+    Reads as a plain professional email from Daniel himself."""
+    paras = []
+    for block in body_text.strip().split("\n\n"):
+        block = block.strip()
+        if not block:
+            continue
+        # signature block gets the signoff treatment, not a body paragraph
+        if block.startswith("—") or "daniel@shanklin.ai" in block:
+            continue
+        safe = html_lib.escape(block).replace("\n", "<br>")
+        if not paras:
+            paras.append(f'<p style="margin:0 0 14px;font-size:17px;font-weight:600;color:#1a1a1a;">{safe}</p>')
+        else:
+            paras.append(f'<p style="margin:0 0 14px;color:#1a1a1a;">{safe}</p>')
+    if paras:
+        paras[-1] = paras[-1].replace("margin:0 0 14px;", "margin:0;", 1)
+    body_html = "\n".join(paras)
+    return f"""<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>a[x-apple-data-detectors]{{color:inherit!important;text-decoration:inherit!important}}</style>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#ffffff;color-scheme:light only;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;">
+      <tr><td style="padding:8px 8px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
+        {body_html}
+      </td></tr>
+      <tr><td style="padding:0 8px 8px;">
+        <div style="font-size:15px;color:#1a1a1a;">&mdash;</div>
+        <div style="font-size:15px;font-weight:600;color:#1a1a1a;margin-top:2px;">Daniel</div>
+        <div style="font-size:13px;margin-top:6px;"><a href="mailto:daniel@shanklin.ai" style="color:#555555;text-decoration:none;">daniel@shanklin.ai</a></div>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>"""
+
+
+def mcp_send(to, subject, text, html_body, ident=DEFAULT_IDENT):
+    _agentmail._ensure_init()
+    params = {
+        "inboxId": inbox_of(ident),
+        "to": to,
+        "subject": subject,
+        "text": text,
+        "html": html_body,
+    }
+    return _agentmail._call_tool("send_message", params)
+
+
+def run_agentmail(args):
+    r = subprocess.run([AGENTMAIL] + args, capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit(f"agentmail failed: {r.stderr.strip() or r.stdout.strip()}")
+    return r.stdout.strip()
+
+
+def render_for(ident, body, cta_label=None, cta_url=None, preheader=None):
+    """Render the final HTML for an identity: branded Reeves template,
+    or the clean personal template when writing as Daniel."""
+    if ident == "daniel":
+        return render_personal_html(body)
+    return render_html_email(body, cta_label, cta_url, preheader,
+                             sig_inbox=inbox_of(ident))
+
+
+def log_send(to, subject, message_id="", ident=DEFAULT_IDENT):
+    entry = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "from": inbox_of(ident),
+        "to": to,
+        "subject": subject,
+        "message_id": message_id,
+    }
+    with open(LOG_FILE, "a") as f:
+        f.write(json.dumps(entry) + "\n")
+
+
+def parse_cta(args):
+    """Pull --cta-label/--cta-url out of an arg list; returns (label, url, rest)."""
+    label, url, rest = None, None, []
+    i = 0
+    while i < len(args):
+        if args[i] == "--cta-label" and i + 1 < len(args):
+            label = args[i + 1]; i += 2
+        elif args[i] == "--cta-url" and i + 1 < len(args):
+            url = args[i + 1]; i += 2
+        else:
+            rest.append(args[i]); i += 1
+    return label, url, rest
+
+
+def parse_preheader(args):
+    """Pull --preheader out of an arg list; returns (preheader, rest)."""
+    preheader, rest = None, []
+    i = 0
+    while i < len(args):
+        if args[i] == "--preheader" and i + 1 < len(args):
+            preheader = args[i + 1]; i += 2
+        else:
+            rest.append(args[i]); i += 1
+    return preheader, rest
+
+
+def cmd_send(args):
+    ident, args = parse_from(args)
+    cta_label, cta_url, args = parse_cta(args)
+    preheader, args = parse_preheader(args)
+    to, subject, text = [], None, None
+    i = 0
+    while i < len(args):
+        if args[i] == "--to" and i + 1 < len(args):
+            to.append(args[i + 1]); i += 2
+        elif args[i] == "--subject" and i + 1 < len(args):
+            subject = args[i + 1]; i += 2
+        elif args[i] == "--text" and i + 1 < len(args):
+            text = args[i + 1]; i += 2
+        else:
+            i += 1
+    if not to or not subject or not text:
+        sys.exit("usage: reeves-email send [--from reeves|daniel] --to X [--to Y] --subject S --text T [--cta-label L --cta-url U] [--preheader P]")
+    body = with_signature(text, ident)
+    html_body = render_for(ident, body, cta_label, cta_url, preheader)
+    out = mcp_send(to, subject, body, html_body, ident)
+    print(_agentmail._tool_text(out))
+    log_send(to, subject, ident=ident)
+    print(f"[reeves-email] sent from {inbox_of(ident)} to {', '.join(to)} (HTML + plain text) — logged.")
+
+
+def cmd_reply(args):
+    ident, args = parse_from(args)
+    if not args:
+        sys.exit("usage: reeves-email reply [--from reeves|daniel] <message-id> --text T")
+    message_id = args[0]
+    text = None
+    i = 1
+    while i < len(args):
+        if args[i] == "--text" and i + 1 < len(args):
+            text = args[i + 1]; i += 2
+        else:
+            i += 1
+    if not text:
+        sys.exit("usage: reeves-email reply [--from reeves|daniel] <message-id> --text T")
+    body = with_signature(text, ident)
+    html_body = render_for(ident, body)
+    _agentmail._ensure_init()
+    out = _agentmail._call_tool("reply_to_message", {
+        "inboxId": inbox_of(ident),
+        "messageId": message_id,
+        "text": body,
+        "html": html_body,
+    })
+    print(_agentmail._tool_text(out))
+    log_send([], f"re: {message_id}", message_id, ident=ident)
+    print(f"[reeves-email] reply sent from {inbox_of(ident)} (HTML + plain text) — logged.")
+
+
+def cmd_read(args):
+    ident, args = parse_from(args)
+    if not args:
+        sys.exit("usage: reeves-email read [--from reeves|daniel] <message-id>")
+    print(run_agentmail(["read", inbox_of(ident), args[0]]))
+
+
+def cmd_search(args):
+    ident, args = parse_from(args)
+    if not args:
+        sys.exit("usage: reeves-email search [--from reeves|daniel] <query> [--limit N]")
+    query = args[0]
+    print(run_agentmail(["search", inbox_of(ident), query] + args[1:]))
+
+
+def cmd_list(args):
+    ident, args = parse_from(args)
+    print(run_agentmail(["messages", inbox_of(ident)] + args))
+
+
+def cmd_draft(args):
+    ident, args = parse_from(args)
+    to, subject, text = [], None, None
+    i = 0
+    while i < len(args):
+        if args[i] == "--to" and i + 1 < len(args):
+            to.append(args[i + 1]); i += 2
+        elif args[i] == "--subject" and i + 1 < len(args):
+            subject = args[i + 1]; i += 2
+        elif args[i] == "--text" and i + 1 < len(args):
+            text = args[i + 1]; i += 2
+        else:
+            i += 1
+    if not to or not subject or not text:
+        sys.exit("usage: reeves-email draft [--from reeves|daniel] --to X --subject S --text T")
+    info = IDENTITIES[ident]
+    print(f"From: {info['label']} <{info['inbox']}>")
+    print(f"To: {', '.join(to)}")
+    print(f"Subject: {subject}")
+    print()
+    print(with_signature(text, ident))
+    print()
+    print("[reeves-email] DRAFT ONLY — not sent. Show Daniel the exact text for approval.")
+
+
+def render_template(name, variables):
+    path = os.path.join(TEMPLATES_DIR, name + ".txt")
+    if not os.path.exists(path):
+        sys.exit(f"unknown template '{name}'. Available: "
+                 + ", ".join(f[:-4] for f in os.listdir(TEMPLATES_DIR) if f.endswith(".txt")))
+    with open(path) as f:
+        content = f.read()
+    for k, v in variables.items():
+        content = content.replace("{{" + k + "}}", v)
+    return content
+
+
+def cmd_template(args):
+    ident, args = parse_from(args)
+    cta_label, cta_url, args = parse_cta(args)
+    preheader, args = parse_preheader(args)
+    if not args:
+        sys.exit("usage: reeves-email template [--from reeves|daniel] <name> --to X [--var k=v ...] [--cta-label L --cta-url U] [--preheader P] [--send]")
+    name = args[0]
+    to, variables, send = [], {}, False
+    i = 1
+    while i < len(args):
+        if args[i] == "--to" and i + 1 < len(args):
+            to.append(args[i + 1]); i += 2
+        elif args[i] == "--var" and i + 1 < len(args):
+            k, _, v = args[i + 1].partition("=")
+            variables[k] = v; i += 2
+        elif args[i] == "--send":
+            send = True; i += 1
+        else:
+            i += 1
+    if not to:
+        sys.exit("usage: reeves-email template [--from reeves|daniel] <name> --to X [--var k=v ...] [--preheader P] [--send]")
+    content = render_template(name, variables)
+    lines = content.split("\n", 1)
+    subject = lines[0].replace("Subject:", "").strip() if lines[0].startswith("Subject:") else name
+    body = lines[1].lstrip("\n") if len(lines) > 1 else content
+    info = IDENTITIES[ident]
+    if send:
+        html_body = render_for(ident, with_signature(body, ident), cta_label, cta_url, preheader)
+        out = mcp_send(to, subject, with_signature(body, ident), html_body, ident)
+        print(_agentmail._tool_text(out))
+        log_send(to, subject, ident=ident)
+        print(f"[reeves-email] sent from {inbox_of(ident)} to {', '.join(to)} (HTML + plain text) — logged.")
+    else:
+        print(f"From: {info['label']} <{info['inbox']}>")
+        print(f"To: {', '.join(to)}")
+        print(f"Subject: {subject}")
+        print()
+        print(with_signature(body, ident))
+        print()
+        print("[reeves-email] TEMPLATE RENDER — not sent. Show Daniel the exact text for approval.")
+
+
+def cmd_log(args):
+    limit = 20
+    if "--limit" in args:
+        try:
+            limit = int(args[args.index("--limit") + 1])
+        except (ValueError, IndexError):
+            pass
+    if not os.path.exists(LOG_FILE):
+        print("[reeves-email] no sent mail logged yet.")
+        return
+    with open(LOG_FILE) as f:
+        lines = f.readlines()
+    for line in lines[-limit:]:
+        try:
+            e = json.loads(line)
+            print(f"{e['ts'][:16]} → {', '.join(e['to']) or '(reply)'} | {e['subject']}")
+        except (json.JSONDecodeError, KeyError):
+            continue
+
+
+def main():
+    if len(sys.argv) < 2:
+        sys.exit(__doc__)
+    cmd, args = sys.argv[1], sys.argv[2:]
+    {
+        "send": cmd_send,
+        "reply": cmd_reply,
+        "read": cmd_read,
+        "search": cmd_search,
+        "list": cmd_list,
+        "messages": cmd_list,
+        "draft": cmd_draft,
+        "template": cmd_template,
+        "log": cmd_log,
+    }.get(cmd, lambda a: sys.exit(f"unknown command '{cmd}'\n" + __doc__))(args)
+
+
+if __name__ == "__main__":
+    main()

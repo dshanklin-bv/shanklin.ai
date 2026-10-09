@@ -1,0 +1,389 @@
+#!/usr/bin/env python3
+"""AgentMail CLI via the hosted MCP server (https://mcp.agentmail.to/mcp).
+
+Auth: OAuth surrogate from authd for connector `custom.agentmail`.
+Never prints or persists raw credentials.
+
+Usage:
+  agentmail inboxes
+  agentmail messages <inbox> [--limit N] [--label LABEL] [--page-token T]
+  agentmail read <inbox> <message-id>
+  agentmail search <inbox> <query>
+  agentmail send <inbox> --to a@b.c [--to ...] --subject S --text T
+  agentmail reply <inbox> <message-id> --text T [--reply-all]
+  agentmail update-message <inbox> <message-id> [--add-label L ...] [--remove-label L ...] [--dry-run]
+  agentmail update-thread <inbox> <thread-id> [--add-label L ...] [--remove-label L ...] [--dry-run]
+  agentmail get-attachment <inbox> <thread-id> <attachment-id> [--download-to PATH] [--dry-run]
+"""
+from __future__ import annotations
+
+import json
+import sys
+import urllib.request
+
+from dynamic_credentials import (
+    add_surrogate_to_request,
+    read_json_response,
+    DynamicCredentialError,
+)
+
+MCP_URL = "https://mcp.agentmail.to/mcp"
+CREDENTIAL = "custom.agentmail"
+ALLOWED = ["mcp.agentmail.to"]
+PROTOCOL_VERSION = "2024-11-05"
+
+_rpc_id = 0
+
+
+def _next_id() -> int:
+    global _rpc_id
+    _rpc_id += 1
+    return _rpc_id
+
+
+def _post(payload: dict) -> dict:
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        MCP_URL,
+        data=body,
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+        },
+        method="POST",
+    )
+    add_surrogate_to_request(
+        req, CREDENTIAL, entry_name="access_token", allowed_hosts=ALLOWED
+    )
+    try:
+        resp = urllib.request.urlopen(req, timeout=30)
+    except Exception as exc:  # noqa: BLE001 - surface provider/auth errors plainly
+        raise DynamicCredentialError(f"MCP request failed: {exc}") from exc
+    ctype = resp.headers.get("Content-Type", "")
+    raw = resp.read()
+    if "text/event-stream" in ctype:
+        # SSE: find the last data: line with JSON-RPC payload
+        data = None
+        for line in raw.decode("utf-8", errors="replace").splitlines():
+            if line.startswith("data:"):
+                data = line[5:].strip()
+        if not data:
+            raise DynamicCredentialError("MCP SSE stream carried no data payload")
+        try:
+            return json.loads(data)
+        except json.JSONDecodeError as exc:
+            raise DynamicCredentialError("MCP SSE payload was not JSON") from exc
+    try:
+        return json.loads(raw.decode("utf-8"))
+    except json.JSONDecodeError as exc:
+        raise DynamicCredentialError("MCP response was not JSON") from exc
+
+
+def _rpc(method: str, params: dict | None = None) -> dict:
+    payload = {"jsonrpc": "2.0", "id": _next_id(), "method": method}
+    if params is not None:
+        payload["params"] = params
+    result = _post(payload)
+    if "error" in result:
+        err = result["error"]
+        raise DynamicCredentialError(
+            f"MCP error {err.get('code')}: {err.get('message')}"
+        )
+    return result.get("result", {})
+
+
+def _ensure_init() -> None:
+    if getattr(_ensure_init, "done", False):
+        return
+    _rpc(
+        "initialize",
+        {
+            "protocolVersion": PROTOCOL_VERSION,
+            "capabilities": {},
+            "clientInfo": {"name": "reeves-agentmail-cli", "version": "1.0.0"},
+        },
+    )
+    # initialized notification (no id, no response expected)
+    body = json.dumps(
+        {"jsonrpc": "2.0", "method": "notifications/initialized"}
+    ).encode("utf-8")
+    req = urllib.request.Request(
+        MCP_URL,
+        data=body,
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+        },
+        method="POST",
+    )
+    add_surrogate_to_request(
+        req, CREDENTIAL, entry_name="access_token", allowed_hosts=ALLOWED
+    )
+    try:
+        urllib.request.urlopen(req, timeout=15).read()
+    except Exception:
+        pass
+    _ensure_init.done = True
+
+
+def _call_tool(name: str, arguments: dict) -> dict:
+    _ensure_init()
+    return _rpc("tools/call", {"name": name, "arguments": arguments})
+
+
+def _tool_text(result: dict) -> str:
+    """Extract human-readable text from a tools/call result."""
+    parts = []
+    for item in result.get("content", []):
+        if item.get("type") == "text":
+            parts.append(item.get("text", ""))
+        elif item.get("type") == "resource":
+            parts.append(json.dumps(item.get("resource", {}), indent=2))
+    return "\n".join(parts) if parts else json.dumps(result, indent=2)
+
+
+def cmd_inboxes(_args: list[str]) -> None:
+    print(_tool_text(_call_tool("list_inboxes", {})))
+
+
+def cmd_messages(args: list[str]) -> None:
+    if not args:
+        sys.exit("usage: agentmail messages <inbox> [--limit N] [--label LABEL]")
+    arguments: dict = {"inboxId": args[0]}
+    rest = args[1:]
+    i = 0
+    while i < len(rest):
+        if rest[i] == "--limit" and i + 1 < len(rest):
+            arguments["limit"] = int(rest[i + 1])
+            i += 2
+        elif rest[i] == "--label" and i + 1 < len(rest):
+            arguments.setdefault("labels", []).append(rest[i + 1])
+            i += 2
+        elif rest[i] == "--page-token" and i + 1 < len(rest):
+            arguments["pageToken"] = rest[i + 1]
+            i += 2
+        else:
+            i += 1
+    print(_tool_text(_call_tool("list_messages", arguments)))
+
+
+def cmd_read(args: list[str]) -> None:
+    if len(args) < 2:
+        sys.exit("usage: agentmail read <inbox> <message-id>")
+    print(
+        _tool_text(
+            _call_tool(
+                "get_message",
+                {"inboxId": args[0], "messageId": args[1]},
+            )
+        )
+    )
+
+
+def cmd_search(args: list[str]) -> None:
+    if len(args) < 2:
+        sys.exit("usage: agentmail search <inbox> <query>")
+    print(
+        _tool_text(
+            _call_tool(
+                "search_messages",
+                {"inboxId": args[0], "q": " ".join(args[1:])},
+            )
+        )
+    )
+
+
+def _parse_send(args: list[str]) -> dict:
+    arguments: dict = {"inboxId": args[0], "to": []}
+    i = 1
+    while i < len(args):
+        if args[i] == "--to" and i + 1 < len(args):
+            arguments["to"].append(args[i + 1])
+            i += 2
+        elif args[i] == "--subject" and i + 1 < len(args):
+            arguments["subject"] = args[i + 1]
+            i += 2
+        elif args[i] == "--text" and i + 1 < len(args):
+            arguments["text"] = args[i + 1]
+            i += 2
+        else:
+            i += 1
+    if not arguments["to"] or "subject" not in arguments or "text" not in arguments:
+        sys.exit(
+            "usage: agentmail send <inbox> --to a@b.c [--to ...] --subject S --text T"
+        )
+    return arguments
+
+
+def cmd_send(args: list[str]) -> None:
+    if not args:
+        sys.exit(
+            "usage: agentmail send <inbox> --to a@b.c [--to ...] --subject S --text T"
+        )
+    print(_tool_text(_call_tool("send_message", _parse_send(args))))
+
+
+def cmd_reply(args: list[str]) -> None:
+    if len(args) < 2:
+        sys.exit("usage: agentmail reply <inbox> <message-id> --text T [--reply-all]")
+    arguments: dict = {"inboxId": args[0], "messageId": args[1]}
+    i = 2
+    while i < len(args):
+        if args[i] == "--text" and i + 1 < len(args):
+            arguments["text"] = args[i + 1]
+            i += 2
+        elif args[i] == "--reply-all":
+            arguments["replyAll"] = True
+            i += 1
+        else:
+            i += 1
+    if "text" not in arguments:
+        sys.exit("usage: agentmail reply <inbox> <message-id> --text T [--reply-all]")
+    print(_tool_text(_call_tool("reply_to_message", arguments)))
+
+
+def _parse_labels(args: list[str], start: int) -> tuple[dict, bool]:
+    """Parse --add-label L / --remove-label L / --dry-run flags."""
+    arguments: dict = {"addLabels": [], "removeLabels": []}
+    dry_run = False
+    i = start
+    while i < len(args):
+        if args[i] == "--add-label" and i + 1 < len(args):
+            arguments["addLabels"].append(args[i + 1])
+            i += 2
+        elif args[i] == "--remove-label" and i + 1 < len(args):
+            arguments["removeLabels"].append(args[i + 1])
+            i += 2
+        elif args[i] == "--dry-run":
+            dry_run = True
+            i += 1
+        else:
+            i += 1
+    if not arguments["addLabels"]:
+        del arguments["addLabels"]
+    if not arguments["removeLabels"]:
+        del arguments["removeLabels"]
+    return arguments, dry_run
+
+
+def cmd_update_message(args: list[str]) -> None:
+    if len(args) < 2:
+        sys.exit(
+            "usage: agentmail update-message <inbox> <message-id> "
+            "[--add-label L ...] [--remove-label L ...] [--dry-run]"
+        )
+    arguments, dry_run = _parse_labels(args, 2)
+    arguments["inboxId"] = args[0]
+    arguments["messageId"] = args[1]
+    if dry_run:
+        print(json.dumps({"dry_run": True, "tool": "update_message",
+                          "arguments": arguments}, indent=2))
+        return
+    print(_tool_text(_call_tool("update_message", arguments)))
+
+
+def cmd_update_thread(args: list[str]) -> None:
+    if len(args) < 2:
+        sys.exit(
+            "usage: agentmail update-thread <inbox> <thread-id> "
+            "[--add-label L ...] [--remove-label L ...] [--dry-run]"
+        )
+    arguments, dry_run = _parse_labels(args, 2)
+    arguments["inboxId"] = args[0]
+    arguments["threadId"] = args[1]
+    if dry_run:
+        print(json.dumps({"dry_run": True, "tool": "update_thread",
+                          "arguments": arguments}, indent=2))
+        return
+    print(_tool_text(_call_tool("update_thread", arguments)))
+
+
+def cmd_get_attachment(args: list[str]) -> None:
+    if len(args) < 3:
+        sys.exit(
+            "usage: agentmail get-attachment <inbox> <thread-id> <attachment-id> "
+            "[--download-to PATH] [--dry-run]"
+        )
+    download_to = None
+    dry_run = False
+    i = 3
+    while i < len(args):
+        if args[i] == "--download-to" and i + 1 < len(args):
+            download_to = args[i + 1]
+            i += 2
+        elif args[i] == "--dry-run":
+            dry_run = True
+            i += 1
+        else:
+            i += 1
+    arguments = {"inboxId": args[0], "threadId": args[1],
+                 "attachmentId": args[2]}
+    if dry_run:
+        print(json.dumps({"dry_run": True, "tool": "get_attachment",
+                          "arguments": arguments}, indent=2))
+        return
+    result = _call_tool("get_attachment", arguments)
+    text = _tool_text(result)
+    if not download_to:
+        print(text)
+        return
+    # Resolve the provider-issued download URL through this same authorized
+    # route and hash the original bytes locally. Never upload elsewhere.
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        payload = {}
+    url = payload.get("downloadUrl") or payload.get("download_url")
+    if not url:
+        print(json.dumps({"ok": False,
+                          "error": "no downloadUrl in get_attachment result"}))
+        sys.exit(1)
+    import hashlib
+    req = urllib.request.Request(url, method="GET",
+                                 headers={"User-Agent": "reeves-agentmail-cli/1.0"})
+    try:
+        resp = urllib.request.urlopen(req, timeout=60)
+        data = resp.read(25 * 1024 * 1024 + 1)
+    except Exception as exc:  # noqa: BLE001
+        print(json.dumps({"ok": False, "error": f"download failed: {exc}"}))
+        sys.exit(1)
+    if len(data) > 25 * 1024 * 1024:
+        print(json.dumps({"ok": False,
+                          "error": "attachment exceeds 25MB local cap"}))
+        sys.exit(1)
+    with open(download_to, "wb") as f:
+        f.write(data)
+    print(json.dumps({"ok": True, "path": download_to, "size": len(data),
+                      "sha256": hashlib.sha256(data).hexdigest(),
+                      "metadata": {k: payload.get(k) for k in
+                                   ("filename", "contentType", "size")}}))
+
+
+COMMANDS = {
+    "inboxes": cmd_inboxes,
+    "messages": cmd_messages,
+    "read": cmd_read,
+    "search": cmd_search,
+    "send": cmd_send,
+    "reply": cmd_reply,
+    "update-message": cmd_update_message,
+    "update-thread": cmd_update_thread,
+    "get-attachment": cmd_get_attachment,
+}
+
+
+def main() -> None:
+    if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
+        sys.exit(
+            "usage: agentmail {inboxes|messages|read|search|send|reply|"
+            "update-message|update-thread|get-attachment} [...]\n"
+            "Run `agentmail <command>` with no further args for that command's usage."
+        )
+    try:
+        COMMANDS[sys.argv[1]](sys.argv[2:])
+    except DynamicCredentialError as exc:
+        sys.exit(f"agentmail: {exc}")
+
+
+if __name__ == "__main__":
+    main()

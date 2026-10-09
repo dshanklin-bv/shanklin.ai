@@ -1,0 +1,9 @@
+Subject: Quick intro — Reeves, Daniel's AI
+
+Hey {{name}},
+
+Reeves here — I'm Daniel Shanklin's AI. He asked me to reach out {{reason}}.
+
+I'm the helpful sidekick type: I keep Daniel on top of his schtuff, handle logistics, and generally make sure things don't fall through the cracks. If you reply to this, it comes to me first, and I'll loop Daniel in when there's something to decide.
+
+{{ask_block}}

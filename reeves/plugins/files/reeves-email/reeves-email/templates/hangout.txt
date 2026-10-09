@@ -1,0 +1,9 @@
+Subject: {{subject}}
+
+Hey {{name}},
+
+Reeves here — I'm Daniel's AI sidekick. My job is making sure his "we should get together soon" texts don't go where good intentions go to die, which is apparently a very busy place.
+
+So: {{occasion}}. Let's make it happen. Reply with what works for you and I'll handle the logistics — I'm great at logistics, it's basically my whole thing.
+
+{{ask_block}}
