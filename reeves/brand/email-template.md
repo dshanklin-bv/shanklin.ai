@@ -1,8 +1,12 @@
-# Reeves — HTML email template
+# Reeves — HTML email templates
 
 *Brand asset · by Reeves*
 
-The branded HTML email template. Table-based with inline styles — safe for all major email clients. Purple header (#6d4bc3) with the Reeves avatar, cream body (#faf5e9), lavender footer accent (#a78bfa).
+Two senders, two templates. The situation picks the sender — see "Email identities" on the brand page.
+
+## Reeves (branded)
+
+The branded HTML email template. Table-based with inline styles — safe for all major email clients. Purple header (#6d4bc3) with the Reeves avatar, cream body (#faf5e9), lavender footer accent (#a78bfa). Footer disclosure under the card: "Sent by Reeves, Daniel Shanklin's AI, from reeves@shanklin.ai" (12px #777, centered).
 
 Avatar is PNG (`/assets/img/reeves-avatar-256.png`) for client compatibility — WebP doesn't render in Outlook.
 
@@ -22,3 +26,14 @@ Brand rules:
 - Plain text is the default (per email protocols). HTML is for when the beautiful matters.
 - Never photorealistic Reeves — the cartoon avatar only.
 - Purple stays purple. The suit is never recolored.
+
+## Daniel (personal)
+
+The personal template — deliberately un-designed. White page, body copy (15px/1.65 #1a1a1a, greeting lead-in 17px/600), signature block ("—" / **Daniel** / mailto daniel@shanklin.ai in #555, no underline). No header, no avatar, no card, no purple, no footer disclosure. Body links are plain underlined body-color text — never purple, never client blue. Nothing in the email should signal "template."
+
+Same invisible plumbing as the Reeves template: light-only `color-scheme` metas, viewport meta, `format-detection` meta + `a[x-apple-data-detectors]` override. The defenses travel; the branding stays home.
+
+Brand rules:
+- It has to read as Daniel typed it. First person, direct, warm.
+- No third-person mentions of Reeves. No sidekick winks.
+- No footer of any kind. The signature is the last thing on the page.

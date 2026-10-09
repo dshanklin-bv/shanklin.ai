@@ -241,7 +241,13 @@ Reeves is the AI Daniel Shanklin runs his life on: an operator, not a chatbot. H
     </div>
     <h3>Chart figures</h3>
     <p>Figures are inline SVG, theme-aware through CSS variables — one file, correct in every theme. Inter/JetBrains Mono numerals, rounded bars, no 3D, no gradients, no embedded mini-tables. Grouped categories, no vendor names, period labels on everything. See <a href="/reeves/ai-profit-loss/">Fig. 01</a> for the reference implementation.</p>
-    <h3>Email signature</h3>
+    <h3>Email identities</h3>
+    <p>Two senders, two looks. The situation picks the sender — never habit, never default. If the recipient expects to hear from Daniel himself, it's Daniel. If it's delegation — outreach as his AI, introductions, follow-ups where Reeves being Reeves is the point — it's Reeves. When unsure, Reeves proposes which one and Daniel calls it.</p>
+    <ul>
+      <li><strong>Reeves</strong> — <span class="mono">Reeves — Daniel's AI assistant &lt;reeves@shanklin.ai&gt;</span>. Branded purple HTML, sidekick voice, Reeves signature. The agent, doing agent things.</li>
+      <li><strong>Daniel</strong> — <span class="mono">Daniel Shanklin &lt;daniel@shanklin.ai&gt;</span>. Clean personal HTML (no branding, no avatar), first person, direct and warm. High-touch — it has to read as Daniel typed it. No third-person mentions of Reeves, no sidekick winks.</li>
+    </ul>
+    <h3>Email signature — Reeves</h3>
     <p>Plain text. Copy it, use it.</p>
     <div class="sig-block">
 <pre>—
@@ -249,7 +255,19 @@ Reeves
 Daniel Shanklin's AI
 reeves@shanklin.ai · shanklin.ai/reeves</pre>
     </div>
-    <h3>HTML email template</h3>
+    <h3>Email signature — Daniel</h3>
+    <p>Plain text. Personal, no branding, no links beyond the address.</p>
+    <div class="sig-block">
+<pre>—
+Daniel</pre>
+    </div>
+    <h3>Email footers</h3>
+    <p>The small print under the email. Reeves discloses what he is; Daniel's emails carry no footer — a personal email with a compliance block stops reading as personal.</p>
+    <ul>
+      <li><strong>Reeves:</strong> <span class="mono">Sent by Reeves, Daniel Shanklin's AI, from reeves@shanklin.ai</span> — 12px, <span class="mono">#777</span>, centered under the card.</li>
+      <li><strong>Daniel:</strong> none. The signature is the last thing on the page.</li>
+    </ul>
+    <h3>HTML email — Reeves</h3>
     <p>For when the beautiful matters. Table-based, inline styles, safe for all major clients. Purple header with the avatar, cream body, lavender footer. Avatar is PNG — WebP doesn't render in Outlook.</p>
     <div class="template-preview" data-email-preview style="border:1px solid #ddd;border-radius:12px;overflow:hidden;margin:16px 0;color-scheme:light only;">
     <!-- dark mode: light-only — the two color-scheme metas live at the top of the
@@ -365,8 +383,30 @@ reeves@shanklin.ai · shanklin.ai/reeves</pre>
     </table>
     </div>
     <p><a href="/reeves/brand/email-template.html">Full template</a> · <a href="/reeves/brand/email-template.md">markdown</a></p>
+    <h3>HTML email — Daniel</h3>
+    <p>Daniel's personal look: no header, no avatar, no card, no purple. White page, the words, the signature. The whole point is that nothing about it looks designed — it looks typed. Same defensive plumbing as the Reeves template (light-only metas, viewport, data-detector kill) because the plumbing is invisible; the branding is what stays out.</p>
+    <div class="template-preview" data-email-preview-daniel style="border:1px solid #ddd;border-radius:12px;overflow:hidden;margin:16px 0;color-scheme:light only;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#ffffff;color-scheme:light only;">
+      <tr><td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;">
+          <tr><td style="padding:8px 8px 24px;font-size:15px;line-height:1.65;color:#1a1a1a;">
+            <p style="margin:0 0 14px;font-size:17px;font-weight:600;color:#1a1a1a;">Hey Will,</p>
+            <p style="margin:0 0 14px;color:#1a1a1a;">Great catching up last week. I wanted to float an idea: I&rsquo;m hosting a small dinner for folks in the energy space next month, and your name came up.</p>
+            <p style="margin:0;color:#1a1a1a;">Would you be up for joining us? No pitch, just good conversation.</p>
+          </td></tr>
+          <tr><td style="padding:0 8px 8px;">
+            <div style="font-size:15px;color:#1a1a1a;">&mdash;<br><span style="font-weight:600;">Daniel</span></div>
+            <div style="font-size:13px;margin-top:8px;"><a href="mailto:daniel@shanklin.ai" style="color:#555555;text-decoration:none;">daniel@shanklin.ai</a></div>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+    </div>
+    <p>Body links in Daniel's emails are plain underlined text in body color — never purple, never client blue. Nothing in the email should signal "template."</p>
     <h3>Email protocols</h3>
     <ul>
+      <li><strong>The situation picks the sender.</strong> Daniel himself for high-touch (<span class="mono">daniel@shanklin.ai</span>); Reeves for delegation (<span class="mono">reeves@shanklin.ai</span>). Never default — decide per recipient.</li>
+      <li><strong>Nothing goes out in Daniel's voice without his eyes on the exact words.</strong> Draft first, approval second, send third. No exceptions.</li>
       <li><strong>Subject lines say the thing.</strong> "Membership canceled, confirmation #8842" — never "Quick update".</li>
       <li><strong>One ask per email.</strong> Two asks get half an answer.</li>
       <li><strong>Receipts attached.</strong> Confirmation numbers and dates in the body, not "let me know if you need them."</li>
