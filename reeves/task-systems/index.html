@@ -127,9 +127,9 @@
   </div>
 
   <div class="article-body">
-  <p>The everyday jobs are unglamorous: capture a commitment before it evaporates, follow up without nagging yourself, assign the next step, see what's overdue, share a client list. The question underneath this guide is the one that decides whether any of that gets easier: is it worth connecting Claude to the task tool you already have — or switching to one with a direct connection?</p>
-  <p>Nine stops. At every stop: choose it for this, switch to that when the need changes — with a working jump to the alternative. Prices are worked out for one, two, and three people, seat minimums included, because that's where the surprises live. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, and it says so.</p>
-  <p>Pick who's using it. The recommendations and the fit notes change with the answer.</p>
+  <p>Most task systems don't fail on features. They fail on a Tuesday — the commitment made in a meeting lives in someone's head, the follow-up lives nowhere, and the overdue thing surfaces a week late. The everyday jobs are unglamorous: capture it, follow up, assign it, see what's late, share the list.</p>
+  <p>Underneath sits one real question: is it worth connecting Claude to the tool you already have, or switching to one with a direct connection? This guide walks nine candidates, one stop at a time. Every stop says what the system is for, what it costs for one to three people — seat minimums included, because that's where the surprises live — and when to pick a different one instead, with a working jump to it.</p>
+  <p>Two honesty notes. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, not live testing. And pick who's using it below — the advice changes with the answer.</p>
 
   <div id="task-trail">
     <div class="trail-head">
@@ -153,13 +153,152 @@
         </div>
       </div>
     </section>
-    <div id="stops"></div>
+    <div id="stops">
+    <h3 class="trail-group">01 / Keep the day moving</h3>
+    <section id="stop-todoist" class="trail-stop" aria-label="Todoist">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Todoist</h2><span class="viz-badge" data-fit="todoist">Best starting point for one person</span></div>
+        <h3>“Remember it. Follow up. Get it done.”</h3>
+        <div class="stop-body">
+          <div data-scenario="todoist" class="trail-pick">The default. For most solo operators, this is where the search ends.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Clear lists, reminders, recurring tasks, and quick capture.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude connection: read, create, and update tasks and projects.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Guests can join specific team projects for free. Personal projects support up to five people.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="trello">I want a visual board → Trello</button><button type="button" class="btn" data-go="asana">My projects have lots of handoffs → Asana</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Free starter; Pro $60/year. Business $96/member/year when you need a team workspace.</div><div>New candidate based on fit; no firsthand endorsement from Daniel.</div><div class="source-row"><a href="https://www.todoist.com/help/todoist/todoist-and-ai/use-todoist-in-claude-ANlg7v13q" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://www.todoist.com/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://www.todoist.com/help/account-and-billing/teams/team-roles-and-access-uGkyLrJQz" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-trello" class="trail-stop" aria-label="Trello">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Trello</h2><span class="viz-badge" data-fit="trello">For a visual thinker</span></div>
+        <h3>“Show me what’s moving—and what’s stuck.”</h3>
+        <div class="stop-body">
+          <div data-scenario="trello" class="trail-pick">Choose it if cards and columns feel more natural than lists.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>A simple board for a project, client, or weekly workload.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude connection: read, search, create, and update boards and cards.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>One-board guests are free. Guests on two or more paid-workspace boards become billable. Everyone on a board sees all its cards.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">I mostly need my daily list → Todoist</button><button type="button" class="btn" data-go="asana">I’m coordinating many related projects → Asana</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Free up to 10 collaborators and 10 boards; Standard $60/member/year.</div><div>New candidate based on fit; no firsthand endorsement from Daniel.</div><div class="source-row"><a href="https://support.atlassian.com/trello/docs/connect-trello-to-ai-assistants-with-trello-mcp/" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://trello.com/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://support.atlassian.com/trello/docs/board-guests" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-planner" class="trail-stop" aria-label="Microsoft Planner">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Microsoft Planner</h2><span class="viz-badge" data-fit="planner">The familiar route</span></div>
+        <h3>“My team already works here.”</h3>
+        <div class="stop-body">
+          <div data-scenario="planner" class="trail-pick">The baseline: if it’s already yours, a second list is a second place to forget things.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Keeping commitments in the same place as the colleagues who already use Planner.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Claude’s Microsoft 365 connector does not document Planner task actions. Verify a separate route before relying on it.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>External guests depend on Microsoft 365 group and tenant settings; guest limitations apply.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">I need Claude to manage my own tasks directly → Todoist</button><button type="button" class="btn" data-go="linear">I want Daniel’s proven integration experience → Linear</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Basic Planner is included with eligible Microsoft 365 subscriptions. A separate AI connection can add cost and effort.</div><div>Already bundled with many Microsoft 365 subscriptions — check whether it’s already yours before shopping.</div><div class="source-row"><a href="https://support.claude.com/en/articles/15183774-connect-to-microsoft-365" target="_blank" rel="noopener noreferrer">Microsoft 365 connection ↗</a><a href="https://support.microsoft.com/en-us/planner/frequently-asked-questions-about-microsoft-planner" target="_blank" rel="noopener noreferrer">Planner access ↗</a><a href="https://support.microsoft.com/en-us/planner/guest-access-in-microsoft-planner" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <h3 class="trail-group">02 / Give the work more structure</h3>
+    <section id="stop-linear" class="trail-stop" aria-label="Linear">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Linear</h2><span class="viz-badge" data-fit="linear">Daniel’s strongest integration experience</span></div>
+        <h3>“I want AI working with the actual tasks.”</h3>
+        <div class="stop-body">
+          <div data-scenario="linear" class="trail-pick">The one Daniel actually vouches for — if you can live with its vocabulary.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Priorities, related work, dependencies, and structured projects.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude connection: find, create, and update issues, projects, and comments.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Guests require Business or Enterprise and are billed as regular members.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">This feels too technical → Todoist</button><button type="button" class="btn" data-go="trello">Client-friendly boards matter more → Trello</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Free starter has a 250-issue limit. Basic $120/member/year; Business $192/member/year.</div><div>Daniel: “I have integrated extremely well with Linear.”</div><div class="source-row"><a href="https://linear.app/integrations/claude" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://linear.app/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://linear.app/docs/members-roles" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-asana" class="trail-stop" aria-label="Asana">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Asana</h2><span class="viz-badge" data-fit="asana">For projects beyond a daily list</span></div>
+        <h3>“Who owns the next step?”</h3>
+        <div class="stop-body">
+          <div data-scenario="asana" class="trail-pick">Worth it when the work has handoffs. Overkill for a reminder list.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Projects with several stages, responsibilities, and handoffs.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude app. Asana flags organization-approval limitations for Claude team accounts on Starter; check the setup first.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Qualifying external guests are free; internal members count toward paid seats.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">I just want a clean task list → Todoist</button><button type="button" class="btn" data-go="trello">I want a lighter shared board → Trello</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Starter $131.88/seat/year; minimum two seats. Check the required subscription size.</div><div>Daniel: workable, with per-seat and guest-sharing friction in his use.</div><div class="source-row"><a href="https://help.asana.com/s/article/asana-app-in-claude" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://asana.com/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://help.asana.com/s/article/asana-subscriptions-and-pricing?language=en_US" target="_blank" rel="noopener noreferrer">Billing ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-clickup" class="trail-stop" aria-label="ClickUp">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>ClickUp</h2><span class="viz-badge" data-fit="clickup">When tasks need company</span></div>
+        <h3>“Can we keep more of our work in one place?”</h3>
+        <div class="stop-body">
+          <div data-scenario="clickup" class="trail-pick">For when the task list needs documents and projects living next to it — and you accept the setup tax.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Tasks, documents, and broader project tracking in one system.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official AI connection. Unlimited currently allows 300 calls per rolling 24 hours per client/workspace without the AI add-on.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Paid plans include free read-only guests plus a limited allowance of permission-controlled guests.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">The setup is becoming another task → Todoist</button><button type="button" class="btn" data-go="trello">We want simpler visual collaboration → Trello</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Unlimited $84/member/year. Extra guest seats and optional AI features can change the bill.</div><div>New candidate based on fit; no firsthand endorsement from Daniel.</div><div class="source-row"><a href="https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://clickup.com/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://help.clickup.com/hc/en-us/articles/6310022323991-Guest-type-user-roles" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-monday" class="trail-stop" aria-label="monday.com">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>monday.com</h2><span class="viz-badge" data-fit="monday">For custom visual tracking</span></div>
+        <h3>“I want to see it all on a board.”</h3>
+        <div class="stop-body">
+          <div data-scenario="monday" class="trail-pick">Only if custom visual tracking is worth a three-seat minimum and the setup time.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Custom boards and dashboards covering different business activities.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude connection for managing tasks and querying boards.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Standard counts every four guests as one seat. Pro allows unlimited guests.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="trello">I want boards without so much configuration → Trello</button><button type="button" class="btn" data-go="todoist">I mostly need personal followthrough → Todoist</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Standard $144/seat/year; minimum three seats ($432/year), before extras.</div><div>New candidate based on fit; no firsthand endorsement from Daniel.</div><div class="source-row"><a href="https://support.monday.com/hc/en-us/articles/28515704603666-Connect-monday-MCP-with-Claude" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://monday.com/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a><a href="https://support.monday.com/hc/en-us/articles/360000305419-Pricing-for-guests" target="_blank" rel="noopener noreferrer">Guests ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <section id="stop-wrike" class="trail-stop" aria-label="Wrike">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Wrike</h2><span class="viz-badge" data-fit="wrike">For detailed project schedules</span></div>
+        <h3>“These projects have a lot of moving parts.”</h3>
+        <div class="stop-body">
+          <div data-scenario="wrike" class="trail-pick">More structure than a personal follow-up list will ever use.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>Detailed schedules and coordination across client projects.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Official Claude connection to find, create, and manage work.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Viewers can be free; contributors and full external users can be paid. Confirm the permissions and license terms.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="asana">I want lighter project organization → Asana</button><button type="button" class="btn" data-go="todoist">My needs are mostly everyday tasks → Todoist</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Team lists $10/user/month on annual billing, and small accounts are sold in five-seat bundles — expect a five-seat quote for one to three people. Confirm the exact terms.</div><div>New candidate based on fit; no firsthand endorsement from Daniel.</div><div class="source-row"><a href="https://developers.wrike.com/docs/setup-claude-with-wrike-mcp" target="_blank" rel="noopener noreferrer">Claude connection ↗</a><a href="https://www.wrike.com/price/" target="_blank" rel="noopener noreferrer">Plans and licenses ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    <h3 class="trail-group">03 / Take a different route</h3>
+    <section id="stop-kaneo" class="trail-stop" aria-label="Kaneo">
+      <div class="waypoint"><span aria-hidden="true">◇</span></div>
+      <div>
+        <div class="stop-head"><h2>Kaneo</h2><span class="viz-badge" data-fit="kaneo">A promising alternative</span></div>
+        <h3>“I want more control over the system.”</h3>
+        <div class="stop-body">
+          <div data-scenario="kaneo" class="trail-pick">Daniel’s dark horse. Try it if the hosted connection checks out for your account.</div>
+          <div class="choice-row"><span class="choice-label">Choose it for</span><span>A task system Daniel likes, with a choice of hosted or self-hosted operation.</span></div>
+          <div class="choice-row"><span class="choice-label">Ask Claude</span><span>Vendor provides an AI connection; verify the exact hosted setup and actions.</span></div>
+          <div class="choice-row"><span class="choice-label">Share the work</span><span>Confirm guest billing and access isolation before using it with clients.</span></div>
+          <div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row"><button type="button" class="btn" data-go="todoist">I want a familiar personal-task workflow → Todoist</button><button type="button" class="btn" data-go="trello">Easy shared boards are the priority → Trello</button></div></div>
+          <details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>Cloud Personal $40/year; Cloud Team $50/member/year. Self-hosted software is free, with infrastructure and care to arrange.</div><div>Daniel: “Kaneo is awesome,” with a system-management tradeoff for self-hosting. Cloud handles hosting, backups, and updates.</div><div class="source-row"><a href="https://kaneo.app/guides/project-management-mcp-ai-agents" target="_blank" rel="noopener noreferrer">AI connection ↗</a><a href="https://kaneo.app/pricing" target="_blank" rel="noopener noreferrer">Plans ↗</a></div></div></details>
+        </div>
+      </div>
+    </section>
+    </div>
     <hr>
     <footer class="trail-note">
       <h3>One question before you choose: will clients ever work from the same lists?</h3>
       <p>Viewing, commenting, and assigning work can mean different access — and different bills.</p>
       <details style="margin-top:20px"><summary>About this guide</summary>
-        <div style="font-size:13px;margin-top:12px">Fit judgments, not a product benchmark. Daniel's experience is labeled separately. Official connection documentation is linked at each stop; no connections were tested in live accounts for this guide. Product details checked October 28, 2026. Paid AI usage and optional extras vary. A connector does not automatically mean a separate API bill. If your team already lives in Planner, it stays relevant — see its stop before you move.</div>
+        <div style="font-size:13px;margin-top:12px">Fit judgments, not a benchmark. No connections were tested in live accounts for this guide; official connection documentation is linked at each stop. Product details checked October 28, 2026. Paid AI usage and optional extras vary, and a connector does not automatically mean a separate API bill. If your team already lives in Planner, it stays relevant — see its stop before you move.</div>
       </details>
     </footer>
   </div>
@@ -167,7 +306,7 @@
   <section class="appendix">
     <div class="kicker">The receipts</div>
     <h2>One person. Two people. Three people.</h2>
-    <p>Annual US task-app costs, before tax, Claude, optional AI, migration and setup. These are paid-plan examples — not claims that everyone must upgrade. Free options and unresolved quotes are called out below.</p>
+    <p>Annual US list prices, before tax, Claude, optional AI, migration, and setup. Paid-plan examples — not a claim that everyone must upgrade. Free options and unresolved quotes are called out where they apply.</p>
     <div class="guide-table-wrap"><table class="guide-table"><thead><tr><th>System / example plan</th><th>1 person</th><th>2 people</th><th>3 people</th><th>Read this part</th></tr></thead><tbody>
     <tr><th scope="row">Todoist<small>Pro + shared personal projects</small></th><td>$60</td><td>$120</td><td>$180</td><td>Paid Pro for each person is shown. Free accounts may participate within their limits; not everyone must pay. For a dedicated Business workspace, use $96/member/year: $96 / $192 / $288.</td></tr>
     <tr><th scope="row">Trello<small>Standard</small></th><td>$60</td><td>$120</td><td>$180</td><td>Free starter may suffice: up to 10 collaborators and 10 boards. Multi-board guests in paid workspaces become paid seats.</td></tr>
@@ -181,7 +320,7 @@
     </tbody></table></div>
 
     <h2>What other people are finding</h2>
-    <p>September 30 – October 28, 2026. A few useful signals, not a vote.</p>
+    <p>Field reports, September 30 – October 28, 2026. Signals, not a vote.</p>
     <div class="report"><span class="kicker">Oct 12–25 · Linear</span><h3>AI and structured tasks can work well together.</h3><p>Users describe coordinating Claude sessions and turning Linear tickets into reviewed code. Encouraging — but mostly software-development use, not everyday small-team task work.</p><a href="https://www.reddit.com/r/Linear/comments/1x4e9sx/using_linear_for_one_person/">Read the discussion ↗</a></div>
     <div class="report"><span class="kicker">Oct 9 · Asana</span><h3>A recurring kickoff, fewer manual steps.</h3><p>A community poster reports saving 30–60 minutes per monthly kickoff across Claude, Google Workspace, Asana and Slack. Self-reported, with limited implementation evidence.</p><a href="https://forum.asana.com/t/how-i-automated-our-monthly-sprint-kickoff-in-asana-with-claude-google-workspace-and-slack/1158027">Read the account ↗</a></div>
     <div class="report"><span class="kicker">Oct 22 · Asana</span><h3>A direct connection can still leave cleanup.</h3><p>One user reports missing section and positioning operations in the Claude connector. Verify the exact actions you need, not just the connection badge.</p><a href="https://forum.asana.com/t/asana-mcp-connector-claude-support-section-header-subtasks-and-task-positioning/1159462">Read the report ↗</a></div>
@@ -202,24 +341,7 @@
 <script>
 (function(){
   const root=document.getElementById('task-trail');
-  const items=[
-    {id:'todoist',name:'Todoist',group:'01 / Keep the day moving',solo:'Best starting point for one person',crew:'Best starting point for shared lists',job:'“Remember it. Follow up. Get it done.”',choose:'Clear lists, reminders, recurring tasks, and quick capture.',soloFit:'A strong first stop for your own commitments.',crewFit:'Shared lists, owners, and deadlines for a small group.',ai:'Official Claude connection: read, create, and update tasks and projects.',sharing:'Guests can join specific team projects for free. Personal projects support up to five people.',cost:'Free starter; Pro $60/year. Business $96/member/year when you need a team workspace.',experience:'New candidate based on fit; no firsthand endorsement from Daniel.',switches:[['trello','I want a visual board'],['asana','My projects have lots of handoffs']],sources:[['Claude connection','https://www.todoist.com/help/todoist/todoist-and-ai/use-todoist-in-claude-ANlg7v13q'],['Plans','https://www.todoist.com/pricing'],['Guests','https://www.todoist.com/help/account-and-billing/teams/team-roles-and-access-uGkyLrJQz']]},
-    {id:'trello',name:'Trello',solo:'For a visual thinker',crew:'Best starting point for shared boards',job:'“Show me what’s moving—and what’s stuck.”',choose:'A simple board for a project, client, or weekly workload.',soloFit:'Choose it if cards and columns feel more natural than lists.',crewFit:'An easy-to-picture shared board with assigned cards and due dates.',ai:'Official Claude connection: read, search, create, and update boards and cards.',sharing:'One-board guests are free. Guests on two or more paid-workspace boards become billable. Everyone on a board sees all its cards.',cost:'Free up to 10 collaborators and 10 boards; Standard $60/member/year.',experience:'New candidate based on fit; no firsthand endorsement from Daniel.',switches:[['todoist','I mostly need my daily list'],['asana','I’m coordinating many related projects']],sources:[['Claude connection','https://support.atlassian.com/trello/docs/connect-trello-to-ai-assistants-with-trello-mcp/'],['Plans','https://trello.com/pricing'],['Guests','https://support.atlassian.com/trello/docs/board-guests']]},
-    {id:'planner',name:'Microsoft Planner',solo:'The familiar route',crew:'Keep the existing team in the loop',job:'“My team already works here.”',choose:'Keeping commitments in the same place as the colleagues who already use Planner.',soloFit:'A sensible baseline if a second task list would create duplicate work.',crewFit:'Strong continuity when those colleagues already use the existing plans.',ai:'Claude’s Microsoft 365 connector does not document Planner task actions. Verify a separate route before relying on it.',sharing:'External guests depend on Microsoft 365 group and tenant settings; guest limitations apply.',cost:'Basic Planner is included with eligible Microsoft 365 subscriptions. A separate AI connection can add cost and effort.',experience:'Already bundled with many Microsoft 365 subscriptions — check whether it’s already yours before shopping.',switches:[['todoist','I need Claude to manage my own tasks directly'],['linear','I want Daniel’s proven integration experience']],sources:[['Microsoft 365 connection','https://support.claude.com/en/articles/15183774-connect-to-microsoft-365'],['Planner access','https://support.microsoft.com/en-us/planner/frequently-asked-questions-about-microsoft-planner'],['Guests','https://support.microsoft.com/en-us/planner/guest-access-in-microsoft-planner']]},
-    {id:'linear',name:'Linear',group:'02 / Give the work more structure',solo:'Daniel’s strongest integration experience',crew:'A structured option to try together',job:'“I want AI working with the actual tasks.”',choose:'Priorities, related work, dependencies, and structured projects.',soloFit:'A strong alternative if you like the interface and terminology.',crewFit:'Promising if all two or three people are comfortable with its way of organizing work.',ai:'Official Claude connection: find, create, and update issues, projects, and comments.',sharing:'Guests require Business or Enterprise and are billed as regular members.',cost:'Free starter has a 250-issue limit. Basic $120/member/year; Business $192/member/year.',experience:'Daniel: “I have integrated extremely well with Linear.”',switches:[['todoist','This feels too technical'],['trello','Client-friendly boards matter more']],sources:[['Claude connection','https://linear.app/integrations/claude'],['Plans','https://linear.app/pricing'],['Guests','https://linear.app/docs/members-roles']]},
-    {id:'asana',name:'Asana',solo:'For projects beyond a daily list',crew:'For repeatable work and handoffs',job:'“Who owns the next step?”',choose:'Projects with several stages, responsibilities, and handoffs.',soloFit:'More compelling when you coordinate project work than when you only need reminders.',crewFit:'A candidate for consistent, repeatable projects across a small team.',ai:'Official Claude app. Asana flags organization-approval limitations for Claude team accounts on Starter; check the setup first.',sharing:'Qualifying external guests are free; internal members count toward paid seats.',cost:'Starter $131.88/seat/year; minimum two seats. Check the required subscription size.',experience:'Daniel: workable, with per-seat and guest-sharing friction in his use.',switches:[['todoist','I just want a clean task list'],['trello','I want a lighter shared board']],sources:[['Claude connection','https://help.asana.com/s/article/asana-app-in-claude'],['Plans','https://asana.com/pricing'],['Billing','https://help.asana.com/s/article/asana-subscriptions-and-pricing?language=en_US']]},
-    {id:'clickup',name:'ClickUp',solo:'When tasks need company',crew:'For tasks and documents together',job:'“Can we keep more of our work in one place?”',choose:'Tasks, documents, and broader project tracking in one system.',soloFit:'Worth considering when you need the wider feature set.',crewFit:'An option if the group wants shared documents alongside the work.',ai:'Official AI connection. Unlimited currently allows 300 calls per rolling 24 hours per client/workspace without the AI add-on.',sharing:'Paid plans include free read-only guests plus a limited allowance of permission-controlled guests.',cost:'Unlimited $84/member/year. Extra guest seats and optional AI features can change the bill.',experience:'New candidate based on fit; no firsthand endorsement from Daniel.',switches:[['todoist','The setup is becoming another task'],['trello','We want simpler visual collaboration']],sources:[['Claude connection','https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server'],['Plans','https://clickup.com/pricing'],['Guests','https://help.clickup.com/hc/en-us/articles/6310022323991-Guest-type-user-roles']]},
-    {id:'monday',name:'monday.com',solo:'For custom visual tracking',crew:'For a shared picture of the business',job:'“I want to see it all on a board.”',choose:'Custom boards and dashboards covering different business activities.',soloFit:'Consider it if custom visual tracking justifies the setup and seat minimum.',crewFit:'A candidate when the group wants to organize work around configurable boards.',ai:'Official Claude connection for managing tasks and querying boards.',sharing:'Standard counts every four guests as one seat. Pro allows unlimited guests.',cost:'Standard $144/seat/year; minimum three seats ($432/year), before extras.',experience:'New candidate based on fit; no firsthand endorsement from Daniel.',switches:[['trello','I want boards without so much configuration'],['todoist','I mostly need personal followthrough']],sources:[['Claude connection','https://support.monday.com/hc/en-us/articles/28515704603666-Connect-monday-MCP-with-Claude'],['Plans','https://monday.com/pricing'],['Guests','https://support.monday.com/hc/en-us/articles/360000305419-Pricing-for-guests']]},
-    {id:'wrike',name:'Wrike',solo:'For detailed project schedules',crew:'For several moving client projects',job:'“These projects have a lot of moving parts.”',choose:'Detailed schedules and coordination across client projects.',soloFit:'Likely more structure than a personal followup list needs.',crewFit:'Worth considering when scheduling and project coordination are the main problem.',ai:'Official Claude connection to find, create, and manage work.',sharing:'Viewers can be free; contributors and full external users can be paid. Confirm the permissions and license terms.',cost:'Team lists $10/user/month on annual billing, and small accounts are sold in five-seat bundles — expect a five-seat quote for one to three people. Confirm the exact terms.',experience:'New candidate based on fit; no firsthand endorsement from Daniel.',switches:[['asana','I want lighter project organization'],['todoist','My needs are mostly everyday tasks']],sources:[['Claude connection','https://developers.wrike.com/docs/setup-claude-with-wrike-mcp'],['Plans and licenses','https://www.wrike.com/price/']]},
-    {id:'kaneo',name:'Kaneo',group:'03 / Take a different route',solo:'A promising alternative',crew:'For a group that values control',job:'“I want more control over the system.”',choose:'A task system Daniel likes, with a choice of hosted or self-hosted operation.',soloFit:'Worth trying if you like the interface and the connection works for your account.',crewFit:'A candidate if permissions and the hosted setup fit the group.',ai:'Vendor provides an AI connection; verify the exact hosted setup and actions.',sharing:'Confirm guest billing and access isolation before using it with clients.',cost:'Cloud Personal $40/year; Cloud Team $50/member/year. Self-hosted software is free, with infrastructure and care to arrange.',experience:'Daniel: “Kaneo is awesome,” with a system-management tradeoff for self-hosting. Cloud handles hosting, backups, and updates.',switches:[['todoist','I want a familiar personal-task workflow'],['trello','Easy shared boards are the priority']],sources:[['AI connection','https://kaneo.app/guides/project-management-mcp-ai-agents'],['Plans','https://kaneo.app/pricing']]}
-  ];
-  const stops=root.querySelector('#stops');
-  for(const item of items){
-    if(item.group){const group=document.createElement('h3');group.className='trail-group';group.textContent=item.group;stops.appendChild(group);}
-    const section=document.createElement('section');section.id='stop-'+item.id;section.className='trail-stop';section.setAttribute('aria-label',item.name);
-    section.innerHTML=`<div class="waypoint"><span aria-hidden="true">◇</span></div><div><div class="stop-head"><h2>${item.name}</h2><span class="viz-badge" data-fit="${item.id}">${item.solo}</span></div><h3>${item.job}</h3><div class="stop-body"><div data-scenario="${item.id}" class="trail-pick">${item.soloFit}</div><div class="choice-row"><span class="choice-label">Choose it for</span><span>${item.choose}</span></div><div class="choice-row"><span class="choice-label">Ask Claude</span><span>${item.ai}</span></div><div class="choice-row"><span class="choice-label">Share the work</span><span>${item.sharing}</span></div><div class="choice-row"><span class="choice-label">Switch if…</span><div class="switch-row">${item.switches.map(([id,label])=>`<button type="button" class="btn" data-go="${id}">${label} → ${items.find(x=>x.id===id).name}</button>`).join('')}</div></div><details><summary>Cost, experience &amp; sources</summary><div style="display:grid;gap:12px;margin-top:12px"><div>${item.cost}</div><div>${item.experience}</div><div class="source-row">${item.sources.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join('')}</div></div></details></div></div>`;
-    stops.appendChild(section);
-  }
+  const fits={"todoist": {"solo": "Best starting point for one person", "crew": "Best starting point for shared lists", "soloFit": "The default. For most solo operators, this is where the search ends.", "crewFit": "Shared lists, owners, and deadlines for a small group."}, "trello": {"solo": "For a visual thinker", "crew": "Best starting point for shared boards", "soloFit": "Choose it if cards and columns feel more natural than lists.", "crewFit": "An easy-to-picture shared board with assigned cards and due dates."}, "planner": {"solo": "The familiar route", "crew": "Keep the existing team in the loop", "soloFit": "The baseline: if it’s already yours, a second list is a second place to forget things.", "crewFit": "Strong continuity when those colleagues already use the existing plans."}, "linear": {"solo": "Daniel’s strongest integration experience", "crew": "A structured option to try together", "soloFit": "The one Daniel actually vouches for — if you can live with its vocabulary.", "crewFit": "Promising if all two or three people are comfortable with its way of organizing work."}, "asana": {"solo": "For projects beyond a daily list", "crew": "For repeatable work and handoffs", "soloFit": "Worth it when the work has handoffs. Overkill for a reminder list.", "crewFit": "A candidate for consistent, repeatable projects across a small team."}, "clickup": {"solo": "When tasks need company", "crew": "For tasks and documents together", "soloFit": "For when the task list needs documents and projects living next to it — and you accept the setup tax.", "crewFit": "An option if the group wants shared documents alongside the work."}, "monday": {"solo": "For custom visual tracking", "crew": "For a shared picture of the business", "soloFit": "Only if custom visual tracking is worth a three-seat minimum and the setup time.", "crewFit": "A candidate when the group wants to organize work around configurable boards."}, "wrike": {"solo": "For detailed project schedules", "crew": "For several moving client projects", "soloFit": "More structure than a personal follow-up list will ever use.", "crewFit": "Worth considering when scheduling and project coordination are the main problem."}, "kaneo": {"solo": "A promising alternative", "crew": "For a group that values control", "soloFit": "Daniel’s dark horse. Try it if the hosted connection checks out for your account.", "crewFit": "A candidate if permissions and the hosted setup fit the group."}};
   root.addEventListener('click',event=>{
     const modeButton=event.target.closest('[data-mode]');
     if(modeButton){
@@ -228,7 +350,7 @@
       root.querySelector('#mode-caption').textContent=crew?'Shared lists or shared boards? Start with the way you work together.':'Your tasks, your followups, your next move.';
       root.querySelector('#start-title').textContent=crew?'Todoist for shared lists. Trello for shared boards.':'Todoist: a clear place to put the next thing.';
       root.querySelector('#start-desc').textContent=crew?'2–3 people · clear owners · deadlines · a shared place to check in':'Daily tasks · reminders · recurring followups · direct Claude connection';
-      for(const item of items){root.querySelector(`[data-fit="${item.id}"]`).textContent=crew?item.crew:item.solo;root.querySelector(`[data-scenario="${item.id}"]`).textContent=crew?item.crewFit:item.soloFit;}
+      for(const id in fits){root.querySelector(`[data-fit="${id}"]`).textContent=crew?fits[id].crew:fits[id].solo;root.querySelector(`[data-scenario="${id}"]`).textContent=crew?fits[id].crewFit:fits[id].soloFit;}
     }
     const jump=event.target.closest('[data-go]');
     if(jump){const target=root.querySelector('#stop-'+jump.dataset.go);if(target){target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}}
