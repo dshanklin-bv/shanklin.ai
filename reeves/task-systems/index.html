@@ -83,6 +83,21 @@
   }
   .chooser .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 25px; padding: 9px 16px; font-size: 14px; line-height: 1.4; text-align: left; text-decoration: none; cursor: pointer; font-family: var(--font-body); }
   .chooser .btn:hover { background: var(--bg); }
+  .chooser .need-group { width: 100%; margin-top: 10px; }
+  .chooser .need-group .row-label { margin-bottom: 6px; display: block; }
+  .chooser .need-group .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .scoreboard { margin: 16px 0 4px; display: grid; gap: 5px; }
+  .scoreboard .sb-title { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  .sb-row { display: grid; grid-template-columns: 118px 1fr 30px; align-items: center; gap: 10px; font-size: 14px; }
+  .sb-row .sb-name { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sb-row .sb-track { height: 8px; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+  .sb-row .sb-fill { display: block; height: 100%; background: var(--accent); opacity: .45; }
+  .sb-row .sb-num { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .sb-row.sb-win .sb-name { color: var(--ink); font-weight: 600; }
+  .sb-row.sb-win .sb-fill { opacity: 1; }
+  .sb-row.sb-win .sb-num { color: var(--ink); font-weight: 600; }
+  .sb-row .sb-num.neg { color: var(--red); }
+  @media (max-width: 480px) { .sb-row { grid-template-columns: 96px 1fr 26px; } }
   .route { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 26px 0 4px; }
   .route .route-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
   .route a { color: var(--accent-ink); text-decoration: none; border: 1px solid var(--line); border-radius: 20px; padding: 4px 12px; font-size: 14px; }
@@ -155,20 +170,23 @@
   <section class="chooser" id="chooser" aria-label="Find your best fit">
     <div class="kicker">Start here</div>
     <h2>What do you need?</h2>
-    <p>Tap what’s true. The guide does the math and names your best fit — the nine stops below are the receipts.</p>
+    <p>Five quick questions. Tap what’s true — the scores move as you answer, and the verdict names your best fit. The nine stops below are the receipts.</p>
     <div class="who-row" role="group" aria-label="Who is it for?">
-      <span class="row-label">Who’s it for</span>
+      <span class="row-label">1 · Who’s it for?</span>
       <button type="button" class="chip" data-who="solo" aria-pressed="true">Just me</button>
       <button type="button" class="chip" data-who="crew" aria-pressed="false">2–3 of us</button>
     </div>
     <div class="needs-row" role="group" aria-label="What do you need?">
-      <span class="row-label">I need</span>
-      <button type="button" class="chip" data-need="reminders" aria-pressed="false">Reminders & recurring follow-ups</button><button type="button" class="chip" data-need="boards" aria-pressed="false">I think in boards, not lists</button><button type="button" class="chip" data-need="handoffs" aria-pressed="false">Assign work & track handoffs</button><button type="button" class="chip" data-need="clients" aria-pressed="false">Clients need access to the lists</button><button type="button" class="chip" data-need="m365" aria-pressed="false">We already live in Microsoft 365</button><button type="button" class="chip" data-need="structure" aria-pressed="false">Structured projects — priorities, dependencies</button><button type="button" class="chip" data-need="docs" aria-pressed="false">Documents live with the tasks</button><button type="button" class="chip" data-need="schedules" aria-pressed="false">Detailed schedules across projects</button><button type="button" class="chip" data-need="control" aria-pressed="false">Run — or rent — my own system</button><button type="button" class="chip" data-need="cheap" aria-pressed="false">Keep the bill small</button><button type="button" class="chip" data-need="claude" aria-pressed="false">Claude must manage the tasks directly</button>
+      <div class="need-group"><span class="row-label">2 · What does the work look like?</span><div class="chips"><button type="button" class="chip" data-need="reminders" aria-pressed="false">Reminders & recurring follow-ups</button><button type="button" class="chip" data-need="handoffs" aria-pressed="false">Assign work & track handoffs</button><button type="button" class="chip" data-need="schedules" aria-pressed="false">Detailed schedules across projects</button></div></div>
+      <div class="need-group"><span class="row-label">3 · How do you like to see it?</span><div class="chips"><button type="button" class="chip" data-need="boards" aria-pressed="false">I think in boards, not lists</button><button type="button" class="chip" data-need="structure" aria-pressed="false">Structured projects — priorities, dependencies</button><button type="button" class="chip" data-need="docs" aria-pressed="false">Documents live with the tasks</button></div></div>
+      <div class="need-group"><span class="row-label">4 · Who else is in it?</span><div class="chips"><button type="button" class="chip" data-need="clients" aria-pressed="false">Clients need access to the lists</button><button type="button" class="chip" data-need="m365" aria-pressed="false">We already live in Microsoft 365</button></div></div>
+      <div class="need-group"><span class="row-label">5 · What are your deal-breakers?</span><div class="chips"><button type="button" class="chip" data-need="cheap" aria-pressed="false">Keep the bill small</button><button type="button" class="chip" data-need="claude" aria-pressed="false">Claude must manage the tasks directly</button><button type="button" class="chip" data-need="control" aria-pressed="false">Run — or rent — my own system</button></div></div>
     </div>
     <div class="verdict" aria-live="polite" id="verdict">
       <span class="v-label">Your best fit</span>
       <h3 id="v-name">Todoist</h3>
       <p id="v-why">The editorial answer, before your needs: Todoist for one person; Todoist or Trello for two or three; Linear if you want Daniel’s proven path. Tap your needs above and this gets personal.</p>
+      <div class="scoreboard" id="scoreboard"></div>
       <p class="v-runner" id="v-runner"></p>
     </div>
   </section>
@@ -392,13 +410,15 @@
   function render(){
     for(const id in fits){const b=root.querySelector(`[data-fit="${id}"]`);if(b)b.textContent=who==='crew'?fits[id].crew:fits[id].solo;const s=root.querySelector(`[data-scenario="${id}"]`);if(s)s.textContent=who==='crew'?fits[id].crewFit:fits[id].soloFit;}
     const nameEl=document.getElementById('v-name'), whyEl=document.getElementById('v-why'), runEl=document.getElementById('v-runner');
+    const allRanked=ORDER.map(id=>{let sc=(who==='crew'&&(id==='todoist'||id==='trello'||id==='asana'||id==='clickup'))?1:(who==='solo'&&id==='todoist'?1:0);for(const n of needs)sc+=SCORES[id][n]||0;return{id,sc};}).sort((a,b)=>b.sc-a.sc||ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
+    const maxSc=Math.max(1,...allRanked.map(r=>r.sc));
+    document.getElementById('scoreboard').innerHTML='<div class="sb-title">Scores — live</div>'+allRanked.map((r,i)=>'<div class="sb-row'+(i===0?' sb-win':'')+'"><span class="sb-name">'+NAMES[r.id]+'</span><span class="sb-track"><span class="sb-fill" style="width:'+(r.sc>0?Math.round(r.sc/maxSc*100):0)+'%"></span></span><span class="sb-num'+(r.sc<0?' neg':'')+'">'+r.sc+'</span></div>').join('');
     if(needs.size===0){
       nameEl.textContent=who==='crew'?'Todoist or Trello':'Todoist';
       whyEl.innerHTML='The editorial answer, before your needs: '+(who==='crew'?'Todoist for shared lists, Trello for shared boards':'Todoist for one person')+'; Linear if you want Daniel’s proven path. Tap your needs above and this gets personal.';
       runEl.textContent=''; return;
     }
-    const ranked=ORDER.map(id=>{let sc=(who==='crew'&&(id==='todoist'||id==='trello'||id==='asana'||id==='clickup'))?1:(who==='solo'&&id==='todoist'?1:0);for(const n of needs)sc+=SCORES[id][n]||0;return{id,sc};}).sort((a,b)=>b.sc-a.sc||ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
-    const best=ranked[0], second=ranked[1];
+    const best=allRanked[0], second=allRanked[1];
     nameEl.textContent=NAMES[best.id];
     const reasons=[...needs].filter(n=>(SCORES[best.id][n]||0)>=2).map(n=>REASONS[n]);
     const traps=[...needs].filter(n=>(SCORES[best.id][n]||0)<=0).map(n=>TRAPS[best.id+'|'+n]).filter(Boolean);

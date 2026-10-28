@@ -10,9 +10,31 @@ Underneath sits one real question: is it worth connecting Claude to the tool you
 
 ## Start with what you need
 
-The page opens with a chooser: pick who's it for (just me, or 2–3 of us) and tap your needs — reminders and recurring follow-ups; thinking in boards; assigning work and tracking handoffs; client access to the lists; already living in Microsoft 365; structured projects with priorities and dependencies; documents beside the tasks; detailed schedules; running or renting your own system; keeping the bill small; Claude managing the tasks directly. The guide scores all nine systems against the tapped needs and names a best fit, with the reasons, the 1/2/3-person cost, any trap (a seat minimum, a missing connection), a runner-up, and a jump to the evidence.
+The page opens with a chooser — five questions:
 
-Default answer, before any needs are tapped: Todoist for one person; Todoist for shared lists or Trello for shared boards at two to three; Linear for Daniel's proven path.
+1. **Who's it for?** Just me, or 2–3 of us.
+2. **What does the work look like?** Reminders and recurring follow-ups; assigning work and tracking handoffs; detailed schedules across projects.
+3. **How do you like to see it?** Thinking in boards, not lists; structured projects with priorities and dependencies; documents living with the tasks.
+4. **Who else is in it?** Clients needing access to the lists; already living in Microsoft 365.
+5. **What are your deal-breakers?** Keeping the bill small; Claude managing the tasks directly; running — or renting — your own system.
+
+Every answer moves a visible scoreboard: all nine systems, ranked live. The scoring matrix behind it (points per need, −3 to 3; plus a +1 starting bonus to Todoist solo, and +1 crew bonuses to Todoist, Trello, Asana and ClickUp at 2–3 people):
+
+| Need | Todoist | Trello | Planner | Linear | Asana | ClickUp | monday.com | Wrike | Kaneo |
+|---|---|---|---|---|---|---|---|---|---|
+| Reminders & follow-ups | 3 | 1 | 1 | 0 | 1 | 1 | 0 | 0 | 1 |
+| Assign & track handoffs | 1 | 1 | 1 | 2 | 3 | 2 | 1 | 2 | 1 |
+| Detailed schedules | 0 | 0 | 1 | 1 | 1 | 1 | 2 | 3 | 0 |
+| Think in boards | -1 | 3 | 0 | 1 | 0 | 1 | 2 | 0 | 1 |
+| Structured projects | 0 | 1 | 1 | 3 | 2 | 2 | 1 | 2 | 1 |
+| Documents with tasks | 0 | 0 | 0 | 0 | 1 | 3 | 1 | 0 | 0 |
+| Client access | 2 | 2 | 0 | -1 | 2 | 1 | 1 | 1 | 0 |
+| Already on Microsoft 365 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Keep the bill small | 2 | 2 | 2 | 0 | -1 | 1 | -2 | -2 | 2 |
+| Claude manages directly | 2 | 2 | -3 | 2 | 2 | 1 | 2 | 2 | 0 |
+| Run/rent own system | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
+
+The verdict names the top scorer, the needs it wins on, the cost at your size, any trap or trade-off, and the runner-up — with a jump to the winner's stop. Default answer, before any needs are tapped: Todoist for one person; Todoist for shared lists or Trello for shared boards at two to three; Linear for Daniel's proven path.
 
 Two honesty notes. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, not live testing.
 
