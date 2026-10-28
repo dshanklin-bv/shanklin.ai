@@ -46,14 +46,12 @@
 <link rel="alternate" type="text/markdown" title="Markdown version" href="/reeves/task-systems.md">
 <style>
   main.wrap.guide-wrap { max-width: 980px; }
-  #task-trail .trail-head { padding: 8px 0 4px; }
   #task-trail .trail-mode { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 10px; }
   #task-trail .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 25px; padding: 9px 16px; font-size: 14px; line-height: 1.4; text-align: left; text-decoration: none; cursor: pointer; font-family: var(--font-body); transition: background .15s; }
   #task-trail .btn:hover { background: var(--panel); }
   #task-trail .btn-primary, #task-trail .btn[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
   #task-trail .btn-primary:hover, #task-trail .btn[aria-pressed="true"]:hover { filter: brightness(1.05); }
   #task-trail .viz-badge { display: inline-block; background: var(--panel); color: var(--accent-ink); border: 1px solid var(--line); padding: 6px 10px; border-radius: 4px; font-size: 12px; line-height: 1.5; }
-  #task-trail .trail-start { display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding: 24px 0; }
   #task-trail .trail-stop { display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding: 24px 0; scroll-margin-top: 20px; }
   #task-trail .trail-stop + .trail-stop { border-top: 1px solid var(--hairline); }
   #task-trail .waypoint { display: flex; justify-content: center; padding-top: 4px; color: var(--accent); font-size: 20px; }
@@ -80,13 +78,28 @@
   .report h3 { margin: 10px 0; }
   @media (max-width: 480px) {
     #task-trail .choice-row { grid-template-columns: 1fr; gap: 4px; }
-    #task-trail .trail-stop, #task-trail .trail-start { grid-template-columns: 22px 1fr; gap: 10px; }
+    #task-trail .trail-stop { grid-template-columns: 22px 1fr; gap: 10px; }
     #task-trail .btn { max-width: 100%; }
   }
   .route { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 26px 0 4px; }
   .route .route-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
   .route a { color: var(--accent-ink); text-decoration: none; border: 1px solid var(--line); border-radius: 20px; padding: 4px 12px; font-size: 14px; }
   .route a:hover { background: var(--panel); }
+  .chooser { border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 18px; margin: 28px 0 8px; background: var(--panel); }
+  .chooser h2 { margin: 4px 0 6px; }
+  .chooser .who-row, .chooser .needs-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .chooser .row-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); width: 100%; margin-bottom: 2px; }
+  .chooser .chip { display: inline-flex; align-items: center; min-height: 40px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 22px; padding: 7px 14px; font-size: 14px; line-height: 1.35; cursor: pointer; font-family: var(--font-body); }
+  .chooser .chip:hover { background: var(--bg); }
+  .chooser .chip[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .verdict { margin-top: 16px; border-top: 1px solid var(--hairline); padding-top: 16px; }
+  .verdict .v-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .verdict h3 { font-size: 26px; margin: 6px 0 8px; color: var(--accent-ink); }
+  .verdict ul { margin: 8px 0 8px 20px; }
+  .verdict .v-cost { font-variant-numeric: tabular-nums; }
+  .verdict .v-trap { color: var(--red); }
+  .verdict .v-runner { color: var(--muted); font-size: 15px; margin-top: 10px; }
+  .verdict .btn { margin-top: 12px; }
   @media print {
     #task-trail .start-links, #task-trail .trail-mode { display: none; }
     .guide-table-wrap { overflow: visible; }
@@ -133,32 +146,32 @@
   <div class="article-body">
   <p>Most task systems don't fail on features. They fail on a Tuesday — the commitment made in a meeting lives in someone's head, the follow-up lives nowhere, and the overdue thing surfaces a week late. The everyday jobs are unglamorous: capture it, follow up, assign it, see what's late, share the list.</p>
   <p>Underneath sits one real question: is it worth connecting Claude to the tool you already have, or switching to one with a direct connection? This guide walks nine candidates, one stop at a time. Every stop says what the system is for, what it costs for one to three people — seat minimums included, because that's where the surprises live — and when to pick a different one instead, with a working jump to it.</p>
-  <p>Two honesty notes. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, not live testing. And pick who's using it below — the advice changes with the answer.</p>
+  <p>Two honesty notes. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, not live testing. And don't read all nine stops cold — start with what you need, below. The guide answers; the stops are the receipts.</p>
 
   <nav class="route" aria-label="The route"><span class="route-label">The route</span><a href="#stop-todoist">Todoist</a><a href="#stop-trello">Trello</a><a href="#stop-planner">Planner</a><a href="#stop-linear">Linear</a><a href="#stop-asana">Asana</a><a href="#stop-clickup">ClickUp</a><a href="#stop-monday">monday.com</a><a href="#stop-wrike">Wrike</a><a href="#stop-kaneo">Kaneo</a></nav>
 
-  <div id="task-trail">
-    <div class="trail-head">
-      <div class="trail-mode" role="group" aria-label="Who will use it?">
-        <button type="button" class="btn" data-mode="solo" aria-pressed="true">Just me</button>
-        <button type="button" class="btn" data-mode="crew" aria-pressed="false">2–3 of us</button>
-      </div>
-      <div aria-live="polite" id="mode-caption">Your tasks, your followups, your next move.</div>
+  <section class="chooser" id="chooser" aria-label="Find your best fit">
+    <div class="kicker">Start here</div>
+    <h2>What do you need?</h2>
+    <p>Tap what’s true. The guide does the math and names your best fit — the nine stops below are the receipts.</p>
+    <div class="who-row" role="group" aria-label="Who is it for?">
+      <span class="row-label">Who’s it for</span>
+      <button type="button" class="chip" data-who="solo" aria-pressed="true">Just me</button>
+      <button type="button" class="chip" data-who="crew" aria-pressed="false">2–3 of us</button>
     </div>
-    <hr>
-    <section class="trail-start" aria-label="Starting recommendation">
-      <div class="waypoint"><span aria-hidden="true">⚑</span></div>
-      <div>
-        <span class="viz-badge">Start here</span>
-        <h2 id="start-title">Todoist: a clear place to put the next thing.</h2>
-        <div id="start-desc">Daily tasks · reminders · recurring followups · direct Claude connection</div>
-        <div class="start-links">
-          <button class="btn btn-primary" type="button" data-go="todoist">Meet Todoist <span aria-hidden="true">↓</span></button>
-          <button class="btn" type="button" data-go="trello">I think in boards</button>
-          <button class="btn" type="button" data-go="linear">Show me Daniel's pick</button>
-        </div>
-      </div>
-    </section>
+    <div class="needs-row" role="group" aria-label="What do you need?">
+      <span class="row-label">I need</span>
+      <button type="button" class="chip" data-need="reminders" aria-pressed="false">Reminders & recurring follow-ups</button><button type="button" class="chip" data-need="boards" aria-pressed="false">I think in boards, not lists</button><button type="button" class="chip" data-need="handoffs" aria-pressed="false">Assign work & track handoffs</button><button type="button" class="chip" data-need="clients" aria-pressed="false">Clients need access to the lists</button><button type="button" class="chip" data-need="m365" aria-pressed="false">We already live in Microsoft 365</button><button type="button" class="chip" data-need="structure" aria-pressed="false">Structured projects — priorities, dependencies</button><button type="button" class="chip" data-need="docs" aria-pressed="false">Documents live with the tasks</button><button type="button" class="chip" data-need="schedules" aria-pressed="false">Detailed schedules across projects</button><button type="button" class="chip" data-need="control" aria-pressed="false">Run — or rent — my own system</button><button type="button" class="chip" data-need="cheap" aria-pressed="false">Keep the bill small</button><button type="button" class="chip" data-need="claude" aria-pressed="false">Claude must manage the tasks directly</button>
+    </div>
+    <div class="verdict" aria-live="polite" id="verdict">
+      <span class="v-label">Your best fit</span>
+      <h3 id="v-name">Todoist</h3>
+      <p id="v-why">The editorial answer, before your needs: Todoist for one person; Todoist or Trello for two or three; Linear if you want Daniel’s proven path. Tap your needs above and this gets personal.</p>
+      <p class="v-runner" id="v-runner"></p>
+    </div>
+  </section>
+
+  <div id="task-trail">
     <div id="stops">
     <h3 class="trail-group">01 / Keep the day moving</h3>
     <section id="stop-todoist" class="trail-stop" aria-label="Todoist">
@@ -358,20 +371,56 @@
 <script>
 (function(){
   const root=document.getElementById('task-trail');
+  const chooser=document.getElementById('chooser');
   const fits={"todoist": {"solo": "Best starting point for one person", "crew": "Best starting point for shared lists", "soloFit": "The default. For most solo operators, this is where the search ends.", "crewFit": "Shared lists, owners, and deadlines for a small group."}, "trello": {"solo": "For a visual thinker", "crew": "Best starting point for shared boards", "soloFit": "Choose it if cards and columns feel more natural than lists.", "crewFit": "An easy-to-picture shared board with assigned cards and due dates."}, "planner": {"solo": "The familiar route", "crew": "Keep the existing team in the loop", "soloFit": "The baseline: if it’s already yours, a second list is a second place to forget things.", "crewFit": "Strong continuity when those colleagues already use the existing plans."}, "linear": {"solo": "Daniel’s strongest integration experience", "crew": "A structured option to try together", "soloFit": "The one Daniel actually vouches for — if you can live with its vocabulary.", "crewFit": "Promising if all two or three people are comfortable with its way of organizing work."}, "asana": {"solo": "For projects beyond a daily list", "crew": "For repeatable work and handoffs", "soloFit": "Worth it when the work has handoffs. Overkill for a reminder list.", "crewFit": "A candidate for consistent, repeatable projects across a small team."}, "clickup": {"solo": "When tasks need company", "crew": "For tasks and documents together", "soloFit": "For when the task list needs documents and projects living next to it — and you accept the setup tax.", "crewFit": "An option if the group wants shared documents alongside the work."}, "monday": {"solo": "For custom visual tracking", "crew": "For a shared picture of the business", "soloFit": "Only if custom visual tracking is worth a three-seat minimum and the setup time.", "crewFit": "A candidate when the group wants to organize work around configurable boards."}, "wrike": {"solo": "For detailed project schedules", "crew": "For several moving client projects", "soloFit": "More structure than a personal follow-up list will ever use.", "crewFit": "Worth considering when scheduling and project coordination are the main problem."}, "kaneo": {"solo": "A promising alternative", "crew": "For a group that values control", "soloFit": "Daniel’s dark horse. Try it if the hosted connection checks out for your account.", "crewFit": "A candidate if permissions and the hosted setup fit the group."}};
-  root.addEventListener('click',event=>{
-    const modeButton=event.target.closest('[data-mode]');
-    if(modeButton){
-      const crew=modeButton.dataset.mode==='crew';
-      root.querySelectorAll('[data-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button===modeButton)));
-      root.querySelector('#mode-caption').textContent=crew?'Shared lists or shared boards? Start with the way you work together.':'Your tasks, your followups, your next move.';
-      root.querySelector('#start-title').textContent=crew?'Todoist for shared lists. Trello for shared boards.':'Todoist: a clear place to put the next thing.';
-      root.querySelector('#start-desc').textContent=crew?'2–3 people · clear owners · deadlines · a shared place to check in':'Daily tasks · reminders · recurring followups · direct Claude connection';
-      for(const id in fits){root.querySelector(`[data-fit="${id}"]`).textContent=crew?fits[id].crew:fits[id].solo;root.querySelector(`[data-scenario="${id}"]`).textContent=crew?fits[id].crewFit:fits[id].soloFit;}
+  const SCORES={"todoist": {"reminders": 3, "boards": -1, "handoffs": 1, "clients": 2, "m365": 0, "structure": 0, "docs": 0, "schedules": 0, "control": 0, "cheap": 2, "claude": 2}, "trello": {"reminders": 1, "boards": 3, "handoffs": 1, "clients": 2, "m365": 0, "structure": 1, "docs": 0, "schedules": 0, "control": 0, "cheap": 2, "claude": 2}, "planner": {"reminders": 1, "boards": 0, "handoffs": 1, "clients": 0, "m365": 3, "structure": 1, "docs": 0, "schedules": 1, "control": 0, "cheap": 2, "claude": -3}, "linear": {"reminders": 0, "boards": 1, "handoffs": 2, "clients": -1, "m365": 0, "structure": 3, "docs": 0, "schedules": 1, "control": 0, "cheap": 0, "claude": 2}, "asana": {"reminders": 1, "boards": 0, "handoffs": 3, "clients": 2, "m365": 0, "structure": 2, "docs": 1, "schedules": 1, "control": 0, "cheap": -1, "claude": 2}, "clickup": {"reminders": 1, "boards": 1, "handoffs": 2, "clients": 1, "m365": 0, "structure": 2, "docs": 3, "schedules": 1, "control": 0, "cheap": 1, "claude": 1}, "monday": {"reminders": 0, "boards": 2, "handoffs": 1, "clients": 1, "m365": 0, "structure": 1, "docs": 1, "schedules": 2, "control": 0, "cheap": -2, "claude": 2}, "wrike": {"reminders": 0, "boards": 0, "handoffs": 2, "clients": 1, "m365": 0, "structure": 2, "docs": 0, "schedules": 3, "control": 0, "cheap": -2, "claude": 2}, "kaneo": {"reminders": 1, "boards": 1, "handoffs": 1, "clients": 0, "m365": 0, "structure": 1, "docs": 0, "schedules": 0, "control": 3, "cheap": 2, "claude": 0}};
+  const NAMES={"todoist": "Todoist", "trello": "Trello", "planner": "Microsoft Planner", "linear": "Linear", "asana": "Asana", "clickup": "ClickUp", "monday": "monday.com", "wrike": "Wrike", "kaneo": "Kaneo"};
+  const COSTS={"todoist": [60, 120, 180], "trello": [60, 120, 180], "planner": [0, 0, 0], "linear": [120, 240, 360], "asana": [263.76, 263.76, 395.64], "clickup": [84, 168, 252], "monday": [432, 432, 432], "wrike": [600, 600, 600], "kaneo": [40, 100, 150]};
+  const REASONS={"reminders": "reminders and recurring follow-ups are its home turf", "boards": "boards are its native language", "handoffs": "assigning work and tracking handoffs is its strength", "clients": "client guests don’t blow up the bill", "m365": "it’s already inside your Microsoft 365", "structure": "priorities and dependencies are first-class", "docs": "documents live beside the tasks", "schedules": "detailed schedules are the point", "control": "you can run it — or rent it — yourself", "cheap": "it’s among the cheapest ways to do this", "claude": "Claude connects to it directly"};
+  const TRAPS={"planner|claude": "Claude can’t drive Planner tasks directly yet — you’d need a bridge.", "linear|clients": "Guests are billed as full members.", "asana|cheap": "A party of one still buys two seats.", "monday|cheap": "Three-seat minimum, whatever your headcount.", "wrike|cheap": "Sold in five-seat bundles.", "kaneo|claude": "The hosted AI connection still needs verifying for your account."};
+  const ORDER=['todoist','trello','planner','linear','asana','clickup','monday','wrike','kaneo'];
+  let who='solo'; const needs=new Set();
+  const money=n=>'$'+(Number.isInteger(n)?n:n.toFixed(2));
+  function costLine(id){
+    const c=COSTS[id];
+    if(id==='planner') return '$0 extra — it rides on your existing Microsoft 365.';
+    if(who==='solo') return money(c[0])+'/year for one person, paid example.';
+    return money(c[1])+' for two · '+money(c[2])+' for three, per year, paid examples.';
+  }
+  function render(){
+    for(const id in fits){const b=root.querySelector(`[data-fit="${id}"]`);if(b)b.textContent=who==='crew'?fits[id].crew:fits[id].solo;const s=root.querySelector(`[data-scenario="${id}"]`);if(s)s.textContent=who==='crew'?fits[id].crewFit:fits[id].soloFit;}
+    const nameEl=document.getElementById('v-name'), whyEl=document.getElementById('v-why'), runEl=document.getElementById('v-runner');
+    if(needs.size===0){
+      nameEl.textContent=who==='crew'?'Todoist or Trello':'Todoist';
+      whyEl.innerHTML='The editorial answer, before your needs: '+(who==='crew'?'Todoist for shared lists, Trello for shared boards':'Todoist for one person')+'; Linear if you want Daniel’s proven path. Tap your needs above and this gets personal.';
+      runEl.textContent=''; return;
     }
+    const ranked=ORDER.map(id=>{let sc=(who==='crew'&&(id==='todoist'||id==='trello'||id==='asana'||id==='clickup'))?1:(who==='solo'&&id==='todoist'?1:0);for(const n of needs)sc+=SCORES[id][n]||0;return{id,sc};}).sort((a,b)=>b.sc-a.sc||ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
+    const best=ranked[0], second=ranked[1];
+    nameEl.textContent=NAMES[best.id];
+    const reasons=[...needs].filter(n=>(SCORES[best.id][n]||0)>=2).map(n=>REASONS[n]);
+    const traps=[...needs].filter(n=>(SCORES[best.id][n]||0)<=0).map(n=>TRAPS[best.id+'|'+n]).filter(Boolean);
+    let html=(reasons.length?'Because: '+reasons.join('; ')+'. ':'It covers your list best of the nine. ')+'<span class="v-cost">'+costLine(best.id)+'</span>';
+    if(traps.length) html+=' <span class="v-trap">Watch out: '+traps.join(' ')+'</span>';
+    html+=' <button type="button" class="btn" data-go="'+best.id+'">See the '+NAMES[best.id]+' stop ↓</button>';
+    whyEl.innerHTML=html;
+    runEl.textContent='Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.';
+  }
+  chooser.addEventListener('click',event=>{
+    const w=event.target.closest('[data-who]');
+    if(w){who=w.dataset.who;chooser.querySelectorAll('[data-who]').forEach(b=>b.setAttribute('aria-pressed',String(b===w)));render();return;}
+    const c=event.target.closest('[data-need]');
+    if(c){const on=c.getAttribute('aria-pressed')==='true';c.setAttribute('aria-pressed',String(!on));if(on)needs.delete(c.dataset.need);else needs.add(c.dataset.need);render();}
+  });
+  root.addEventListener('click',event=>{
     const jump=event.target.closest('[data-go]');
     if(jump){const target=root.querySelector('#stop-'+jump.dataset.go);if(target){target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}}
   });
+  document.getElementById('verdict').addEventListener('click',event=>{
+    const jump=event.target.closest('[data-go]');
+    if(jump){const target=root.querySelector('#stop-'+jump.dataset.go);if(target){target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}}
+  });
+  render();
 })();
 </script>
 <script>

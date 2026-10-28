@@ -730,6 +730,12 @@ Most task systems don't fail on features. They fail on a Tuesday — the commitm
 
 Underneath sits one real question: is it worth connecting Claude to the tool you already have, or switching to one with a direct connection? This guide walks nine candidates, one stop at a time. Every stop says what the system is for, what it costs for one to three people — seat minimums included, because that's where the surprises live — and when to pick a different one instead.
 
+## Start with what you need
+
+The page opens with a chooser: pick who's it for (just me, or 2–3 of us) and tap your needs — reminders and recurring follow-ups; thinking in boards; assigning work and tracking handoffs; client access to the lists; already living in Microsoft 365; structured projects with priorities and dependencies; documents beside the tasks; detailed schedules; running or renting your own system; keeping the bill small; Claude managing the tasks directly. The guide scores all nine systems against the tapped needs and names a best fit, with the reasons, the 1/2/3-person cost, any trap (a seat minimum, a missing connection), a runner-up, and a jump to the evidence.
+
+Default answer, before any needs are tapped: Todoist for one person; Todoist for shared lists or Trello for shared boards at two to three; Linear for Daniel's proven path.
+
 Two honesty notes. Daniel's firsthand experience is labeled where it appears; everything else is fit judgment against official documentation, not live testing.
 
 **Start here (Just me):** Todoist — a clear place to put the next thing. Daily tasks, reminders, recurring followups, direct Claude connection.
