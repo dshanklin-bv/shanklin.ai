@@ -52,7 +52,7 @@
   #task-trail .btn-primary, #task-trail .btn[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
   #task-trail .btn-primary:hover, #task-trail .btn[aria-pressed="true"]:hover { filter: brightness(1.05); }
   #task-trail .viz-badge { display: inline-block; background: var(--panel); color: var(--accent-ink); border: 1px solid var(--line); padding: 6px 10px; border-radius: 4px; font-size: 12px; line-height: 1.5; }
-  #task-trail .trail-stop { display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding: 24px 0; scroll-margin-top: 20px; }
+  #task-trail .trail-stop { display: grid; grid-template-columns: 32px 1fr; gap: 16px; padding: 24px 0; scroll-margin-top: 96px; }
   #task-trail .trail-stop + .trail-stop { border-top: 1px solid var(--hairline); }
   #task-trail .waypoint { display: flex; justify-content: center; padding-top: 4px; color: var(--accent); font-size: 20px; }
   #task-trail .stop-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
@@ -81,6 +81,8 @@
     #task-trail .trail-stop { grid-template-columns: 22px 1fr; gap: 10px; }
     #task-trail .btn { max-width: 100%; }
   }
+  .chooser .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 25px; padding: 9px 16px; font-size: 14px; line-height: 1.4; text-align: left; text-decoration: none; cursor: pointer; font-family: var(--font-body); }
+  .chooser .btn:hover { background: var(--bg); }
   .route { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 26px 0 4px; }
   .route .route-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
   .route a { color: var(--accent-ink); text-decoration: none; border: 1px solid var(--line); border-radius: 20px; padding: 4px 12px; font-size: 14px; }
@@ -402,6 +404,18 @@
     const traps=[...needs].filter(n=>(SCORES[best.id][n]||0)<=0).map(n=>TRAPS[best.id+'|'+n]).filter(Boolean);
     let html=(reasons.length?'Because: '+reasons.join('; ')+'. ':'It covers your list best of the nine. ')+'<span class="v-cost">'+costLine(best.id)+'</span>';
     if(traps.length) html+=' <span class="v-trap">Watch out: '+traps.join(' ')+'</span>';
+    const LABELS={reminders:'reminders & recurring follow-ups',boards:'thinking in boards',handoffs:'assigning & tracking handoffs',clients:'client access',m365:'living in Microsoft 365',structure:'structured projects',docs:'documents with the tasks',schedules:'detailed schedules',control:'running your own system',cheap:'keeping the bill small',claude:'Claude managing tasks directly'};
+    const conflicts=[];
+    for(const n of needs){
+      if((SCORES[best.id][n]||0)>0) continue;
+      let w=null,ws=1;
+      for(const id of ORDER){const s=SCORES[id][n]||0;if(s>ws){ws=s;w=id;}}
+      if(!w||w===best.id) continue;
+      let why='';
+      for(const m of needs){if((SCORES[w][m]||0)<=0&&(SCORES[best.id][m]||0)>(SCORES[w][m]||0)){why=TRAPS[w+'|'+m]||'';break;}}
+      conflicts.push(NAMES[w]+' is strongest on '+LABELS[n]+(why?' — but '+why.charAt(0).toLowerCase()+why.slice(1):' — it just loses on your other needs')+' So it’s not the pick.');
+    }
+    if(conflicts.length) html+=' <span class="v-trap">Trade-off: '+conflicts.join(' ')+'</span>';
     html+=' <button type="button" class="btn" data-go="'+best.id+'">See the '+NAMES[best.id]+' stop ↓</button>';
     whyEl.innerHTML=html;
     runEl.textContent='Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.';
