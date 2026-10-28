@@ -31,7 +31,7 @@ Every answer moves a visible scoreboard: all nine systems, ranked live. The scor
 | Client access | 2 | 2 | 0 | -1 | 2 | 1 | 1 | 1 | 0 |
 | Already on Microsoft 365 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Keep the bill small | 2 | 2 | 2 | 0 | -1 | 1 | -2 | -2 | 2 |
-| Claude manages directly | 2 | 2 | -3 | 2 | 2 | 1 | 2 | 2 | 0 |
+| Claude manages directly | 2 | 1 | -3 | 2 | 1 | 1 | 1 | 0 | 0 |
 | Run/rent own system | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 
 The verdict names the top scorer, the needs it wins on, the cost at your size, any trap or trade-off, and the runner-up — with a jump to the winner's stop. Default answer, before any needs are tapped: Todoist for one person; Todoist for shared lists or Trello for shared boards at two to three; Linear for Daniel's proven path.
@@ -50,7 +50,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: Best starting point for one person. The default. For most solo operators, this is where the search ends.
 - 2–3 of us: Best starting point for shared lists. Shared lists, owners, and deadlines for a small group.
 - Choose it for: Clear lists, reminders, recurring tasks, and quick capture.
-- Ask Claude: Official Claude connection: read, create, and update tasks and projects.
+- Ask Claude: Official Claude connection — the best-verified of the nine inside Claude. Outside Claude it has broken before; expect occasional re-auth.
+- What agent users report: Verified end-to-end in Claude — reads and writes — in Oct 2026 (Doist issue tracker). The same server failed on every tool in Codex and Grok for a stretch, and users report re-authenticating every few days.
 - Share the work: Guests can join specific team projects for free. Personal projects support up to five people.
 - Cost: Free starter; Pro $60/year. Business $96/member/year when you need a team workspace.
 - Experience: New candidate based on fit; no firsthand endorsement from Daniel.
@@ -62,7 +63,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: For a visual thinker. Choose it if cards and columns feel more natural than lists.
 - 2–3 of us: Best starting point for shared boards. An easy-to-picture shared board with assigned cards and due dates.
 - Choose it for: A simple board for a project, client, or weekly workload.
-- Ask Claude: Official Claude connection: read, search, create, and update boards and cards.
+- Ask Claude: Official Claude connection (launched Jul 2026). Early practitioner reports are auth errors, not successes.
+- What agent users report: Oct 2026, Atlassian Community: consent pages erroring (500s), repeated authorization failures. No positive end-to-end practitioner report found yet.
 - Share the work: One-board guests are free. Guests on two or more paid-workspace boards become billable. Everyone on a board sees all its cards.
 - Cost: Free up to 10 collaborators and 10 boards; Standard $60/member/year.
 - Experience: New candidate based on fit; no firsthand endorsement from Daniel.
@@ -74,7 +76,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: The familiar route. The baseline: if it’s already yours, a second list is a second place to forget things.
 - 2–3 of us: Keep the existing team in the loop. Strong continuity when those colleagues already use the existing plans.
 - Choose it for: Keeping commitments in the same place as the colleagues who already use Planner.
-- Ask Claude: Claude’s Microsoft 365 connector does not document Planner task actions. Verify a separate route before relying on it.
+- Ask Claude: Claude’s Microsoft 365 connector has no Planner tools at all — it is read-only, and Planner isn’t in it. Agent access means a community server you install yourself.
+- What agent users report: Apr 2026 admin analysis (Office 365 for IT Pros): the connector searches SharePoint and reads Teams/Outlook — it cannot create or change anything, and Planner appears in no tool list.
 - Share the work: External guests depend on Microsoft 365 group and tenant settings; guest limitations apply.
 - Cost: Basic Planner is included with eligible Microsoft 365 subscriptions. A separate AI connection can add cost and effort.
 - Experience: Already bundled with many Microsoft 365 subscriptions — check whether it’s already yours before shopping.
@@ -88,7 +91,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: Daniel’s strongest integration experience. The one Daniel actually vouches for — if you can live with its vocabulary.
 - 2–3 of us: A structured option to try together. Promising if all two or three people are comfortable with its way of organizing work.
 - Choose it for: Priorities, related work, dependencies, and structured projects.
-- Ask Claude: Official Claude connection: find, create, and update issues, projects, and comments.
+- Ask Claude: Official Claude connection: find, create, and update issues, projects, and comments. The practitioner favorite.
+- What agent users report: MarsBased, Apr 2026: “practically everything… turns your AI assistant into a full Linear client.” The strongest practitioner record of the nine. Caveat: Cursor users report the connection hanging.
 - Share the work: Guests require Business or Enterprise and are billed as regular members.
 - Cost: Free starter has a 250-issue limit. Basic $120/member/year; Business $192/member/year.
 - Experience: Daniel: “I have integrated extremely well with Linear.”
@@ -100,7 +104,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: For projects beyond a daily list. Worth it when the work has handoffs. Overkill for a reminder list.
 - 2–3 of us: For repeatable work and handoffs. A candidate for consistent, repeatable projects across a small team.
 - Choose it for: Projects with several stages, responsibilities, and handoffs.
-- Ask Claude: Official Claude app. Asana flags organization-approval limitations for Claude team accounts on Starter; check the setup first.
+- Ask Claude: Official Claude app (V2). Setup is the heaviest of the nine — custom clients need your own developer app — and org approval may apply.
+- What agent users report: 2026 forum record: V2 dropped the dependencies tool, some date edits silently don’t stick, a task with 10 subtasks takes 11 confirmation clicks. One user: “effectively unusable” from assistants without a built-in connector.
 - Share the work: Qualifying external guests are free; internal members count toward paid seats.
 - Cost: Starter $131.88/seat/year; minimum two seats. Check the required subscription size.
 - Experience: Daniel: workable, with per-seat and guest-sharing friction in his use.
@@ -112,7 +117,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: When tasks need company. For when the task list needs documents and projects living next to it — and you accept the setup tax.
 - 2–3 of us: For tasks and documents together. An option if the group wants shared documents alongside the work.
 - Choose it for: Tasks, documents, and broader project tracking in one system.
-- Ask Claude: Official AI connection. Unlimited currently allows 300 calls per rolling 24 hours per client/workspace without the AI add-on.
+- Ask Claude: Official AI connection. Call caps are workspace-shared, and some reads and writes silently drop data (see evidence).
+- What agent users report: 2026 feedback board, firsthand: updates silently drop sprint points, task reads omit synced blocks, and a time-entry tag bug created duplicate entries — with no delete tool to clean them up.
 - Share the work: Paid plans include free read-only guests plus a limited allowance of permission-controlled guests.
 - Cost: Unlimited $84/member/year. Extra guest seats and optional AI features can change the bill.
 - Experience: New candidate based on fit; no firsthand endorsement from Daniel.
@@ -124,7 +130,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: For custom visual tracking. Only if custom visual tracking is worth a three-seat minimum and the setup time.
 - 2–3 of us: For a shared picture of the business. A candidate when the group wants to organize work around configurable boards.
 - Choose it for: Custom boards and dashboards covering different business activities.
-- Ask Claude: Official Claude connection for managing tasks and querying boards.
+- Ask Claude: Official Claude connection — but agents can’t set item descriptions through its tools (see evidence), and every call burns the account’s shared daily API budget.
+- What agent users report: Apr 2026, a builder’s field report: agent-created items come out with empty descriptions — the text lands in comments, because no tool exists to set it. The workaround is raw API calls.
 - Share the work: Standard counts every four guests as one seat. Pro allows unlimited guests.
 - Cost: Standard $144/seat/year; minimum three seats ($432/year), before extras.
 - Experience: New candidate based on fit; no firsthand endorsement from Daniel.
@@ -136,7 +143,8 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - Just me: For detailed project schedules. More structure than a personal follow-up list will ever use.
 - 2–3 of us: For several moving client projects. Worth considering when scheduling and project coordination are the main problem.
 - Choose it for: Detailed schedules and coordination across client projects.
-- Ask Claude: Official Claude connection to find, create, and manage work.
+- Ask Claude: Vendor offers a Claude connection. No practitioner has publicly verified it.
+- What agent users report: None. No hands-on agentic verdicts found anywhere — treat the connection as a vendor claim, not a finding.
 - Share the work: Viewers can be free; contributors and full external users can be paid. Confirm the permissions and license terms.
 - Cost: Team lists $10/user/month on annual billing, and small accounts are sold in five-seat bundles — expect a five-seat quote for one to three people. Confirm the exact terms.
 - Experience: New candidate based on fit; no firsthand endorsement from Daniel.
@@ -151,6 +159,7 @@ The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp 
 - 2–3 of us: For a group that values control. A candidate if permissions and the hosted setup fit the group.
 - Choose it for: A task system Daniel likes, with a choice of hosted or self-hosted operation.
 - Ask Claude: Vendor provides an AI connection; verify the exact hosted setup and actions.
+- What agent users report: None. No end-user agentic reports found — everything written about its MCP comes from Kaneo.
 - Share the work: Confirm guest billing and access isolation before using it with clients.
 - Cost: Cloud Personal $40/year; Cloud Team $50/member/year. Self-hosted software is free, with infrastructure and care to arrange.
 - Experience: Daniel: “Kaneo is awesome,” with a system-management tradeoff for self-hosting. Cloud handles hosting, backups, and updates.
@@ -179,28 +188,8 @@ Annual US list prices, before tax, Claude, optional AI, migration, and setup. Pa
 | Wrike — Team; five-seat bundle estimate | $600 | $600 | $600 | PROVISIONAL: published $10 annual-billing rate and five-seat bundle rule. The same page says Team supports 2–15 users. Confirm minimum purchasable subscription and viewer/contributor licenses. |
 | Kaneo — Cloud Personal (1); Cloud Team (2–3) | $40 | $100 | $150 | Hosted advertised rates. Confirm Cloud AI connection and guest/access requirements. Self-hosted software is $0, plus infrastructure and maintenance. |
 
-## What other people are finding
+## What agent users report
 
-Field reports, September 30 – October 28, 2026. Signals, not a vote.
-
-- **Oct 12–25 · Linear — AI and structured tasks can work well together.** Users describe coordinating Claude sessions and turning Linear tickets into reviewed code. Encouraging — but mostly software-development use, not everyday small-team task work. [Read the discussion](https://www.reddit.com/r/Linear/comments/1x4e9sx/using_linear_for_one_person/)
-- **Oct 9 · Asana — A recurring kickoff, fewer manual steps.** A community poster reports saving 30–60 minutes per monthly kickoff across Claude, Google Workspace, Asana and Slack. Self-reported, with limited implementation evidence. [Read the account](https://forum.asana.com/t/how-i-automated-our-monthly-sprint-kickoff-in-asana-with-claude-google-workspace-and-slack/1158027)
-- **Oct 22 · Asana — A direct connection can still leave cleanup.** One user reports missing section and positioning operations in the Claude connector. Verify the exact actions you need, not just the connection badge. [Read the report](https://forum.asana.com/t/asana-mcp-connector-claude-support-section-header-subtasks-and-task-positioning/1159462)
-
-No strong recent independent evidence was established here for Planner, Kaneo or Google Tasks. Wrike, monday.com and Trello were added through official documentation, without an equivalent recent-community review.
-
-## The short version
-
-**Just you:** start with Todoist. Free until it isn’t; Pro is $60 a year when you outgrow it. Already living in Microsoft 365? Planner costs nothing extra — but Claude can’t drive it yet, so the day you want AI keeping the list, you switch or you bridge. There is no third option.
-
-**Two or three of you:** Todoist if you think in lists, Trello if you think in boards. At this size both stay cheap, and neither punishes you much for sharing.
-
-**Want the path Daniel has actually proven?** Linear. $120 a person a year, and his verdict stands: “I have integrated extremely well with Linear.” If your work has real structure — priorities, dependencies, related pieces — it earns the vocabulary lesson.
-
-**The traps, quickly:** Asana sells a party of one a minimum of two seats. monday.com sells three. Wrike sells five at a time and prefers a conversation. None of that makes them bad tools. It makes them expensive ways to keep a three-person list.
-
-**And Kaneo is the dark horse**  — the one to try if you’d rather run, or rent, your own system than rent someone else’s roadmap.
-
-The last word is unglamorous: the best task system is the one whose list you actually open. The Claude connection matters because it lowers the cost of keeping that list true — capture from anywhere, follow-ups drafted, the overdue surfaced before it embarrasses you. Pick the cheapest system you’ll open every day, connect it, and argue about switching in a quarter. With data.
+Folded into each stop above, next to the product it describes. Headline from the practitioner record (forums, issue trackers, builder blogs, 2025–2026): only Linear and Todoist carry strong positive endorsements from people who run agents daily. Asana and ClickUp have deep records that are mostly bug catalogues. Trello's official MCP is new (Jul 2026) with auth failures as its first reports. The Microsoft 365 connector exposes no Planner tools at all. Wrike and Kaneo have no hands-on agentic verdicts at all — their connection claims are vendor-only.
 
 *Researched and drafted by Darwin, Daniel's chief-of-staff AI, and handed to Reeves by email on October 28, 2026; edited and published by Reeves. Prices checked against official sources on October 28, 2026; Wrike's five-seat bundle rule and monday.com's three-seat minimum were re-verified at publication. No connections were tested in live accounts for this guide. Firsthand experience is labeled where it appears; community reports are anecdotes, not consensus.*
