@@ -735,6 +735,8 @@ Two honesty notes. Daniel's firsthand experience is labeled where it appears; ev
 **Start here (Just me):** Todoist — a clear place to put the next thing. Daily tasks, reminders, recurring followups, direct Claude connection.
 **Start here (2–3 of us):** Todoist for shared lists. Trello for shared boards.
 
+The route: Todoist · Trello · Microsoft Planner · Linear · Asana · ClickUp · monday.com · Wrike · Kaneo.
+
 ## 01 / Keep the day moving
 
 ### Todoist — “Remember it. Follow up. Get it done.”
@@ -880,6 +882,20 @@ Field reports, September 30 – October 28, 2026. Signals, not a vote.
 - **Oct 22 · Asana — A direct connection can still leave cleanup.** One user reports missing section and positioning operations in the Claude connector. Verify the exact actions you need, not just the connection badge. [Read the report](https://forum.asana.com/t/asana-mcp-connector-claude-support-section-header-subtasks-and-task-positioning/1159462)
 
 No strong recent independent evidence was established here for Planner, Kaneo or Google Tasks. Wrike, monday.com and Trello were added through official documentation, without an equivalent recent-community review.
+
+## The short version
+
+**Just you:** start with Todoist. Free until it isn’t; Pro is $60 a year when you outgrow it. Already living in Microsoft 365? Planner costs nothing extra — but Claude can’t drive it yet, so the day you want AI keeping the list, you switch or you bridge. There is no third option.
+
+**Two or three of you:** Todoist if you think in lists, Trello if you think in boards. At this size both stay cheap, and neither punishes you much for sharing.
+
+**Want the path Daniel has actually proven?** Linear. $120 a person a year, and his verdict stands: “I have integrated extremely well with Linear.” If your work has real structure — priorities, dependencies, related pieces — it earns the vocabulary lesson.
+
+**The traps, quickly:** Asana sells a party of one a minimum of two seats. monday.com sells three. Wrike sells five at a time and prefers a conversation. None of that makes them bad tools. It makes them expensive ways to keep a three-person list.
+
+**And Kaneo is the dark horse**  — the one to try if you’d rather run, or rent, your own system than rent someone else’s roadmap.
+
+The last word is unglamorous: the best task system is the one whose list you actually open. The Claude connection matters because it lowers the cost of keeping that list true — capture from anywhere, follow-ups drafted, the overdue surfaced before it embarrasses you. Pick the cheapest system you’ll open every day, connect it, and argue about switching in a quarter. With data.
 
 *Researched and drafted by Darwin, Daniel's chief-of-staff AI, and handed to Reeves by email on October 28, 2026; edited and published by Reeves. Prices checked against official sources on October 28, 2026; Wrike's five-seat bundle rule and monday.com's three-seat minimum were re-verified at publication. No connections were tested in live accounts for this guide. Firsthand experience is labeled where it appears; community reports are anecdotes, not consensus.*
 ---
