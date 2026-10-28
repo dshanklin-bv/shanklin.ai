@@ -400,12 +400,12 @@
       if(!w||w===best.id) continue;
       let why='';
       for(const m of needs){if((SCORES[w][m]||0)<=0&&(SCORES[best.id][m]||0)>(SCORES[w][m]||0)){why=TRAPS[w+'|'+m]||'';break;}}
-      conflicts.push(NAMES[w]+' is strongest on '+LABELS[n]+(why?' — but '+why:' — it just loses on your other needs')+' So it’s not the pick.');
+      conflicts.push(NAMES[w]+' is strongest on '+LABELS[n]+(why?' — but '+why:' — it just loses on your other needs.')+' So it’s not the pick.');
     }
     if(conflicts.length) html+=' <span class="v-trap">Trade-off: '+conflicts.join(' ')+'</span>';
     html+=' <button type="button" class="btn" data-go="'+best.id+'">See the '+NAMES[best.id]+' stop ↓</button>';
     whyEl.innerHTML=html;
-    runEl.textContent=second.sc===best.sc?('Tied on points with '+NAMES[second.id]+' — '+NAMES[best.id]+' gets the nod on the editorial tie-break. Its stop below says why it might still win.') :('Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.');
+    const tied=allRanked.filter(r=>r.sc===best.sc&&r.id!==best.id).map(r=>NAMES[r.id]);runEl.textContent=tied.length?('Tied on points with '+tied.join(', ')+' — '+NAMES[best.id]+' gets the nod on the editorial tie-break. Their stops below say why they might still win.') :('Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.');
   }
   chooser.addEventListener('click',event=>{
     const w=event.target.closest('[data-who]');
