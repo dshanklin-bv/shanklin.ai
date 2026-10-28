@@ -413,7 +413,7 @@
       if(!w||w===best.id) continue;
       let why='';
       for(const m of needs){if((SCORES[w][m]||0)<=0&&(SCORES[best.id][m]||0)>(SCORES[w][m]||0)){why=TRAPS[w+'|'+m]||'';break;}}
-      conflicts.push(NAMES[w]+' is strongest on '+LABELS[n]+(why?' — but '+why.charAt(0).toLowerCase()+why.slice(1):' — it just loses on your other needs')+' So it’s not the pick.');
+      conflicts.push(NAMES[w]+' is strongest on '+LABELS[n]+(why?' — but '+why:' — it just loses on your other needs')+' So it’s not the pick.');
     }
     if(conflicts.length) html+=' <span class="v-trap">Trade-off: '+conflicts.join(' ')+'</span>';
     html+=' <button type="button" class="btn" data-go="'+best.id+'">See the '+NAMES[best.id]+' stop ↓</button>';
