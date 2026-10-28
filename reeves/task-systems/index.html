@@ -438,7 +438,7 @@
     if(conflicts.length) html+=' <span class="v-trap">Trade-off: '+conflicts.join(' ')+'</span>';
     html+=' <button type="button" class="btn" data-go="'+best.id+'">See the '+NAMES[best.id]+' stop ↓</button>';
     whyEl.innerHTML=html;
-    runEl.textContent='Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.';
+    runEl.textContent=second.sc===best.sc?('Tied on points with '+NAMES[second.id]+' — '+NAMES[best.id]+' gets the nod on the editorial tie-break. Its stop below says why it might still win.') :('Runner-up: '+NAMES[second.id]+' — close, and its stop below says why it might still win.');
   }
   chooser.addEventListener('click',event=>{
     const w=event.target.closest('[data-who]');
