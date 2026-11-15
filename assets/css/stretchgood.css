@@ -191,3 +191,16 @@ footer.site.sg-foot .wrap { max-width: 1040px; align-items: baseline; }
 .sg-sponsor { font-family: var(--mono); font-size: 12px; color: var(--faint); }
 .sg-sponsor a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--hairline); text-underline-offset: 3px; }
 .sg-sponsor a:hover { color: var(--accent-ink); }
+/* Opening story (real photo, no concept tag) */
+.sg-story { background: var(--bg); border-bottom: 1px solid var(--hairline); }
+.sg-story-in { max-width: 1040px; margin: 0 auto; padding: 56px 24px 52px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+.sg-story h2 { font-family: var(--sg-serif); font-weight: 400; font-size: clamp(34px, 4.4vw, 54px); line-height: 1.04; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 22px; }
+.sg-story p { font-size: 17px; line-height: 1.65; color: var(--muted); margin: 0 0 16px; max-width: 36em; }
+.sg-story p:last-child { margin-bottom: 0; }
+.sg-story .pic { margin: 0; }
+.sg-story .pic img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 50px rgba(0,0,0,0.35); }
+.sg-story figcaption { font-family: var(--mono); font-size: 12px; color: var(--faint); margin-top: 10px; }
+@media (max-width: 760px) {
+  .sg-story-in { grid-template-columns: 1fr; gap: 28px; padding: 36px 20px 36px; }
+  .sg-story .pic { max-width: 420px; }
+}
