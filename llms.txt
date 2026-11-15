@@ -4,6 +4,17 @@ shanklin.ai is Daniel Shanklin's personal portal — everything he builds and ru
 ## The portal
 - [shanklin.ai — Daniel's corner of the internet](https://shanklin.ai/): Daniel Shanklin's corner of the internet — Reeves, Eidos AGI, OurOtters, Prim, AIC Holdings. Pick a door.
 
+## Stretchgood (planned, not operating)
+- [Stretchgood: free stretch-limo rides, planned for Fort Worth](https://shanklin.ai/stretchgood/): A planned Fort Worth effort offering completely free stretch-limo rides, prom kids first, spring 2027 target. Not operating yet; no rides or donations offered.
+- [Mission · Stretchgood](https://shanklin.ai/stretchgood/mission/): markdown at https://shanklin.ai/stretchgood/mission.md
+- [Why · Stretchgood](https://shanklin.ai/stretchgood/why/): markdown at https://shanklin.ai/stretchgood/why.md
+- [Plan · Stretchgood](https://shanklin.ai/stretchgood/plan/): markdown at https://shanklin.ai/stretchgood/plan.md
+- [Financials · Stretchgood](https://shanklin.ai/stretchgood/financials/): markdown at https://shanklin.ai/stretchgood/financials.md
+- [Fundraising · Stretchgood](https://shanklin.ai/stretchgood/fundraising/): markdown at https://shanklin.ai/stretchgood/fundraising.md
+- [What we need to buy · Stretchgood](https://shanklin.ai/stretchgood/what-we-need-to-buy/): markdown at https://shanklin.ai/stretchgood/what-we-need-to-buy.md
+- [Open decisions · Stretchgood](https://shanklin.ai/stretchgood/open-decisions/): markdown at https://shanklin.ai/stretchgood/open-decisions.md
+- [Follow along · Stretchgood](https://shanklin.ai/stretchgood/follow-along/): markdown at https://shanklin.ai/stretchgood/follow-along.md
+
 ## Reeves — the AI blog
 - [Reeves — notes from Daniel Shanklin's AI](https://shanklin.ai/reeves/): A blog written by Reeves, Daniel Shanklin's AI — on money, automation, and whatever he's asked to look into.
 - [About Reeves — notes from Daniel Shanklin's AI](https://shanklin.ai/reeves/about/): Who Reeves is, how he works, and why he writes. In his own words.

@@ -9,6 +9,15 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 PAGES = [
     ("index.md", "Portal"),
+    ("stretchgood.md", "Stretchgood"),
+    ("stretchgood/mission.md", "Stretchgood: Mission"),
+    ("stretchgood/why.md", "Stretchgood: Why"),
+    ("stretchgood/plan.md", "Stretchgood: Plan"),
+    ("stretchgood/financials.md", "Stretchgood: Financials"),
+    ("stretchgood/fundraising.md", "Stretchgood: Fundraising"),
+    ("stretchgood/what-we-need-to-buy.md", "Stretchgood: What we need to buy"),
+    ("stretchgood/open-decisions.md", "Stretchgood: Open decisions"),
+    ("stretchgood/follow-along.md", "Stretchgood: Follow along"),
     ("reeves.md", "Reeves"),
     ("reeves/about.md", "About"),
     ("reeves/manual.md", "Manual"),

@@ -182,5 +182,68 @@
     "description": "Deep, bespoke tutorials from Reeves — each one built from real work on this site. First up: how to make your website AI-friendly.",
     "type": "page",
     "markdown_url": "https://shanklin.ai/reeves/tutorials.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/financials/",
+    "title": "Financials · Stretchgood",
+    "description": "What it costs to start and to keep running, line by line, with unknowns marked and every total labeled as an estimate.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/financials.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/follow-along/",
+    "title": "Follow along · Stretchgood",
+    "description": "Where updates to the plan will live and how to keep up. No sign-up, booking, or donation form.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/follow-along.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/fundraising/",
+    "title": "Fundraising · Stretchgood",
+    "description": "How the startup and ongoing money will be raised. Stretchgood is not taking donations yet.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/fundraising.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/",
+    "title": "Stretchgood: free stretch-limo rides, planned for Fort Worth",
+    "description": "Stretchgood is a planned Fort Worth effort to give completely free stretch-limo rides, prom kids first, with a spring 2027 target. Not operating yet.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/mission/",
+    "title": "Mission · Stretchgood",
+    "description": "What Stretchgood exists to do: preserve a part of ordinary life we could lose, the big nights that mark growing up, with free stretch-limo rides.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/mission.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/open-decisions/",
+    "title": "Open decisions · Stretchgood",
+    "description": "Everything still to settle before the first ride, in one list.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/open-decisions.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/plan/",
+    "title": "Plan · Stretchgood",
+    "description": "How Stretchgood gets from a plan to a first ride: who it serves and in what order, who it works with, and who drives.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/plan.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/what-we-need-to-buy/",
+    "title": "What we need to buy · Stretchgood",
+    "description": "The vehicle and everything that comes with it: the reference listing, the checks before any purchase, and the shopping list.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/what-we-need-to-buy.md"
+  },
+  {
+    "url": "https://shanklin.ai/stretchgood/why/",
+    "title": "Why · Stretchgood",
+    "description": "Why the big nights matter, why they could be lost, and why a free limo ride is the way Stretchgood answers that.",
+    "type": "page",
+    "markdown_url": "https://shanklin.ai/stretchgood/why.md"
   }
 ]

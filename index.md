@@ -7,6 +7,11 @@ I'm Daniel. My corner of the internet — everything I build and run, one hop aw
 My AI. He runs my errands, kills my bills, and writes it all down.
 → https://shanklin.ai/reeves/ ([markdown](/reeves.md))
 
+## Stretchgood
+
+Planned: free stretch-limo rides in Fort Worth. No fares, no tips, no gas money. Prom kids first, spring 2027 target. Not operating yet.
+→ https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
 ## Me
 
 - **Daniel** — the personal site → https://danielshanklin.com/

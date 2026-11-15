@@ -16,6 +16,11 @@ I'm Daniel. My corner of the internet — everything I build and run, one hop aw
 My AI. He runs my errands, kills my bills, and writes it all down.
 → https://shanklin.ai/reeves/ ([markdown](/reeves.md))
 
+## Stretchgood
+
+Planned: free stretch-limo rides in Fort Worth. No fares, no tips, no gas money. Prom kids first, spring 2027 target. Not operating yet.
+→ https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
 ## Me
 
 - **Daniel** — the personal site → https://danielshanklin.com/
@@ -33,6 +38,512 @@ My AI. He runs my errands, kills my bills, and writes it all down.
 ---
 
 The entire site as markdown: [/site.md](/site.md) · © 2026 Daniel Shanklin · written by Reeves, in Daniel's voice · reeves@shanklin.ai
+
+---
+
+<!-- Stretchgood · /stretchgood.md -->
+
+# Stretchgood
+
+> **Concept preview, not final.** Images are generated concept art; copy is concept, not final.
+
+*Planned · Fort Worth, Texas · Not operating yet*
+
+Free stretch-limo rides for the big nights that mark growing up. A community that shows up. Read the plan section by section below.
+
+## Where it stands
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+## Sections
+
+1. **Mission**: What Stretchgood exists to do: preserve a part of ordinary life we could lose, the big nights that mark growing up, with free stretch-limo rides. → https://shanklin.ai/stretchgood/mission/ ([markdown](/stretchgood/mission.md))
+2. **Why**: Why the big nights matter, why they could be lost, and why a free limo ride is the way Stretchgood answers that. → https://shanklin.ai/stretchgood/why/ ([markdown](/stretchgood/why.md))
+3. **Plan**: How Stretchgood gets from a plan to a first ride: who it serves and in what order, who it works with, and who drives. → https://shanklin.ai/stretchgood/plan/ ([markdown](/stretchgood/plan.md))
+4. **Financials**: What it costs to start and to keep running, line by line, with unknowns marked and every total labeled as an estimate. → https://shanklin.ai/stretchgood/financials/ ([markdown](/stretchgood/financials.md))
+5. **Fundraising**: How the startup and ongoing money will be raised. Stretchgood is not taking donations yet. → https://shanklin.ai/stretchgood/fundraising/ ([markdown](/stretchgood/fundraising.md))
+6. **What we need to buy**: The vehicle and everything that comes with it: the reference listing, the checks before any purchase, and the shopping list. → https://shanklin.ai/stretchgood/what-we-need-to-buy/ ([markdown](/stretchgood/what-we-need-to-buy.md))
+7. **Open decisions**: Everything still to settle before the first ride, in one list. → https://shanklin.ai/stretchgood/open-decisions/ ([markdown](/stretchgood/open-decisions.md))
+8. **Follow along**: Where updates to the plan will live and how to keep up. No sign-up, booking, or donation form. → https://shanklin.ai/stretchgood/follow-along/ ([markdown](/stretchgood/follow-along.md))
+
+---
+
+© 2026 Daniel Shanklin
+
+---
+
+<!-- Stretchgood: Mission · /stretchgood/mission.md -->
+
+# Mission · Stretchgood
+
+> **Concept preview, not final.** Concept line: A community that shows up.
+
+*Stretchgood · 01 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+Stretchgood is a planned Fort Worth, Texas effort to give free stretch-limo rides to people who need them. It is not running yet. Nothing here is a claim that we already have nonprofit status, a partner agreement, a purchased car, or a single ride on the road.
+
+## A community that shows up
+
+Stretchgood is a Fort Worth effort to keep a simple promise: when someone has a big night, the community shows up. We do that by giving free stretch-limo rides, with no fares, no tips, and no gas money, starting with prom.
+
+The mission is about preserving a part of ordinary life that mattered to so many of us when we were younger: the big nights that mark growing up, the feeling of being celebrated, a community showing up for its kids, the kind of night you remember for life. Not a patriotic speech. Just that part of life, kept available for people who might otherwise miss it.
+
+We plan to start with prom, then later offer the same kind of ride to hospice patients, veterans, and wish-style experiences. Stretchgood has no affiliation with Make-A-Wish or any other wish-granting organization. The short essay behind the mission is on the [Why](/stretchgood/why/) page.
+
+## How the work is supposed to work
+
+A good small nonprofit can say, in plain language, who it is for, what it does, and what it hopes will change. Here is that chain for Stretchgood, as a plan, not as a result we have already measured:
+
+- **Who:** people in Fort Worth who might miss a landmark night, beginning with prom kids who cannot otherwise get that ride.
+- **What we do:** a free, careful stretch-limo ride, arranged with a local partner, with no cost to the passenger.
+- **What should happen that night:** they feel celebrated. A community showed up for them.
+- **What we hope lasts:** they keep a memory of being worth the trouble, and Fort Worth keeps the habit of making those nights possible.
+- **How we'll know:** we'll count the rides, publish what each one cost, and, with permission, let people tell us whether the night felt the way we hoped. We will not pretend a count of rides is the same thing as a changed life.
+
+If we change the mission wording, we'll change it here, in the open.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Why · /stretchgood/why.md -->
+
+# Why · Stretchgood
+
+> **Concept preview, not final.** Concept line: Some nights you remember for the rest of your life.
+
+*Stretchgood · 02 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+This is the why behind our mission: Stretchgood is a Fort Worth effort to keep a simple promise. When someone has a big night, the community shows up.
+
+There is a part of growing up that does not show up in a slogan. It is the night you got dressed up. Someone came to the door. The car was longer than it had any right to be, and for a little while the world arranged itself around you. You felt celebrated. Not because you had earned a prize, but because the people around you decided the night should matter.
+
+A lot of us had a night like that, or we watched a friend have one, or we spent years wishing we had. It is easy to treat those nights as decoration. We don't. We think they are one of the ways a place tells its kids, and later its veterans and its families in hard seasons, that they are worth showing up for. If we are not careful, that part of life becomes something only some people get. The rest are told, kindly or not, that the big night is not for them.
+
+Stretchgood is our attempt to keep that from happening here, in a small and concrete way. A stretch limo is a little ridiculous, and that is part of the point. It is ceremony. It says: this night is different. We want to give that ride to prom kids who might otherwise miss it, completely free. No fares, no tips, no gas money. If we can do that well, we want to offer the same kind of night to hospice patients, to veterans, and as wish-style experiences.
+
+This is a plan, not a service already on the road. We would rather say so than dress it up. The work, if we do it right, will be quiet and local: one car, one partner, one season, and a community that decided to show up.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Plan · /stretchgood/plan.md -->
+
+# Plan · Stretchgood
+
+> **Concept preview, not final.** Concept line: From a plan on paper to a car at the curb.
+
+*Stretchgood · 03 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+This is the plan. Stretchgood is not operating yet. We have not bought a car, formed a charity, or taken anyone on a ride.
+
+## What is settled
+
+- The name is Stretchgood, and it's staying.
+- This will be a Fort Worth, Texas effort.
+- The rides will be completely free. No fares, no tips, no gas money, ever.
+- We will start with prom kids who might not otherwise get that night.
+- If we can do that well, later rides will be for hospice patients, veterans, and wish-style experiences. No affiliation with Make-A-Wish or any other wish-granting organization.
+- The first ride is aimed at the spring 2027 prom season.
+- The proposed first partner is a local prom-dress charity. We do not have an agreement yet, so we are not naming anyone.
+- This page, at shanklin.ai/stretchgood, is where we keep the plan in the open.
+
+## What we are working through
+
+- We are shopping for a used stretch Town Car. A low-priced candidate has been listed, but it is unverified. We will not treat a listing price as a done deal.
+- How we will be organized is still an open question: work under a fiscal sponsor, or form a Texas nonprofit and apply for federal tax-exempt status. We will not claim either status before it is real. See [Open decisions](/stretchgood/open-decisions/).
+- Insurance, the city's vehicle-for-hire rules, and who drives are also not decided. Those questions are written out on the same page.
+- The [Financials](/stretchgood/financials/) page is the working budget, with ranges, sources, and the holes we still have, including insurance, which has no quote yet.
+
+## The sequence we have in mind
+
+1. Finish the public plan and the budget you can see.
+2. Choose a structure that lets people support the work without us pretending we already have tax-exempt status.
+3. Get a written handle on insurance and the city question before anyone rides.
+4. Decide who drives, and put vetting and safeguarding for minors in place before the first prom night.
+5. Inspect and, only then, buy or accept a car.
+6. Work with a local prom-dress charity on a first, small set of rides for spring 2027.
+7. Publish what it actually cost, per ride, and what we would do differently.
+
+If a step slips, we will say so here. A plan that cannot be revised in public is not a plan worth keeping.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Financials · /stretchgood/financials.md -->
+
+# Financials · Stretchgood
+
+> **Concept preview, not final.** Concept line: Every line counted. Nothing guessed.
+
+*Stretchgood · 04 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+We want Stretchgood's books to be as plain as the mission. Good small organizations publish a startup budget, an operating budget, and a cost per person they serve, and they label what is a real figure and what is still an estimate. That is what this page tries to do.
+
+This is a working budget for a planned effort. We have not bought a car, raised a round of funding, or received an insurance quote. We will not invent a grand total that hides those holes. Every number below is either sourced, carried over from our own shopping notes, or marked as a planning assumption. The rides will be completely free (no fares, no tips, no gas money), so the budget has no passenger revenue.
+
+When a figure changes, this page should change with it.
+
+## How to read this
+
+- **Sourced** means we can point to a public listing, a government fee, or a published rate.
+- **Shopping notes** means a figure from our own search for a car, not independently re-verified as a live listing here.
+- **Planning assumption** means we had to choose a reasonable range (for example, how many rides, or how many miles) in order to do the math. Those are not forecasts.
+- **Unknown** means we will not fill the gap with a guess.
+
+## Startup (one-time, before the first ride)
+
+| Line | Low | High | Kind | Notes |
+| --- | ---: | ---: | --- | --- |
+| Used stretch Town Car | $3,900 | $12,500 | Mixed | Low is a current candidate list price, **unverified**. High is a sourced public listing at $12,500. Other sourced listings: $7,500 and $11,500. Auction comps of $6,400–$10,400 are from earlier shopping notes and were not re-verified here. A cautious planning band, if we do not use the unverified $3,900 car, is about $7,500–$12,500. **[Needs Daniel's check]** |
+| Texas motor vehicle sales tax (6.25%) **[Needs Daniel's check]** | $244 | $781 | Sourced rate, estimated amount | 6.25% of $3,900 is $243.75; of $12,500 is $781.25. On a private-party sale, tax may be due on the greater of the price or the state's standard presumptive value, so the tax could be higher than 6.25% of what we pay. |
+| Title, registration, and emissions **[Needs Daniel's check]** | about $112 | about $150 | Sourced pieces, estimated total | Tarrant County title fee $33; state registration $50.75 (6,000 lbs or less) or $54 (6,001–10,000 lbs) plus Tarrant's $10 local fee; DFW emissions inspection at the station is at most $18.50. Other small processing fees may apply. A stretch Town Car's weight class is not confirmed until we have a specific vehicle. |
+| Pre-purchase inspection **[Needs Daniel's check]** | $129 | $300 | Sourced range | One Texas mobile inspector lists most pre-purchase inspections at $129–$179. A more thorough or specialty inspection can run higher; $300 is a cautious top of that commonly quoted range, not a bid on this car. |
+| Tires, if the inspection says replace them | n/a | n/a | Unknown until inspection | We do not have a local installed quote for this vehicle. This line stays open. |
+| Immediate repairs after inspection | n/a | n/a | Unknown | We will not set a repair total until a mechanic has seen the car. A cheap listing can hide expensive work. |
+| Texas certificate of formation, if we form a nonprofit **[Needs Daniel's check]** | $25 | $25 | Sourced | Filing fee set by Texas law. $0 if we do not incorporate and use a fiscal sponsor instead. |
+| IRS exemption application, if we apply **[Needs Daniel's check]** | $275 | $600 | Sourced | Form 1023-EZ is $275; Form 1023 is $600. 1023-EZ is only for organizations that meet IRS eligibility, including projected annual gross receipts of $50,000 or less and assets of $250,000 or less. We have not filed. We will not claim tax-exempt status until it is granted. |
+| Fort Worth vehicle-for-hire operating license **[Needs Daniel's check]** | $0 | $500 | Sourced fee, open question | The city's Ground Transportation Office lists a $500 nonrefundable fee for a two-year operating license. It is due only if the ordinance applies to free rides. That question is not decided. See [Open decisions](/stretchgood/open-decisions/). |
+| Insurance (down payment or first term) | n/a | n/a | Unknown | No quote yet. The coverage target, if the city ordinance applies, is $500,000 combined single limit per occurrence. **[Needs Daniel's check]** |
+
+> **Estimate.** Built from the figures above, not a quote.
+
+**Startup subtotal**, before tires, repairs, and insurance:
+
+- If the unverified $3,900 car were real and sound, and tax were 6.25% of that price: $3,900 + $243.75 + about $112–$150 + $129–$179 inspection + $0–$25 formation + $0–$600 IRS + $0–$500 license ≈ **$4,385–$5,598**.
+- If we buy in the sourced listing band of $7,500–$12,500, with 6.25% tax on the price: $7,500–$12,500 + $468.75–$781.25 + about $112–$150 + $129–$300 + $0–$25 + $0–$600 + $0–$500 ≈ **$8,210–$14,856**.
+
+Those are not purchase prices for a ready-to-roll car. They leave out repairs, tires, and insurance, which could be the difference between a tight budget and a much larger one.
+
+
+
+## First-year operating
+
+The first rides are aimed at spring 2027 prom season. We do not know how many we will give. To show the math, we use three **planning assumptions**: 10, 25, or 50 rides, and 30, 50, or 80 miles per ride (including driving to the pickup and home again). Those mileages are assumptions, not logged trips.
+
+Fuel price used below: **$3.318 per gallon**, AAA's Texas average for regular gasoline on November 14, 2026 **[Needs Daniel's check]**. Stretch-limo fuel economy is not an EPA number we could find for a stretched Town Car. A luxury-transport operator's published range is **[Needs Daniel's check]** **8–15 mpg**. We also show a mid point of 10 mpg.
+
+**Fuel cost = (rides × miles per ride ÷ mpg) × $3.318**
+
+| Planning case | Rides | Miles each | MPG | Gallons | Fuel |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Low use, better mileage | 10 | 30 | 15 | 20 | $66 |
+| Mid case | 25 | 50 | 10 | 125 | $415 |
+| Heavier use, poorer mileage | 50 | 80 | 8 | 500 | $1,659 |
+
+Idling while we wait, and city traffic, could push real fuel use toward the high end. We will replace these assumptions with actual gallons after the first season.
+
+| Line | Low | High | Kind | Notes |
+| --- | ---: | ---: | --- | --- |
+| Fuel | $66 | $1,659 | Sourced price and mpg range; assumed miles | See the table above. |
+| Maintenance and repairs **[Needs Daniel's check]** | $33 | $442, as a published floor only | Sourced baseline, likely too low | AAA's 2025 average maintenance cost is 11.04 cents per mile, for new top-selling models, not an older stretch limo. At 300 miles that is $33; at 1,250 miles, $138; at 4,000 miles, $442. The real number for this car should be higher. We do not have a sourced annual figure for a used stretch Town Car, so we are not inventing a markup. |
+| Storage **[Needs Daniel's check]** | $528 | $2,280 | Sourced range, not a reserved space | A stretch limo will not fit in an ordinary parking garage. Fort Worth-area RV and oversized-vehicle storage lists outdoor space from $44 a month ($528 a year) and indoor space from $77 a month ($924 a year). Other local covered-storage listings run higher, up to about $190 a month ($2,280 a year). Donated storage would be $0. We have not rented a space. |
+| Cleaning **[Needs Daniel's check]** | $370 | $1,600 | Estimate, based on sourced car-detail prices | Local full-detail prices for a standard car are commonly about $185–$349. A stretch will likely cost more, and we do not have a stretch-specific quote. The range above is 2 details at $185, up to 4 details at $400, as a planning band. Day-to-day wipe-downs can be done by us. |
+| Registration renewal **[Needs Daniel's check]** | $61 | $64 | Sourced | $50.75 or $54 plus Tarrant's $10 local fee, depending on weight class. |
+| Emissions inspection **[Needs Daniel's check]** | $18.50 | $18.50 | Sourced maximum | Tarrant County is in the DFW emissions program. Station maximum for that test is $18.50. |
+| Fiscal sponsor fee, if we use one **[Needs Daniel's check]** | 5% of funds received | 10% of funds received | Sourced typical range | Common published range for fiscal sponsorship. The dollar amount depends on what we raise, so we are not converting it to a fake total. |
+| Insurance | n/a | n/a | Unknown | No quote. Still the largest open operating cost. Coverage target is $500,000 combined single limit if the city rules apply. |
+| Paid staff **[Needs Daniel's check]** | $0 | $0 | Planning assumption | Year one is planned as volunteer-run, like some of the smaller ride and prom-dress charities we looked at. If that changes, we will say so. |
+
+> **Estimate.** Built from the figures above, not a quote.
+
+**First-year operating subtotal**, still excluding insurance and the fiscal-sponsor percentage:
+
+- Lean case (low fuel, AAA maintenance floor, low storage, two standard-car details, registration and emissions): $66 + $33 + $528 + $370 + $61 + $18.50 ≈ **$1,077**.
+- Mid case (25 rides, 50 miles, 10 mpg; AAA floor on 1,250 miles; mid storage of $1,200; cleaning $800; registration and emissions): $415 + $138 + $1,200 + $800 + $62 + $18.50 ≈ **$2,634**.
+- Higher case (high fuel, AAA floor on 4,000 miles, high storage, high cleaning): $1,659 + $442 + $2,280 + $1,600 + $64 + $18.50 ≈ **$6,064**.
+
+
+
+Add insurance once we have a quote, and 5–10% of whatever we raise if a fiscal sponsor is in the picture. Until then, any "year one total" would be incomplete, so we are not writing one.
+
+## Cost per ride
+
+> **Estimate.** Built from the figures above, not a quote.
+
+We are showing two views, the way a careful nonprofit would. Both **exclude insurance**, because we do not have a quote. Both also use the mid operating subtotal of **$2,634**, which itself includes a maintenance number that is probably too low.
+
+**View A: year-one operating cost only** (the cash it takes to give the ride, not counting the car):
+
+- 10 rides: $2,634 ÷ 10 = **about $263 per ride**
+- 25 rides: $2,634 ÷ 25 = **about $105 per ride**
+- 50 rides: $2,634 ÷ 50 = **about $53 per ride**
+
+If actual operating costs land at the lean $1,077, those figures become about $108, $43, and $22. If they land at the higher $6,064, they become about $606, $243, and $121. Insurance would raise every one of these.
+
+**View B: same operating mid case, plus the car spread over five years.** This is not depreciation for tax purposes. It is a way to see the all-in cost of the first season. We use a mid purchase in the sourced listing band: $10,000 + 6.25% tax ($625) + $130 for title, registration, and emissions + $150 inspection = **$10,905** to get the car titled, before repairs. $10,905 ÷ 5 years = **$2,181 per year**.
+
+- 10 rides: ($2,634 + $2,181) ÷ 10 = **about $482 per ride**
+- 25 rides: ($2,634 + $2,181) ÷ 25 = **about $193 per ride**
+- 50 rides: ($2,634 + $2,181) ÷ 50 = **about $96 per ride**
+
+If we somehow bought a sound car at the unverified $3,900 price, the five-year share would be much smaller (about $4,400 startup ÷ 5 ≈ $880 a year, or $35–$88 per ride on top of operating costs). We are not counting on that.
+
+
+
+What we will not do is pick one of these numbers, strip the assumptions off it, and call it "the cost of a Stretchgood ride." After the first season, we want to replace this page with actual dollars and actual miles.
+
+## Overhead
+
+Year one has no planned payroll. The main overhead we can already name is a fiscal sponsor's 5–10% fee, if we go that route **[Needs Daniel's check]**, plus the ordinary costs of keeping the car legal and clean. We will report program costs (the rides) separately from administration and fundraising once there is real money moving. Until there is, a program-versus-overhead ratio would be theater.
+
+## What this page is not
+
+It is not an audit, not a Form 990, and not a promise that donations are tax-deductible. It is the honest math we have today. When we have better numbers, especially an insurance quote and a mechanic's report, they will go here.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Fundraising · /stretchgood/fundraising.md -->
+
+# Fundraising · Stretchgood
+
+> **Concept preview, not final.** Concept line: Paid for by people who show up. Never by the riders.
+
+*Stretchgood · 05 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+The rides will always be free to the people in the car. The money has to come from somewhere else. This page is the plan for that, written before we have a structure that can accept tax-deductible gifts. We will not pretend we already do.
+
+Excellent small nonprofits tend to do a few things well: they ask clearly, they show the math, they make it easy to give things other than cash, and they use the local rails that already exist. We want Stretchgood to follow that pattern.
+
+## First decision: how gifts can be received
+
+There are two honest paths. We have not chosen one.
+
+**A fiscal sponsor.** An existing 501(c)(3) can receive tax-deductible gifts for a project like this, keep legal control of the funds, and charge a fee for the service. Published guidance commonly puts that fee at about 5–10% of the money received **[Needs Daniel's check]**, sometimes a little more when the sponsor does more of the back office. This is often the faster way for a new project to raise money without building a whole charity first.
+
+**Our own nonprofit.** We could form a Texas nonprofit corporation (the state filing fee is $25 **[Needs Daniel's check]**) and apply to the IRS (the user fee is $275 on Form 1023-EZ, or $600 on Form 1023 **[Needs Daniel's check]**, and the EZ form is only for organizations that meet the IRS size rules). Approval takes time. Until it is granted, we are not a 501(c)(3), and we will not say we are.
+
+Some donors and foundations prefer to give to an organization that already has its own exemption. Some are comfortable giving through a sponsor. We will pick the path that gets the work started cleanly, then say so here.
+
+Until one of those is in place, please do not send money with the expectation of a tax deduction. If you want to help anyway, start with the [Get involved](/stretchgood/follow-along/) page.
+
+## Where the money can come from
+
+**People.** Individual gifts are how a lot of small, local efforts actually start: a few people who care about the night, and who can see what the money buys. We want a public cost-per-ride figure, once we have real costs, so a gift can be understood in plain terms: this is what it takes to take someone to prom.
+
+**In-kind gifts.** This may matter as much as cash. A donated or deeply discounted stretch limo, a safe place to park a long car, fuel, tires, inspection labor, or regular detailing would come straight off the budget. Prom-dress charities and honor-flight groups often run on this kind of help. We would need to inspect a donated vehicle with the same care as a purchased one, and we would need to handle the title and tax rules correctly.
+
+**Local businesses.** A shop, a dealer, a detailer, or a company that wants to underwrite a season of rides, without turning the car into a rolling billboard that gets in the way of the night. Sponsorship should be public and specific: what was given, and what it covered.
+
+**Community foundations and small grants.** North Texas Community Foundation, here in Fort Worth, makes competitive grants and also awards gifts that donors recommend from funds they already keep there. **[Needs Daniel's check]** We would need a qualified nonprofit or a fiscal sponsor to be eligible, and we would apply only for funds that actually fit. Communities Foundation of Texas is the other large regional foundation in this picture, and it is the home of North Texas Giving Day. **[Needs Daniel's check]**
+
+**North Texas Giving Day and other giving days.** North Texas Giving Day is the region's annual community giving event, usually in September. For 2027, registration is already being offered, and the organizers say participating nonprofits receive 100% of the gifts, with transaction fees covered. **[Needs Daniel's check]** That only helps us once we have a qualified organization or sponsor to register. Giving Tuesday and year-end giving can use the same rails.
+
+**Workplace matching.** Many employers match employee gifts to 501(c)(3) organizations. That is a reason to get the structure right, not a source we can claim today.
+
+**Small grants and churches, civic clubs, and school communities.** Honor Flight hubs often ask civic groups to underwrite a veteran. **[Needs Daniel's check]** A prom ride is a smaller ask, and a natural fit for people who already care about the kids in their schools. We will only pursue this once we can receive the money properly.
+
+## How we want to ask
+
+Show the budget. Show the cost per ride once we can. Say what a gift will buy. Publish what came in and what it paid for. Do not dress up overhead, and do not hide the fact that insurance and repairs are still open. If a funder needs a Form 990 or an audit, we will build toward that when the size of the work requires it, not before.
+
+The [Financials](/stretchgood/financials/) page is the beginning of that habit.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: What we need to buy · /stretchgood/what-we-need-to-buy.md -->
+
+# What we need to buy · Stretchgood
+
+> **Concept preview, not final.** Concept line: One long car, and everything it takes to keep it running.
+
+*Stretchgood · 06 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+This is the shopping list, not a receipt. We have not bought the car, and we will not treat a listing as a purchase.
+
+## The car
+
+The target is a used stretch Town Car. Public listings we can point to right now include a 2005 at $7,500, a 2008 in Texas at $11,500, and a 2007 at $12,500 **[Needs Daniel's check]**. Earlier shopping also turned up auction results in the mid-to-high thousands **[Needs Daniel's check]**, and a current candidate listed at $3,900 that has not been verified. The low price is interesting only if a mechanic says the car is sound.
+
+Before any money changes hands we want:
+
+- A pre-purchase inspection, preferably by someone who has seen stretched cars, not only stock sedans. Typical Texas mobile inspections are listed around $129–$179 **[Needs Daniel's check]**; a more thorough job may cost more.
+- A look at the frame, the stretch joint, the air-conditioning, the brakes, the tires, and the title history.
+- A clear plan for Texas title, registration, and 6.25% motor vehicle sales tax, including the possibility that a private-party sale is taxed on a higher standard presumptive value **[Needs Daniel's check]**.
+- A place to keep a very long car. An ordinary garage space will not do.
+
+If someone offers to donate a vehicle, it goes through the same inspection. A gift that needs thousands of dollars of work is not automatically a gift we should take.
+
+## To get the car legal and usable
+
+- Texas title and registration, and an emissions test if the car is in the age window for Tarrant County **[Needs Daniel's check]**.
+- Immediate repairs and tires, only as the inspection requires. We are not guessing those totals on this page.
+- Insurance, once we have a quote, with a coverage target of $500,000 combined single limit if the city's vehicle-for-hire rules apply **[Needs Daniel's check]**. See [Open decisions](/stretchgood/open-decisions/).
+- The city's $500 operating license, only if those rules apply to free rides.
+
+## To keep it running
+
+- Fuel. Stretch limousines are thirsty. Published operator figures cluster around 8–15 miles per gallon **[Needs Daniel's check]**. At Texas's recent regular-gas average, even a modest first season is a real line item, which is why we would welcome in-kind fuel help.
+- Maintenance. An older stretched Town Car will cost more to keep than a new sedan. We have a published per-mile average for ordinary new cars, and we are treating it as a floor, not a forecast.
+- Storage. Covered or indoor space is kinder to the car; it also costs more.
+- Cleaning. The car has to feel special when someone steps in. That means regular cleaning, and professional detailing when a wipe-down is not enough.
+- Basic supplies: safety kit, phone charger, water, a way to keep the interior ready for a formal night.
+
+## To do the work carefully
+
+- Driver vetting, once we decide who drives: a driving-record check and a serious background check. A Texas fingerprint check for an unpaid role is listed at $38 **[Needs Daniel's check]**, which is a starting point, not the whole safeguarding plan.
+- A simple way to schedule rides, keep notes, and, later, publish what each ride cost.
+- The legal paperwork for whichever structure we choose: a fiscal-sponsor agreement, or a Texas certificate of formation and an IRS application. Those filing fees are small. Doing them carefully matters more than the fee.
+
+The website itself does not need a separate budget. It can live here, on shanklin.ai.
+
+A fuller budget, with the math, is on the [Financials](/stretchgood/financials/) page. If you have something on this list you can give or do, the [Get involved](/stretchgood/follow-along/) page is the place.
+
+## Reference listing
+
+A planning input used to size the budget. Not a quote, not bought, not verified.
+
+| Planning input | What the listing says |
+|---|---|
+| Vehicle | 2007 Town Car stretch, used |
+| Listed price | $3,900 (asking price, not a quote) |
+| Location | San Antonio, Texas |
+| Mileage | 122k miles, as listed |
+| Title | Clear title claimed by the listing, not verified |
+| Status | Not bought. Not verified. |
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Open decisions · /stretchgood/open-decisions.md -->
+
+# Open decisions · Stretchgood
+
+> **Concept preview, not final.** Concept line: What is still undecided, out in the open.
+
+*Stretchgood · 07 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+These are the questions we have not decided yet. We are writing them down so the plan stays honest. Nothing on this page is a request for a ruling, a quote, or a meeting. We have not contacted the city, an insurer, or a partner about them.
+
+## Insurance
+
+We do not have a quote. Until we do, insurance is a hole in the budget, not a line we will invent.
+
+The coverage we want to aim for, if we are treated as a vehicle-for-hire, is the city's published minimum: **[Needs Daniel's check]** **$500,000 combined single limit per occurrence**, with the policy written to cover the vehicle and any driver. The city code also has other conditions, including how the policy is written and, if we were licensed, naming the city as an additional insured. **[Needs Daniel's check]** Those details matter only if the ordinance applies.
+
+What we still need to decide: what coverage we carry even if the ordinance does not apply; whether the policy is commercial auto or something else; and what it will actually cost. We will publish a quote when we have one, and not before.
+
+## The city's vehicle-for-hire rules
+
+Fort Worth regulates "vehicle for hire" service through its Ground Transportation Office. **[Needs Daniel's check]** The code defines a vehicle for hire as a chauffeured vehicle that transports passengers over city streets **[Needs Daniel's check]** **"for a fare or compensation."** A vehicle-for-hire service is the business of offering that transportation **"in exchange for a fee or compensation."** The city's own page lists a **$500** nonrefundable fee for a two-year operating license **[Needs Daniel's check]**, and the insurance minimum above, along with driver-qualification and background-check rules **[Needs Daniel's check]**, if a person is operating under that license.
+
+Stretchgood rides will have no fares, no tips, and no gas money. It is not decided whether a completely free ride is still "for a fare or compensation." We are not going to guess the city's answer in public, and we are not going to start rides as if the question had already been settled. The plan is to get a clear, written answer before the first prom night, and to follow it. **[Needs Daniel's check]** If a license is required, the $500 fee belongs in the budget. If it is not, that line stays at zero. Either way, we will say what we learned.
+
+## Entity structure
+
+Two paths are still open:
+
+1. Work under a **fiscal sponsor**: an existing 501(c)(3) that can receive gifts for the project, usually for a fee of about 5–10% **[Needs Daniel's check]**.
+2. **Form a Texas nonprofit** (a $25 certificate of formation) **[Needs Daniel's check]** and **apply to the IRS** ($275 or $600, depending on the form) **[Needs Daniel's check]**. We will not claim 501(c)(3) status unless and until the IRS grants it.
+
+We have not chosen. The right choice depends on how fast we need to raise money, how much back-office help we need, and what donors will require. See [How we'll raise money](/stretchgood/fundraising/).
+
+## Who drives
+
+This is not decided. We are not assuming any particular person will drive, and no one should assume it either.
+
+Whoever drives will need a clean, current driving record, and a vetting process that is serious enough for a car full of people on a formal night. If the city's vehicle-for-hire rules apply, the code also sets minimum driver qualifications **[Needs Daniel's check]**, including rules about serious traffic offenses, intoxication offenses, and sex-offender registration, and it requires national criminal background and driver's-license checks.
+
+The decision includes how many drivers we need, whether they are volunteers, and how we train them for the actual work of the night: being on time, being discreet, and getting people there safely.
+
+## Vetting and safeguarding for minors
+
+Most of the first rides will be for high-school kids. That fact has to shape the work more than the car does.
+
+We have not written the policy yet. The plan is to write one before any minor is booked, and to include at least:
+
+- A real background check and a driving-record check for every driver and for any volunteer who would be alone with a rider. In Texas, a fingerprint-based check for an unpaid role is listed at $38 **[Needs Daniel's check]**, which is a starting point, not a complete policy.
+- Clear rules about who is in the car. A good default is that a minor is not alone in the vehicle with only one adult, unless a parent or guardian has agreed to a specific arrangement.
+- Parent or guardian permission, and a simple way to share the route, the timing, and who is driving.
+- A no-alcohol rule in the car, and a plan for what the driver does if a situation does not feel safe.
+- A way to report a concern, and a promise that a concern will be taken seriously.
+
+We would rather delay a ride than improvise this on the night of prom.
+
+## The vehicle
+
+The target is a used stretch Town Car. That is a direction, not a purchase. A low list price is not the same thing as a good car. The open questions are which car, at what price, after inspection, whether a donated vehicle would be better, and where we will keep it. Details are on [What we need to buy](/stretchgood/what-we-need-to-buy/) and in the [Financials](/stretchgood/financials/).
+
+When one of these decisions is made, we will update this page and the budget together.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+<!-- Stretchgood: Follow along · /stretchgood/follow-along.md -->
+
+# Follow along · Stretchgood
+
+> **Concept preview, not final.** Concept line: Watch it come together.
+
+*Stretchgood · 08 / 08 · Planned · Fort Worth, Texas · Not operating yet*
+
+Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
+
+**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+
+Stretchgood is still a plan. The most useful thing you can do right now is follow this page, and tell us if you have a skill, a space, or a gift that would help us do the first season well.
+
+We are not asking for tax-deductible donations today, because we do not yet have a fiscal sponsor or a granted 501(c)(3) status. If you want to give money later, we will say so here once there is a proper way to receive it.
+
+## Follow the plan
+
+This site is the record. The [Plan](/stretchgood/plan/), the [Financials](/stretchgood/financials/), and the [Open decisions](/stretchgood/open-decisions/) will change as we learn things. If you care about this, start there.
+
+## Ways people can help, when we are ready
+
+- **A safe place to keep a long car**, covered if possible.
+- **A mechanic** who will inspect a used stretch limo carefully, or a detailer who would help us keep it looking like a special night.
+- **Fuel, tires, or other in-kind help**, once we have a car.
+- **A sound used stretch Town Car**, donated or offered at a fair price, with a title we can verify. We will still inspect it.
+- **Help with the unglamorous work**: insurance shopping, bookkeeping, or walking us through fiscal sponsorship or a clean nonprofit filing.
+- **Introductions**, not pressure, to a local prom-dress charity, a civic group, or a business that might underwrite a season. We will not name a partner until there is an agreement.
+- **Time, later**, once we have decided who drives and have a safeguarding plan for minors. Wanting to help is welcome. Driving is a decision we have not made, and it will not be casual.
+
+If you are a family hoping for a ride in spring 2027, thank you for being patient. We will say when we are actually taking requests. We would rather you hear that from this page than from a promise made too early.
+
+## What we are not doing
+
+We are not selling rides, taking tips, or asking passengers for gas money. We are not claiming that Stretchgood is already a charity, or that it is already on the road. And we are not going to fill this page with a waiting list, a countdown, or a donation button that would overstate where we are.
+
+If you want to reach us about Stretchgood, use the contact already published on shanklin.ai, and say what you have in mind. We will keep the conversation, and the credit, in the open as much as we can.
+
+Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
 
 ---
 
