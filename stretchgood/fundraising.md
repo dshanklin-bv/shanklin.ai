@@ -1,12 +1,12 @@
 # Fundraising · Stretchgood
 
-> **Concept preview, not final.** Concept line: Paid for by people who show up. Never by the riders.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 05 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 The rides will always be free to the people in the car. The money has to come from somewhere else. This page is the plan for that, written before we have a structure that can accept tax-deductible gifts. We will not pretend we already do.
 

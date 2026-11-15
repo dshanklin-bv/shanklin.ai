@@ -1,12 +1,12 @@
 # Open decisions · Stretchgood
 
-> **Concept preview, not final.** Concept line: What is still undecided, out in the open.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 07 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 These are the questions we have not decided yet. We are writing them down so the plan stays honest. Nothing on this page is a request for a ruling, a quote, or a meeting. We have not contacted the city, an insurer, or a partner about them.
 

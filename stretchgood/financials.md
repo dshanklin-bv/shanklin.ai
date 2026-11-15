@@ -1,12 +1,12 @@
 # Financials · Stretchgood
 
-> **Concept preview, not final.** Concept line: Every line counted. Nothing guessed.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 04 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 We want Stretchgood's books to be as plain as the mission. Good small organizations publish a startup budget, an operating budget, and a cost per person they serve, and they label what is a real figure and what is still an estimate. That is what this page tries to do.
 

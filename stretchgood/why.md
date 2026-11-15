@@ -1,12 +1,12 @@
 # Why · Stretchgood
 
-> **Concept preview, not final.** Concept line: Some nights you remember for the rest of your life.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 02 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 This is the why behind our mission: Stretchgood is a Fort Worth effort to keep a simple promise. When someone has a big night, the community shows up.
 

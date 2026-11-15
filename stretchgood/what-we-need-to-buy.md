@@ -1,12 +1,12 @@
 # What we need to buy · Stretchgood
 
-> **Concept preview, not final.** Concept line: One long car, and everything it takes to keep it running.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 06 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 This is the shopping list, not a receipt. We have not bought the car, and we will not treat a listing as a purchase.
 

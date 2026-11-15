@@ -12,7 +12,7 @@ Plenty of kids never get that night, whether it's prom, a big milestone, or a wi
 
 *Daniel's kids on their first limo ride.*
 
-> **Concept preview, not final.** Images other than the opening family photo are generated concept art; copy is concept, not final.
+> **V1 · figures are estimates.** Images other than the opening family photo are generated concept art.
 
 *Planned · Fort Worth, Texas · Not operating yet*
 

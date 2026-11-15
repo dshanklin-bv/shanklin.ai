@@ -1,12 +1,12 @@
 # Plan · Stretchgood
 
-> **Concept preview, not final.** Concept line: From a plan on paper to a car at the curb.
+> **V1 · figures are estimates.**
 
 *Stretchgood · 03 / 08 · Planned · Fort Worth, Texas · Not operating yet*
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-**Concept copy, not final.** Items marked [Needs Daniel's check] are unverified.
+Items marked [Needs Daniel's check] are unverified.
 
 This is the plan. Stretchgood is not operating yet. We have not bought a car, formed a charity, or taken anyone on a ride.
 

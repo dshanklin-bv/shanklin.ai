@@ -204,3 +204,7 @@ footer.site.sg-foot .wrap { max-width: 1040px; align-items: baseline; }
   .sg-story-in { grid-template-columns: 1fr; gap: 28px; padding: 36px 20px 36px; }
   .sg-story .pic { max-width: 420px; }
 }
+/* V1 note (replaces the concept ribbon) */
+.sg-v1 { background: var(--bg); color: var(--faint); border-bottom: 1px solid var(--hairline); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 6px 16px; }
+.sg-v1 span { text-transform: none; letter-spacing: 0.02em; }
+@media (max-width: 760px) { .sg-v1 span { display: block; } }
