@@ -122,3 +122,7 @@ Year one has no planned payroll. The main overhead we can already name is a fisc
 It is not an audit, not a Form 990, and not a promise that donations are tax-deductible. It is the honest math we have today. When we have better numbers, especially an insurance quote and a mechanic's report, they will go here.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

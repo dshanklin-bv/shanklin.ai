@@ -23,4 +23,4 @@ Stretchgood is a plan, not a running service. It is not giving rides, has no est
 
 ---
 
-© 2026 Daniel Shanklin
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

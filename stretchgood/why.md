@@ -19,3 +19,7 @@ Stretchgood is our attempt to keep that from happening here, in a small and conc
 This is a plan, not a service already on the road. We would rather say so than dress it up. The work, if we do it right, will be quiet and local: one car, one partner, one season, and a community that decided to show up.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

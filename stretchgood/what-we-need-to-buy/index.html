@@ -26,28 +26,23 @@
   "isPartOf": { "@type": "WebSite", "url": "https://shanklin.ai/", "name": "shanklin.ai" }
 }
 </script>
-<link rel="icon" type="image/png" href="/assets/img/favicon-daniel-32.png">
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/stretchgood/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,0..1,400..800;1,9..144,0..100,0..1,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Caveat:wght@500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=df4a38a5">
-<link rel="stylesheet" href="/assets/css/stretchgood.css?v=4">
+<link rel="stylesheet" href="/assets/css/stretchgood.css?v=5">
 <link rel="alternate" type="text/markdown" title="Markdown version" href="/stretchgood/what-we-need-to-buy.md">
-<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('reeves-theme')||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+<script>try{var t=localStorage.getItem('stretchgood-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
 <body>
 <div class="sg-ribbon">Concept preview, not final <span>· images are generated concept art · copy is concept, not final</span></div>
-<header class="masthead">
+<header class="sg-bar">
   <div class="wrap">
-    <a class="name" href="/">shanklin<em>.ai</em></a>
-    <nav>
-      <a href="/stretchgood/">stretchgood</a>
-      <a href="/stretchgood/what-we-need-to-buy.md">.md</a>
-      <span class="themes" role="group" aria-label="Theme">
-        <button data-set-theme="light">light</button><button data-set-theme="dark">dark</button><button data-set-theme="ai" title="machine-readable view">ai</button>
-      </span>
-    </nav>
+    <a class="sg-mark" href="/stretchgood/">Stretch<em>good</em></a>
+    <span class="themes" role="group" aria-label="Theme">
+      <button data-set-theme="light">light</button><button data-set-theme="dark">dark</button>
+    </span>
   </div>
 </header>
 <nav class="sg-tabs" aria-label="Stretchgood sections">
@@ -133,8 +128,8 @@
 
 <footer class="site sg-foot">
   <div class="wrap">
-    <span class="fine">© 2026 Daniel Shanklin</span>
     <span class="colophon">Stretchgood · planned · Fort Worth, Texas</span>
+    <span class="sg-sponsor">Sponsored by <a href="https://shanklin.ai/">Daniel Shanklin</a></span>
   </div>
 </footer>
 
@@ -142,7 +137,7 @@
 (function(){
   function set(t){
     document.documentElement.setAttribute('data-theme',t);
-    try{localStorage.setItem('reeves-theme',t);}catch(e){}
+    try{localStorage.setItem('stretchgood-theme',t);}catch(e){}
     document.querySelectorAll('[data-set-theme]').forEach(function(b){
       b.classList.toggle('on',b.getAttribute('data-set-theme')===t);
     });

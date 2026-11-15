@@ -41,3 +41,7 @@ This is the plan. Stretchgood is not operating yet. We have not bought a car, fo
 If a step slips, we will say so here. A plan that cannot be revised in public is not a plan worth keeping.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

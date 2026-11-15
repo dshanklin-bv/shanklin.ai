@@ -47,3 +47,7 @@ Show the budget. Show the cost per ride once we can. Say what a gift will buy. P
 The [Financials](/stretchgood/financials/) page is the beginning of that habit.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

@@ -31,3 +31,7 @@ A good small nonprofit can say, in plain language, who it is for, what it does, 
 If we change the mission wording, we'll change it here, in the open.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

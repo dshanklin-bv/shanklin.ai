@@ -35,3 +35,7 @@ We are not selling rides, taking tips, or asking passengers for gas money. We ar
 If you want to reach us about Stretchgood, use the contact already published on shanklin.ai, and say what you have in mind. We will keep the conversation, and the credit, in the open as much as we can.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

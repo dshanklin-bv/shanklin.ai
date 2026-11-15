@@ -68,7 +68,7 @@ Stretchgood is a plan, not a running service. It is not giving rides, has no est
 
 ---
 
-© 2026 Daniel Shanklin
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
 
 ---
 
@@ -110,6 +110,10 @@ Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
 
 ---
 
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
+
+---
+
 <!-- Stretchgood: Why · /stretchgood/why.md -->
 
 # Why · Stretchgood
@@ -133,6 +137,10 @@ Stretchgood is our attempt to keep that from happening here, in a small and conc
 This is a plan, not a service already on the road. We would rather say so than dress it up. The work, if we do it right, will be quiet and local: one car, one partner, one season, and a community that decided to show up.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
 
 ---
 
@@ -181,6 +189,10 @@ This is the plan. Stretchgood is not operating yet. We have not bought a car, fo
 If a step slips, we will say so here. A plan that cannot be revised in public is not a plan worth keeping.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
 
 ---
 
@@ -313,6 +325,10 @@ Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
 
 ---
 
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
+
+---
+
 <!-- Stretchgood: Fundraising · /stretchgood/fundraising.md -->
 
 # Fundraising · Stretchgood
@@ -364,6 +380,10 @@ Show the budget. Show the cost per ride once we can. Say what a gift will buy. P
 The [Financials](/stretchgood/financials/) page is the beginning of that habit.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
 
 ---
 
@@ -436,6 +456,10 @@ Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
 
 ---
 
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
+
+---
+
 <!-- Stretchgood: Open decisions · /stretchgood/open-decisions.md -->
 
 # Open decisions · Stretchgood
@@ -505,6 +529,10 @@ Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
 
 ---
 
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
+
+---
+
 <!-- Stretchgood: Follow along · /stretchgood/follow-along.md -->
 
 # Follow along · Stretchgood
@@ -544,6 +572,10 @@ We are not selling rides, taking tips, or asking passengers for gas money. We ar
 If you want to reach us about Stretchgood, use the contact already published on shanklin.ai, and say what you have in mind. We will keep the conversation, and the credit, in the open as much as we can.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
 
 ---
 

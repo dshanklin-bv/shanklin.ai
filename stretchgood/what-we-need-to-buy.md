@@ -62,3 +62,7 @@ A planning input used to size the budget. Not a quote, not bought, not verified.
 | Status | Not bought. Not verified. |
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)

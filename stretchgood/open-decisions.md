@@ -62,3 +62,7 @@ The target is a used stretch Town Car. That is a direction, not a purchase. A lo
 When one of these decisions is made, we will update this page and the budget together.
 
 Overview: https://shanklin.ai/stretchgood/ ([markdown](/stretchgood.md))
+
+---
+
+Sponsored by [Daniel Shanklin](https://shanklin.ai/)
