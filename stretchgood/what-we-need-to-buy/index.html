@@ -27,22 +27,14 @@
 }
 </script>
 <link rel="icon" type="image/svg+xml" href="/assets/img/stretchgood/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,SOFT,WONK,wght@0,9..144,0..100,0..1,400..800;1,9..144,0..100,0..1,400..800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Caveat:wght@500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=df4a38a5">
-<link rel="stylesheet" href="/assets/css/stretchgood.css?v=7">
+<link rel="stylesheet" href="/assets/css/stretchgood.css?v=8">
 <link rel="alternate" type="text/markdown" title="Markdown version" href="/stretchgood/what-we-need-to-buy.md">
-<script>try{var t=localStorage.getItem('stretchgood-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
 <body>
 <div class="sg-v1">V1 · figures are estimates</div>
 <header class="sg-bar">
   <div class="wrap">
     <a class="sg-mark" href="/stretchgood/">Stretch<em>good</em></a>
-    <span class="themes" role="group" aria-label="Theme">
-      <button data-set-theme="light">light</button><button data-set-theme="dark">dark</button>
-    </span>
   </div>
 </header>
 <nav class="sg-tabs" aria-label="Stretchgood sections">
@@ -135,20 +127,6 @@
 
 <script>
 (function(){
-  function set(t){
-    document.documentElement.setAttribute('data-theme',t);
-    try{localStorage.setItem('stretchgood-theme',t);}catch(e){}
-    document.querySelectorAll('[data-set-theme]').forEach(function(b){
-      b.classList.toggle('on',b.getAttribute('data-set-theme')===t);
-    });
-  }
-  document.querySelectorAll('[data-set-theme]').forEach(function(b){
-    b.addEventListener('click',function(){set(b.getAttribute('data-set-theme'));});
-  });
-  var cur=document.documentElement.getAttribute('data-theme')||'dark';
-  document.querySelectorAll('[data-set-theme]').forEach(function(b){
-    b.classList.toggle('on',b.getAttribute('data-set-theme')===cur);
-  });
   var t=document.querySelector('.sg-tabs [aria-current="page"]');
   if(t&&t.scrollIntoView){try{t.scrollIntoView({block:'nearest',inline:'center'});window.scrollTo(0,0);}catch(e){}}
 })();
