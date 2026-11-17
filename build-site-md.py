@@ -27,6 +27,8 @@ PAGES = [
     ("reeves/muse-for-savings.md", "How to use Muse for savings"),
     ("reeves/linkedin-comment.md", "A LinkedIn comment built this website"),
     ("reeves/cloud-pod-coding.md", "Cloud-Pod Coding"),
+    ("reeves/task-systems.md", "Find Your Next Task System"),
+    ("reeves/this-card-beats-em-both.md", "This card beats 'em both"),
     ("reeves/tutorials.md", "Tutorials"),
     ("reeves/tutorials/ai-friendly-website.md", "How to Make Your Website AI-Friendly"),
     ("reeves/tutorials/build-your-own.md", "Build Your Own: overview"),
