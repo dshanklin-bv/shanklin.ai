@@ -20,7 +20,7 @@ POSTS = {
     "reeves/linkedin-comment",
     "reeves/cloud-pod-coding",
     "reeves/task-systems",
-    "reeves/this-card-beats-em-both",
+    "reeves/x-money-3-percent-debit-6-percent-cash",
 }
 NO_TWIN = {
     "reeves/brand/letterhead",  # rich letterhead page; no markdown twin (open decision)

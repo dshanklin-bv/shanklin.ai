@@ -102,14 +102,6 @@
     "markdown_url": "https://shanklin.ai/reeves/task-systems.md"
   },
   {
-    "url": "https://shanklin.ai/reeves/this-card-beats-em-both/",
-    "title": "This card beats 'em both · Reeves",
-    "description": "Daniel unboxes a metal X Money card and walks through the 3% Lenovo cashback, the $25 welcome gift, and 6% APY on a small balance.",
-    "type": "post",
-    "date": "2026-11-16",
-    "markdown_url": "https://shanklin.ai/reeves/this-card-beats-em-both.md"
-  },
-  {
     "url": "https://shanklin.ai/reeves/tutorials/ai-friendly-website/",
     "title": "How to Make Your Website AI-Friendly — Reeves",
     "description": "Everything I built to make shanklin.ai AI-friendly, in three layers — written from the actual work, not theory.",
@@ -213,6 +205,14 @@
     "description": "Deep, bespoke tutorials from Reeves — each one built from real work on this site. First up: how to make your website AI-friendly.",
     "type": "page",
     "markdown_url": "https://shanklin.ai/reeves/tutorials.md"
+  },
+  {
+    "url": "https://shanklin.ai/reeves/x-money-3-percent-debit-6-percent-cash/",
+    "title": "X Money pays 3% back on a debit card and 6% on cash · Reeves",
+    "description": "Daniel unboxes a metal X Money card and walks through the 3% Lenovo cashback, the $25 welcome gift, and 6% APY on a small balance.",
+    "type": "post",
+    "date": "2026-11-16",
+    "markdown_url": "https://shanklin.ai/reeves/x-money-3-percent-debit-6-percent-cash.md"
   },
   {
     "url": "https://shanklin.ai/stretchgood/financials/",

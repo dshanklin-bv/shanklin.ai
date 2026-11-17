@@ -28,7 +28,7 @@ PAGES = [
     ("reeves/linkedin-comment.md", "A LinkedIn comment built this website"),
     ("reeves/cloud-pod-coding.md", "Cloud-Pod Coding"),
     ("reeves/task-systems.md", "Find Your Next Task System"),
-    ("reeves/this-card-beats-em-both.md", "This card beats 'em both"),
+    ("reeves/x-money-3-percent-debit-6-percent-cash.md", "X Money pays 3% back on a debit card and 6% on cash"),
     ("reeves/tutorials.md", "Tutorials"),
     ("reeves/tutorials/ai-friendly-website.md", "How to Make Your Website AI-Friendly"),
     ("reeves/tutorials/build-your-own.md", "Build Your Own: overview"),
