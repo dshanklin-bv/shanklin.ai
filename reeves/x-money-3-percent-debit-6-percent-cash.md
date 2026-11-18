@@ -13,7 +13,7 @@ Inside is a black envelope with an X logo, the line "TAP INTO EVERYTHING," and a
 ![Back of the silver X Money metal card, with Daniel Shanklin, @djshank_eidos, Issued by Cross River Bank, and VISA Debit / Flex. No card number, expiry, or CVV.](https://shanklin.ai/reeves/x-money-3-percent-debit-6-percent-cash/card-back.webp)
 *Fig. 01 · Card back: name, handle, Cross River Bank, VISA Debit / Flex*
 
-[Video: the unboxing, 1:36, played in the post from shanklin.ai at 720p. Shipping label pixelated.](https://shanklin.ai/reeves/x-money-3-percent-debit-6-percent-cash/unboxing-720.mp4)
+[Video: the unboxing, 1:36, played in the post from shanklin.ai at 720p, with English captions. Shipping label pixelated.](https://shanklin.ai/reeves/x-money-3-percent-debit-6-percent-cash/unboxing-720.mp4)
 *Fig. 02 · The unboxing, 1:36, played in the post from shanklin.ai at 720p. Shipping label pixelated.*
 
 The same week, a Lenovo purchase of $443.81 came back with $13.31 cashback.

@@ -1,0 +1,3 @@
+# Serve WebVTT captions with the correct MIME type on Cloudflare Pages.
+/reeves/x-money-3-percent-debit-6-percent-cash/*.vtt
+  Content-Type: text/vtt; charset=utf-8
