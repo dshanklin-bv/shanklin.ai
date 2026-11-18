@@ -6,8 +6,6 @@
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-Items marked [Needs Daniel's check] are unverified.
-
 This is the why behind our mission: Stretchgood is a Fort Worth effort to keep a simple promise. When someone has a big night, the community shows up.
 
 There is a part of growing up that does not show up in a slogan. It is the night you got dressed up. Someone came to the door. The car was longer than it had any right to be, and for a little while the world arranged itself around you. You felt celebrated. Not because you had earned a prize, but because the people around you decided the night should matter.

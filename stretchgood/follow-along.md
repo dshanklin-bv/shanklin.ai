@@ -6,8 +6,6 @@
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-Items marked [Needs Daniel's check] are unverified.
-
 Stretchgood is still a plan. The most useful thing you can do right now is follow this page, and tell us if you have a skill, a space, or a gift that would help us do the first season well.
 
 We are not asking for tax-deductible donations today, because we do not yet have a fiscal sponsor or a granted 501(c)(3) status. If you want to give money later, we will say so here once there is a proper way to receive it.

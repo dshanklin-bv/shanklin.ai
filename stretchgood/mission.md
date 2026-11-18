@@ -6,8 +6,6 @@
 
 Stretchgood is a plan, not a running service. It is not giving rides, has no established 501(c)(3) status, and has no partner commitments. Nothing here can be booked or donated to, and no ride is promised.
 
-Items marked [Needs Daniel's check] are unverified.
-
 Stretchgood is a planned Fort Worth, Texas effort to give free stretch-limo rides to people who need them. It is not running yet. Nothing here is a claim that we already have nonprofit status, a partner agreement, a purchased car, or a single ride on the road.
 
 ## A community that shows up
